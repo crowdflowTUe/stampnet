@@ -1,0 +1,56 @@
+{
+  "layer_parameters": {
+    "decoder_parameters": {
+      "coord_tensor_size": 41,
+      "decoder_enc_size": 128,
+      "gumbel_parameters": {
+        "anneal_rate": 0.01,
+        "min_temperature": 0.2,
+        "steps_per_epoch": 128,
+        "tau_init": 7
+      },
+      "nr_of_stamps": 40,
+      "stamp_size": 40,
+      "stamps_per_canvas": 3
+    },
+    "encoder_parameters": {
+      "conv_kernel_size": [
+        3,
+        3
+      ],
+      "conv_layer_sizes": [
+        16,
+        32,
+        64,
+        128,
+        128
+      ],
+      "encoder_dropout_rate": 0.2,
+      "final_conv_kernel": [
+        3,
+        3
+      ],
+      "final_conv_size": 256
+    },
+    "input_parameters": {
+      "batch_size": 64,
+      "img_channels": 1,
+      "img_cols": 80,
+      "img_rows": 80
+    },
+    "loss": "mse"
+  },
+  "run_parameters": {
+    "epochs": 1000,
+    "img_type": "pedestrian",
+    "img_type_parameters": {
+      "data_path": "data/pedestrian",
+      "resize": false,
+      "shuffle": true
+    },
+    "shuffle": false,
+    "steps_per_epoch": 128,
+    "validation_steps": 100
+  },
+  "seed": 285058718
+}

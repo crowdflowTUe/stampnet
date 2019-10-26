@@ -1,0 +1,1763 @@
+INFO - multi_loc_mnist_2D - Running command 'main'
+INFO - multi_loc_mnist_2D - Started run with ID "22"
+multi_loc_mnist_2D.py:167: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(16, (3, 3), padding="same", activation=<keras.lay..., kernel_initializer=<keras.ini...)`
+  , border_mode='same')(input)
+/home/joost/joost/anaconda2/lib/python2.7/site-packages/keras/activations.py:197: UserWarning: Do not pass a layer instance (such as LeakyReLU) as the activation argument of another layer. Instead, advanced activation layers should be used just like any other layer in a model.
+  identifier=identifier.__class__.__name__))
+multi_loc_mnist_2D.py:170: UserWarning: Update your `MaxPooling2D` call to the Keras 2 API: `MaxPooling2D((2, 2), padding="same")`
+  c1 = MaxPooling2D((2, 2), border_mode='same')(c1)
+multi_loc_mnist_2D.py:177: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(32, (3, 3), padding="same", activation=<keras.lay..., kernel_initializer=<keras.ini...)`
+  , border_mode='same')(c1)
+multi_loc_mnist_2D.py:180: UserWarning: Update your `MaxPooling2D` call to the Keras 2 API: `MaxPooling2D((2, 2), padding="same")`
+  c2 = MaxPooling2D((2, 2), border_mode='same')(c2)
+multi_loc_mnist_2D.py:187: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(64, (3, 3), padding="same", activation=<keras.lay..., kernel_initializer=<keras.ini...)`
+  , border_mode='same')(c2)
+multi_loc_mnist_2D.py:190: UserWarning: Update your `MaxPooling2D` call to the Keras 2 API: `MaxPooling2D((2, 2), padding="same")`
+  c3 = MaxPooling2D((2, 2), border_mode='same')(c3)
+multi_loc_mnist_2D.py:198: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(128, (3, 3), padding="same", activation=<keras.lay..., kernel_initializer=<keras.ini...)`
+  , border_mode='same')(c3)
+multi_loc_mnist_2D.py:201: UserWarning: Update your `MaxPooling2D` call to the Keras 2 API: `MaxPooling2D((2, 2), padding="same")`
+  c4 = MaxPooling2D((2, 2), border_mode='same')(c4)
+multi_loc_mnist_2D.py:208: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(128, (3, 3), padding="same", activation=<keras.lay..., kernel_initializer=<keras.ini...)`
+  , border_mode='same')(c4)
+multi_loc_mnist_2D.py:211: UserWarning: Update your `MaxPooling2D` call to the Keras 2 API: `MaxPooling2D((2, 2), padding="same")`
+  c5 = MaxPooling2D((2, 2), border_mode='same')(c5)
+multi_loc_mnist_2D.py:253: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(114, (1, 1), padding="same", activation=<keras.lay..., kernel_initializer=<keras.ini..., name="pre-softmax_y")`
+  , name="pre-" + name
+multi_loc_mnist_2D.py:253: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(114, (1, 1), padding="same", activation=<keras.lay..., kernel_initializer=<keras.ini..., name="pre-softmax_x")`
+  , name="pre-" + name
+multi_loc_mnist_2D.py:253: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(80, (1, 1), padding="same", activation=<keras.lay..., kernel_initializer=<keras.ini..., name="pre-softmax_stamp")`
+  , name="pre-" + name
+multi_loc_mnist_2D.py:288: UserWarning: Update your `Conv2D` call to the Keras 2 API: `Conv2D(1, (28, 28), kernel_initializer=<keras.ini..., name="stamp_layer", kernel_constraint=<utils.ker..., activation="linear", padding="same", use_bias=False)`
+  , kernel_initializer=glorot_uniform(seed=r.randint(1e9))
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+main_input (InputLayer)         (64, 84, 84, 1)      0                                            
+__________________________________________________________________________________________________
+conv2d_1 (Conv2D)               (64, 84, 84, 16)     160         main_input[0][0]                 
+__________________________________________________________________________________________________
+batch_normalization_1 (BatchNor (64, 84, 84, 16)     64          conv2d_1[0][0]                   
+__________________________________________________________________________________________________
+dropout_1 (Dropout)             (64, 84, 84, 16)     0           batch_normalization_1[0][0]      
+__________________________________________________________________________________________________
+max_pooling2d_1 (MaxPooling2D)  (64, 42, 42, 16)     0           dropout_1[0][0]                  
+__________________________________________________________________________________________________
+conv2d_2 (Conv2D)               (64, 42, 42, 32)     4640        max_pooling2d_1[0][0]            
+__________________________________________________________________________________________________
+batch_normalization_2 (BatchNor (64, 42, 42, 32)     128         conv2d_2[0][0]                   
+__________________________________________________________________________________________________
+dropout_2 (Dropout)             (64, 42, 42, 32)     0           batch_normalization_2[0][0]      
+__________________________________________________________________________________________________
+max_pooling2d_2 (MaxPooling2D)  (64, 21, 21, 32)     0           dropout_2[0][0]                  
+__________________________________________________________________________________________________
+conv2d_3 (Conv2D)               (64, 21, 21, 64)     18496       max_pooling2d_2[0][0]            
+__________________________________________________________________________________________________
+batch_normalization_3 (BatchNor (64, 21, 21, 64)     256         conv2d_3[0][0]                   
+__________________________________________________________________________________________________
+dropout_3 (Dropout)             (64, 21, 21, 64)     0           batch_normalization_3[0][0]      
+__________________________________________________________________________________________________
+max_pooling2d_3 (MaxPooling2D)  (64, 11, 11, 64)     0           dropout_3[0][0]                  
+__________________________________________________________________________________________________
+conv2d_4 (Conv2D)               (64, 11, 11, 128)    73856       max_pooling2d_3[0][0]            
+__________________________________________________________________________________________________
+batch_normalization_4 (BatchNor (64, 11, 11, 128)    512         conv2d_4[0][0]                   
+__________________________________________________________________________________________________
+dropout_4 (Dropout)             (64, 11, 11, 128)    0           batch_normalization_4[0][0]      
+__________________________________________________________________________________________________
+max_pooling2d_4 (MaxPooling2D)  (64, 6, 6, 128)      0           dropout_4[0][0]                  
+__________________________________________________________________________________________________
+conv2d_5 (Conv2D)               (64, 6, 6, 128)      147584      max_pooling2d_4[0][0]            
+__________________________________________________________________________________________________
+batch_normalization_5 (BatchNor (64, 6, 6, 128)      512         conv2d_5[0][0]                   
+__________________________________________________________________________________________________
+dropout_5 (Dropout)             (64, 6, 6, 128)      0           batch_normalization_5[0][0]      
+__________________________________________________________________________________________________
+max_pooling2d_5 (MaxPooling2D)  (64, 3, 3, 128)      0           dropout_5[0][0]                  
+__________________________________________________________________________________________________
+conv2d_6 (Conv2D)               (64, 1, 1, 256)      295168      max_pooling2d_5[0][0]            
+__________________________________________________________________________________________________
+batch_normalization_6 (BatchNor (64, 1, 1, 256)      1024        conv2d_6[0][0]                   
+__________________________________________________________________________________________________
+dropout_6 (Dropout)             (64, 1, 1, 256)      0           batch_normalization_6[0][0]      
+__________________________________________________________________________________________________
+conv2d_8 (Conv2D)               (64, 1, 1, 128)      32896       dropout_6[0][0]                  
+__________________________________________________________________________________________________
+batch_normalization_8 (BatchNor (64, 1, 1, 128)      512         conv2d_8[0][0]                   
+__________________________________________________________________________________________________
+conv2d_9 (Conv2D)               (64, 1, 1, 128)      32896       dropout_6[0][0]                  
+__________________________________________________________________________________________________
+pre-softmax_y (Conv2D)          (64, 1, 1, 114)      14706       batch_normalization_8[0][0]      
+__________________________________________________________________________________________________
+batch_normalization_9 (BatchNor (64, 1, 1, 128)      512         conv2d_9[0][0]                   
+__________________________________________________________________________________________________
+batch_normalization_10 (BatchNo (64, 1, 1, 114)      456         pre-softmax_y[0][0]              
+__________________________________________________________________________________________________
+pre-softmax_x (Conv2D)          (64, 1, 1, 114)      14706       batch_normalization_9[0][0]      
+__________________________________________________________________________________________________
+conv2d_7 (Conv2D)               (64, 1, 1, 128)      32896       dropout_6[0][0]                  
+__________________________________________________________________________________________________
+flatten_1 (Flatten)             (64, 114)            0           batch_normalization_10[0][0]     
+__________________________________________________________________________________________________
+batch_normalization_11 (BatchNo (64, 1, 1, 114)      456         pre-softmax_x[0][0]              
+__________________________________________________________________________________________________
+batch_normalization_7 (BatchNor (64, 1, 1, 128)      512         conv2d_7[0][0]                   
+__________________________________________________________________________________________________
+softmax_y (GumbelSampler3)      (64, 2, 57)          0           flatten_1[0][0]                  
+__________________________________________________________________________________________________
+flatten_2 (Flatten)             (64, 114)            0           batch_normalization_11[0][0]     
+__________________________________________________________________________________________________
+pre-softmax_stamp (Conv2D)      (64, 1, 1, 80)       10320       batch_normalization_7[0][0]      
+__________________________________________________________________________________________________
+duplicator_y (Duplicate3)       (64, 2, 57, 57)      0           softmax_y[0][0]                  
+__________________________________________________________________________________________________
+softmax_x (GumbelSampler3)      (64, 2, 57)          0           flatten_2[0][0]                  
+__________________________________________________________________________multi_loc_mnist_2D.py:775: UserWarning: Update your `fit_generator` call to the Keras 2 API: `fit_generator(<itertools..., verbose=2, workers=1, validation_data=<itertools..., steps_per_epoch=128, epochs=800, callbacks=[<keras.ca..., max_queue_size=20, validation_steps=100)`
+  , workers = 1
+________________________
+batch_normalization_12 (BatchNo (64, 1, 1, 80)       320         pre-softmax_stamp[0][0]          
+__________________________________________________________________________________________________
+permute_1 (Permute)             (64, 2, 57, 57)      0           duplicator_y[0][0]               
+__________________________________________________________________________________________________
+duplicator_x (Duplicate3)       (64, 2, 57, 57)      0           softmax_x[0][0]                  
+__________________________________________________________________________________________________
+flatten_3 (Flatten)             (64, 80)             0           batch_normalization_12[0][0]     
+__________________________________________________________________________________________________
+multiply_1 (Multiply)           (64, 2, 57, 57)      0           permute_1[0][0]                  
+                                                                 duplicator_x[0][0]               
+__________________________________________________________________________________________________
+softmax_stamp (GumbelSampler3)  (64, 2, 40)          0           flatten_3[0][0]                  
+__________________________________________________________________________________________________
+duplicator_coords (Duplicate3)  (64, 2, 40, 57, 57)  0           multiply_1[0][0]                 
+__________________________________________________________________________________________________
+duplicator_stamps_y (Duplicate3 (64, 2, 57, 40)      0           softmax_stamp[0][0]              
+__________________________________________________________________________________________________
+permute_2 (Permute)             (64, 2, 57, 57, 40)  0           duplicator_coords[0][0]          
+__________________________________________________________________________________________________
+duplicator_stamps_xy (Duplicate (64, 2, 57, 57, 40)  0           duplicator_stamps_y[0][0]        
+__________________________________________________________________________________________________
+multiply_2 (Multiply)           (64, 2, 57, 57, 40)  0           permute_2[0][0]                  
+                                                                 duplicator_stamps_xy[0][0]       
+__________________________________________________________________________________________________
+sum_1 (Sum)                     (64, 57, 57, 40)     0           multiply_2[0][0]                 
+__________________________________________________________________________________________________
+zero_padding2d_1 (ZeroPadding2D (64, 84, 84, 40)     0           sum_1[0][0]                      
+__________________________________________________________________________________________________
+stamp_layer (Conv2D)            (64, 84, 84, 1)      31360       zero_padding2d_1[0][0]           
+__________________________________________________________________________________________________
+min_1 (Min)                     (64, 84, 84, 1)      0           stamp_layer[0][0]                
+==================================================================================================
+Total params: 714,948
+Trainable params: 712,316
+Non-trainable params: 2,632
+__________________________________________________________________________________________________
+Loading image data...
+Loaded!
+Localizing train data...
+('Number of repeats: ', 1)
+Training data localized!
+Localizing test data...
+('Number of repeats: ', 1)
+Test data localized!
+(60000, 84, 84)
+An error has occurred while saving the model. Perhaps something isn't pickable.
+Epoch 1/800
+ - 15s - loss: 162.2247 - min_1_loss: 162.2247 - softmax_stamp_loss: 0.0858 - multiply_1_loss: 1.2479e-05 - val_loss: 150.6325 - val_min_1_loss: 150.6325 - val_softmax_stamp_loss: 0.1229 - val_multiply_1_loss: 1.7443e-05
+Epoch 2/800
+ - 11s - loss: 155.4820 - min_1_loss: 155.4820 - softmax_stamp_loss: 0.0885 - multiply_1_loss: 1.3163e-05 - val_loss: 148.4225 - val_min_1_loss: 148.4225 - val_softmax_stamp_loss: 0.0946 - val_multiply_1_loss: 1.6316e-05
+Epoch 3/800
+ - 11s - loss: 151.0520 - min_1_loss: 151.0520 - softmax_stamp_loss: 0.0916 - multiply_1_loss: 1.4277e-05 - val_loss: 144.1345 - val_min_1_loss: 144.1345 - val_softmax_stamp_loss: 0.0957 - val_multiply_1_loss: 1.8381e-05
+Epoch 4/800
+ - 11s - loss: 146.2693 - min_1_loss: 146.2693 - softmax_stamp_loss: 0.0945 - multiply_1_loss: 1.6061e-05 - val_loss: 145.0345 - val_min_1_loss: 145.0345 - val_softmax_stamp_loss: 0.0955 - val_multiply_1_loss: 1.7373e-05
+Epoch 5/800
+ - 11s - loss: 141.6955 - min_1_loss: 141.6955 - softmax_stamp_loss: 0.0973 - multiply_1_loss: 1.8647e-05 - val_loss: 145.5323 - val_min_1_loss: 145.5323 - val_softmax_stamp_loss: 0.0976 - val_multiply_1_loss: 1.7168e-05
+Epoch 6/800
+ - 11s - loss: 137.7481 - min_1_loss: 137.7481 - softmax_stamp_loss: 0.0998 - multiply_1_loss: 2.1963e-05 - val_loss: 141.8813 - val_min_1_loss: 141.8813 - val_softmax_stamp_loss: 0.0996 - val_multiply_1_loss: 2.0049e-05
+Epoch 7/800
+ - 11s - loss: 134.4951 - min_1_loss: 134.4951 - softmax_stamp_loss: 0.1021 - multiply_1_loss: 2.6096e-05 - val_loss: 139.1658 - val_min_1_loss: 139.1658 - val_softmax_stamp_loss: 0.1005 - val_multiply_1_loss: 2.1493e-05
+Epoch 8/800
+ - 11s - loss: 131.7355 - min_1_loss: 131.7355 - softmax_stamp_loss: 0.1044 - multiply_1_loss: 3.0974e-05 - val_loss: 140.6170 - val_min_1_loss: 140.6170 - val_softmax_stamp_loss: 0.1107 - val_multiply_1_loss: 2.1740e-05
+Epoch 9/800
+ - 11s - loss: 129.3790 - min_1_loss: 129.3790 - softmax_stamp_loss: 0.1073 - multiply_1_loss: 3.6626e-05 - val_loss: 138.2137 - val_min_1_loss: 138.2137 - val_softmax_stamp_loss: 0.1118 - val_multiply_1_loss: 2.4654e-05
+Epoch 10/800
+ - 11s - loss: 127.3491 - min_1_loss: 127.3491 - softmax_stamp_loss: 0.1101 - multiply_1_loss: 4.2749e-05 - val_loss: 137.0425 - val_min_1_loss: 137.0425 - val_softmax_stamp_loss: 0.1148 - val_multiply_1_loss: 2.6087e-05
+Epoch 11/800
+ - 11s - loss: 125.6478 - min_1_loss: 125.6478 - softmax_stamp_loss: 0.1142 - multiply_1_loss: 4.9780e-05 - val_loss: 134.3795 - val_min_1_loss: 134.3795 - val_softmax_stamp_loss: 0.1238 - val_multiply_1_loss: 3.0959e-05
+Epoch 12/800
+ - 11s - loss: 124.1301 - min_1_loss: 124.1301 - softmax_stamp_loss: 0.1212 - multiply_1_loss: 5.7663e-05 - val_loss: 132.8473 - val_min_1_loss: 132.8473 - val_softmax_stamp_loss: 0.1509 - val_multiply_1_loss: 3.5772e-05
+Epoch 13/800
+ - 11s - loss: 122.7638 - min_1_loss: 122.7638 - softmax_stamp_loss: 0.1292 - multiply_1_loss: 6.6450e-05 - val_loss: 132.8323 - val_min_1_loss: 132.8323 - val_softmax_stamp_loss: 0.1555 - val_multiply_1_loss: 3.7051e-05
+Epoch 14/800
+ - 11s - loss: 121.4620 - min_1_loss: 121.4620 - softmax_stamp_loss: 0.1393 - multiply_1_loss: 7.6856e-05 - val_loss: 132.8716 - val_min_1_loss: 132.8716 - val_softmax_stamp_loss: 0.2126 - val_multiply_1_loss: 4.0955e-05
+Epoch 15/800
+ - 11s - loss: 120.3097 - min_1_loss: 120.3097 - softmax_stamp_loss: 0.1514 - multiply_1_loss: 8.8363e-05 - val_loss: 131.9679 - val_min_1_loss: 131.9679 - val_softmax_stamp_loss: 0.3602 - val_multiply_1_loss: 4.4262e-05
+Epoch 16/800
+ - 11s - loss: 119.1654 - min_1_loss: 119.1654 - softmax_stamp_loss: 0.1672 - multiply_1_loss: 1.0149e-04 - val_loss: 128.9438 - val_min_1_loss: 128.9438 - val_softmax_stamp_loss: 0.1732 - val_multiply_1_loss: 4.9487e-05
+Epoch 17/800
+ - 11s - loss: 118.1079 - min_1_loss: 118.1079 - softmax_stamp_loss: 0.1845 - multiply_1_loss: 1.1475e-04 - val_loss: 127.3631 - val_min_1_loss: 127.3631 - val_softmax_stamp_loss: 0.2075 - val_multiply_1_loss: 6.1150e-05
+Epoch 18/800
+ - 11s - loss: 117.1423 - min_1_loss: 117.1423 - softmax_stamp_loss: 0.1991 - multiply_1_loss: 1.3072e-04 - val_loss: 126.7368 - val_min_1_loss: 126.7368 - val_softmax_stamp_loss: 0.1783 - val_multiply_1_loss: 6.6348e-05
+Epoch 19/800
+ - 11s - loss: 116.2818 - min_1_loss: 116.2818 - softmax_stamp_loss: 0.2125 - multiply_1_loss: 1.4812e-04 - val_loss: 128.5707 - val_min_1_loss: 128.5707 - val_softmax_stamp_loss: 0.4940 - val_multiply_1_loss: 6.7398e-05
+Epoch 20/800
+ - 11s - loss: 115.0909 - min_1_loss: 115.0909 - softmax_stamp_loss: 0.2224 - multiply_1_loss: 1.7414e-04 - val_loss: 123.6419 - val_min_1_loss: 123.6419 - val_softmax_stamp_loss: 0.3165 - val_multiply_1_loss: 1.0762e-04
+Epoch 21/800
+ - 11s - loss: 111.5820 - min_1_loss: 111.5820 - softmax_stamp_loss: 0.2367 - multiply_1_loss: 2.3765e-04 - val_loss: 120.5198 - val_min_1_loss: 120.5198 - val_softmax_stamp_loss: 0.2529 - val_multiply_1_loss: 1.3808e-04
+Epoch 22/800
+ - 11s - loss: 107.1694 - min_1_loss: 107.1694 - softmax_stamp_loss: 0.2523 - multiply_1_loss: 3.3103e-04 - val_loss: 119.6470 - val_min_1_loss: 119.6470 - val_softmax_stamp_loss: 0.4230 - val_multiply_1_loss: 1.5541e-04
+Epoch 23/800
+ - 11s - loss: 104.1132 - min_1_loss: 104.1132 - softmax_stamp_loss: 0.2563 - multiply_1_loss: 4.4356e-04 - val_loss: 118.4067 - val_min_1_loss: 118.4067 - val_softmax_stamp_loss: 0.4185 - val_multiply_1_loss: 1.6530e-04
+Epoch 24/800
+ - 11s - loss: 101.7853 - min_1_loss: 101.7853 - softmax_stamp_loss: 0.2584 - multiply_1_loss: 5.8548e-04 - val_loss: 120.4318 - val_min_1_loss: 120.4318 - val_softmax_stamp_loss: 0.7354 - val_multiply_1_loss: 1.7228e-04
+Epoch 25/800
+ - 11s - loss: 99.8744 - min_1_loss: 99.8744 - softmax_stamp_loss: 0.2673 - multiply_1_loss: 7.1282e-04 - val_loss: 117.4540 - val_min_1_loss: 117.4540 - val_softmax_stamp_loss: 0.6838 - val_multiply_1_loss: 2.2208e-04
+Epoch 26/800
+ - 11s - loss: 98.0752 - min_1_loss: 98.0752 - softmax_stamp_loss: 0.2749 - multiply_1_loss: 8.7904e-04 - val_loss: 119.4163 - val_min_1_loss: 119.4163 - val_softmax_stamp_loss: 0.7747 - val_multiply_1_loss: 2.3174e-04
+Epoch 27/800
+ - 11s - loss: 96.5774 - min_1_loss: 96.5774 - softmax_stamp_loss: 0.2851 - multiply_1_loss: 0.0010 - val_loss: 116.9111 - val_min_1_loss: 116.9111 - val_softmax_stamp_loss: 0.6379 - val_multiply_1_loss: 2.9098e-04
+Epoch 28/800
+ - 11s - loss: 94.9719 - min_1_loss: 94.9719 - softmax_stamp_loss: 0.3016 - multiply_1_loss: 0.0012 - val_loss: 115.2766 - val_min_1_loss: 115.2766 - val_softmax_stamp_loss: 0.4767 - val_multiply_1_loss: 3.2908e-04
+Epoch 29/800
+ - 11s - loss: 93.5719 - min_1_loss: 93.5719 - softmax_stamp_loss: 0.3193 - multiply_1_loss: 0.0013 - val_loss: 113.1900 - val_min_1_loss: 113.1900 - val_softmax_stamp_loss: 0.4009 - val_multiply_1_loss: 3.9680e-04
+Epoch 30/800
+ - 11s - loss: 91.9925 - min_1_loss: 91.9925 - softmax_stamp_loss: 0.3364 - multiply_1_loss: 0.0015 - val_loss: 111.1146 - val_min_1_loss: 111.1146 - val_softmax_stamp_loss: 0.3341 - val_multiply_1_loss: 4.0877e-04
+Epoch 31/800
+ - 11s - loss: 90.6824 - min_1_loss: 90.6824 - softmax_stamp_loss: 0.3566 - multiply_1_loss: 0.0017 - val_loss: 110.4795 - val_min_1_loss: 110.4795 - val_softmax_stamp_loss: 0.4707 - val_multiply_1_loss: 5.0700e-04
+Epoch 32/800
+ - 11s - loss: 89.3101 - min_1_loss: 89.3101 - softmax_stamp_loss: 0.3737 - multiply_1_loss: 0.0018 - val_loss: 109.1614 - val_min_1_loss: 109.1614 - val_softmax_stamp_loss: 0.3369 - val_multiply_1_loss: 4.8265e-04
+Epoch 33/800
+ - 11s - loss: 87.9380 - min_1_loss: 87.9380 - softmax_stamp_loss: 0.4015 - multiply_1_loss: 0.0020 - val_loss: 107.2768 - val_min_1_loss: 107.2768 - val_softmax_stamp_loss: 0.3764 - val_multiply_1_loss: 5.4258e-04
+Epoch 34/800
+ - 11s - loss: 86.7529 - min_1_loss: 86.7529 - softmax_stamp_loss: 0.4237 - multiply_1_loss: 0.0022 - val_loss: 107.0844 - val_min_1_loss: 107.0844 - val_softmax_stamp_loss: 0.4198 - val_multiply_1_loss: 5.9653e-04
+Epoch 35/800
+ - 11s - loss: 85.5650 - min_1_loss: 85.5650 - softmax_stamp_loss: 0.4417 - multiply_1_loss: 0.0024 - val_loss: 103.2451 - val_min_1_loss: 103.2451 - val_softmax_stamp_loss: 0.3984 - val_multiply_1_loss: 7.5109e-04
+Epoch 36/800
+ - 11s - loss: 84.4859 - min_1_loss: 84.4859 - softmax_stamp_loss: 0.4700 - multiply_1_loss: 0.0026 - val_loss: 98.7495 - val_min_1_loss: 98.7495 - val_softmax_stamp_loss: 0.3898 - val_multiply_1_loss: 9.7538e-04
+Epoch 37/800
+ - 11s - loss: 83.4522 - min_1_loss: 83.4522 - softmax_stamp_loss: 0.4896 - multiply_1_loss: 0.0028 - val_loss: 100.5934 - val_min_1_loss: 100.5934 - val_softmax_stamp_loss: 0.3828 - val_multiply_1_loss: 9.4396e-04
+Epoch 38/800
+ - 11s - loss: 82.3969 - min_1_loss: 82.3969 - softmax_stamp_loss: 0.5157 - multiply_1_loss: 0.0029 - val_loss: 100.6357 - val_min_1_loss: 100.6357 - val_softmax_stamp_loss: 0.4673 - val_multiply_1_loss: 9.3608e-04
+Epoch 39/800
+ - 11s - loss: 81.5687 - min_1_loss: 81.5687 - softmax_stamp_loss: 0.5388 - multiply_1_loss: 0.0031 - val_loss: 99.5648 - val_min_1_loss: 99.5648 - val_softmax_stamp_loss: 0.4984 - val_multiply_1_loss: 0.0010
+Epoch 40/800
+ - 11s - loss: 80.6863 - min_1_loss: 80.6863 - softmax_stamp_loss: 0.5659 - multiply_1_loss: 0.0032 - val_loss: 98.9604 - val_min_1_loss: 98.9604 - val_softmax_stamp_loss: 0.4652 - val_multiply_1_loss: 0.0011
+Epoch 41/800
+ - 11s - loss: 79.7683 - min_1_loss: 79.7683 - softmax_stamp_loss: 0.5981 - multiply_1_loss: 0.0034 - val_loss: 96.4376 - val_min_1_loss: 96.4376 - val_softmax_stamp_loss: 0.5363 - val_multiply_1_loss: 0.0012
+Epoch 42/800
+ - 11s - loss: 78.9349 - min_1_loss: 78.9349 - softmax_stamp_loss: 0.6202 - multiply_1_loss: 0.0035 - val_loss: 96.0010 - val_min_1_loss: 96.0010 - val_softmax_stamp_loss: 0.5718 - val_multiply_1_loss: 0.0013
+Epoch 43/800
+ - 11s - loss: 78.2476 - min_1_loss: 78.2476 - softmax_stamp_loss: 0.6446 - multiply_1_loss: 0.0037 - val_loss: 98.8418 - val_min_1_loss: 98.8418 - val_softmax_stamp_loss: 0.5898 - val_multiply_1_loss: 0.0012
+Epoch 44/800
+ - 11s - loss: 77.5569 - min_1_loss: 77.5569 - softmax_stamp_loss: 0.6668 - multiply_1_loss: 0.0038 - val_loss: 93.7173 - val_min_1_loss: 93.7173 - val_softmax_stamp_loss: 0.6063 - val_multiply_1_loss: 0.0016
+Epoch 45/800
+ - 11s - loss: 76.8953 - min_1_loss: 76.8953 - softmax_stamp_loss: 0.6920 - multiply_1_loss: 0.0039 - val_loss: 92.9065 - val_min_1_loss: 92.9065 - val_softmax_stamp_loss: 0.4658 - val_multiply_1_loss: 0.0015
+Epoch 46/800
+ - 11s - loss: 76.3110 - min_1_loss: 76.3110 - softmax_stamp_loss: 0.7058 - multiply_1_loss: 0.0040 - val_loss: 95.0670 - val_min_1_loss: 95.0670 - val_softmax_stamp_loss: 0.4968 - val_multiply_1_loss: 0.0015
+Epoch 47/800
+ - 11s - loss: 75.6592 - min_1_loss: 75.6592 - softmax_stamp_loss: 0.7224 - multiply_1_loss: 0.0041 - val_loss: 92.5868 - val_min_1_loss: 92.5868 - val_softmax_stamp_loss: 0.5248 - val_multiply_1_loss: 0.0016
+Epoch 48/800
+ - 11s - loss: 74.9386 - min_1_loss: 74.9386 - softmax_stamp_loss: 0.7409 - multiply_1_loss: 0.0043 - val_loss: 94.6968 - val_min_1_loss: 94.6968 - val_softmax_stamp_loss: 0.6140 - val_multiply_1_loss: 0.0015
+Epoch 49/800
+ - 11s - loss: 74.5054 - min_1_loss: 74.5054 - softmax_stamp_loss: 0.7631 - multiply_1_loss: 0.0044 - val_loss: 91.1256 - val_min_1_loss: 91.1256 - val_softmax_stamp_loss: 0.5969 - val_multiply_1_loss: 0.0017
+Epoch 50/800
+ - 11s - loss: 73.9416 - min_1_loss: 73.9416 - softmax_stamp_loss: 0.7788 - multiply_1_loss: 0.0046 - val_loss: 91.3955 - val_min_1_loss: 91.3955 - val_softmax_stamp_loss: 0.5489 - val_multiply_1_loss: 0.0018
+Epoch 51/800
+ - 11s - loss: 73.5339 - min_1_loss: 73.5339 - softmax_stamp_loss: 0.7924 - multiply_1_loss: 0.0047 - val_loss: 93.8994 - val_min_1_loss: 93.8994 - val_softmax_stamp_loss: 0.6583 - val_multiply_1_loss: 0.0017
+Epoch 52/800
+ - 11s - loss: 73.1796 - min_1_loss: 73.1796 - softmax_stamp_loss: 0.8092 - multiply_1_loss: 0.0047 - val_loss: 90.2424 - val_min_1_loss: 90.2424 - val_softmax_stamp_loss: 0.5511 - val_multiply_1_loss: 0.0018
+Epoch 53/800
+ - 11s - loss: 72.6554 - min_1_loss: 72.6554 - softmax_stamp_loss: 0.8188 - multiply_1_loss: 0.0049 - val_loss: 88.9581 - val_min_1_loss: 88.9581 - val_softmax_stamp_loss: 0.5536 - val_multiply_1_loss: 0.0019
+Epoch 54/800
+ - 11s - loss: 72.3284 - min_1_loss: 72.3284 - softmax_stamp_loss: 0.8274 - multiply_1_loss: 0.0049 - val_loss: 87.4261 - val_min_1_loss: 87.4261 - val_softmax_stamp_loss: 0.5079 - val_multiply_1_loss: 0.0020
+Epoch 55/800
+ - 11s - loss: 71.8858 - min_1_loss: 71.8858 - softmax_stamp_loss: 0.8435 - multiply_1_loss: 0.0051 - val_loss: 91.0068 - val_min_1_loss: 91.0068 - val_softmax_stamp_loss: 0.6308 - val_multiply_1_loss: 0.0020
+Epoch 56/800
+ - 11s - loss: 71.4493 - min_1_loss: 71.4493 - softmax_stamp_loss: 0.8553 - multiply_1_loss: 0.0052 - val_loss: 87.1852 - val_min_1_loss: 87.1852 - val_softmax_stamp_loss: 0.5359 - val_multiply_1_loss: 0.0022
+Epoch 57/800
+ - 11s - loss: 71.1525 - min_1_loss: 71.1525 - softmax_stamp_loss: 0.8635 - multiply_1_loss: 0.0053 - val_loss: 86.6220 - val_min_1_loss: 86.6220 - val_softmax_stamp_loss: 0.5552 - val_multiply_1_loss: 0.0021
+Epoch 58/800
+ - 11s - loss: 70.8973 - min_1_loss: 70.8973 - softmax_stamp_loss: 0.8755 - multiply_1_loss: 0.0054 - val_loss: 90.8556 - val_min_1_loss: 90.8556 - val_softmax_stamp_loss: 0.6288 - val_multiply_1_loss: 0.0020
+Epoch 59/800
+ - 11s - loss: 70.4634 - min_1_loss: 70.4634 - softmax_stamp_loss: 0.8900 - multiply_1_loss: 0.0055 - val_loss: 87.8631 - val_min_1_loss: 87.8631 - val_softmax_stamp_loss: 0.5811 - val_multiply_1_loss: 0.0022
+Epoch 60/800
+ - 11s - loss: 70.2075 - min_1_loss: 70.2075 - softmax_stamp_loss: 0.9006 - multiply_1_loss: 0.0055 - val_loss: 86.5166 - val_min_1_loss: 86.5166 - val_softmax_stamp_loss: 0.5812 - val_multiply_1_loss: 0.0024
+Epoch 61/800
+ - 11s - loss: 69.8708 - min_1_loss: 69.8708 - softmax_stamp_loss: 0.9068 - multiply_1_loss: 0.0056 - val_loss: 88.2974 - val_min_1_loss: 88.2974 - val_softmax_stamp_loss: 0.6287 - val_multiply_1_loss: 0.0022
+Epoch 62/800
+ - 11s - loss: 69.6003 - min_1_loss: 69.6003 - softmax_stamp_loss: 0.9158 - multiply_1_loss: 0.0057 - val_loss: 85.3581 - val_min_1_loss: 85.3581 - val_softmax_stamp_loss: 0.5853 - val_multiply_1_loss: 0.0025
+Epoch 63/800
+ - 11s - loss: 69.3684 - min_1_loss: 69.3684 - softmax_stamp_loss: 0.9308 - multiply_1_loss: 0.0058 - val_loss: 87.2547 - val_min_1_loss: 87.2547 - val_softmax_stamp_loss: 0.6450 - val_multiply_1_loss: 0.0026
+Epoch 64/800
+ - 11s - loss: 69.0446 - min_1_loss: 69.0446 - softmax_stamp_loss: 0.9318 - multiply_1_loss: 0.0059 - val_loss: 88.8223 - val_min_1_loss: 88.8223 - val_softmax_stamp_loss: 0.6136 - val_multiply_1_loss: 0.0023
+Epoch 65/800
+ - 11s - loss: 68.7525 - min_1_loss: 68.7525 - softmax_stamp_loss: 0.9478 - multiply_1_loss: 0.0060 - val_loss: 87.0549 - val_min_1_loss: 87.0549 - val_softmax_stamp_loss: 0.6270 - val_multiply_1_loss: 0.0026
+Epoch 66/800
+ - 11s - loss: 68.5803 - min_1_loss: 68.5803 - softmax_stamp_loss: 0.9492 - multiply_1_loss: 0.0061 - val_loss: 86.2532 - val_min_1_loss: 86.2532 - val_softmax_stamp_loss: 0.6038 - val_multiply_1_loss: 0.0025
+Epoch 67/800
+ - 11s - loss: 68.4300 - min_1_loss: 68.4300 - softmax_stamp_loss: 0.9575 - multiply_1_loss: 0.0061 - val_loss: 86.1875 - val_min_1_loss: 86.1875 - val_softmax_stamp_loss: 0.6045 - val_multiply_1_loss: 0.0026
+Epoch 68/800
+ - 11s - loss: 68.1586 - min_1_loss: 68.1586 - softmax_stamp_loss: 0.9619 - multiply_1_loss: 0.0062 - val_loss: 88.2890 - val_min_1_loss: 88.2890 - val_softmax_stamp_loss: 0.6385 - val_multiply_1_loss: 0.0025
+Epoch 69/800
+ - 11s - loss: 68.0515 - min_1_loss: 68.0515 - softmax_stamp_loss: 0.9738 - multiply_1_loss: 0.0063 - val_loss: 85.7852 - val_min_1_loss: 85.7852 - val_softmax_stamp_loss: 0.6042 - val_multiply_1_loss: 0.0026
+Epoch 70/800
+ - 11s - loss: 67.6592 - min_1_loss: 67.6592 - softmax_stamp_loss: 0.9813 - multiply_1_loss: 0.0064 - val_loss: 84.6022 - val_min_1_loss: 84.6022 - val_softmax_stamp_loss: 0.6275 - val_multiply_1_loss: 0.0028
+Epoch 71/800
+ - 11s - loss: 67.4361 - min_1_loss: 67.4361 - softmax_stamp_loss: 0.9912 - multiply_1_loss: 0.0065 - val_loss: 85.6881 - val_min_1_loss: 85.6881 - val_softmax_stamp_loss: 0.6227 - val_multiply_1_loss: 0.0028
+Epoch 72/800
+ - 11s - loss: 67.2029 - min_1_loss: 67.2029 - softmax_stamp_loss: 0.9994 - multiply_1_loss: 0.0066 - val_loss: 88.0638 - val_min_1_loss: 88.0638 - val_softmax_stamp_loss: 0.6774 - val_multiply_1_loss: 0.0027
+Epoch 73/800
+ - 11s - loss: 67.1163 - min_1_loss: 67.1163 - softmax_stamp_loss: 1.0013 - multiply_1_loss: 0.0067 - val_loss: 85.0231 - val_min_1_loss: 85.0231 - val_softmax_stamp_loss: 0.6660 - val_multiply_1_loss: 0.0031
+Epoch 74/800
+ - 11s - loss: 66.8743 - min_1_loss: 66.8743 - softmax_stamp_loss: 1.0147 - multiply_1_loss: 0.0067 - val_loss: 86.5620 - val_min_1_loss: 86.5620 - val_softmax_stamp_loss: 0.7009 - val_multiply_1_loss: 0.0030
+Epoch 75/800
+ - 11s - loss: 66.7139 - min_1_loss: 66.7139 - softmax_stamp_loss: 1.0212 - multiply_1_loss: 0.0068 - val_loss: 85.3942 - val_min_1_loss: 85.3942 - val_softmax_stamp_loss: 0.7065 - val_multiply_1_loss: 0.0031
+Epoch 76/800
+ - 11s - loss: 66.6092 - min_1_loss: 66.6092 - softmax_stamp_loss: 1.0148 - multiply_1_loss: 0.0069 - val_loss: 84.9168 - val_min_1_loss: 84.9168 - val_softmax_stamp_loss: 0.6809 - val_multiply_1_loss: 0.0030
+Epoch 77/800
+ - 11s - loss: 66.4236 - min_1_loss: 66.4236 - softmax_stamp_loss: 1.0277 - multiply_1_loss: 0.0070 - val_loss: 86.2427 - val_min_1_loss: 86.2427 - val_softmax_stamp_loss: 0.6771 - val_multiply_1_loss: 0.0031
+Epoch 78/800
+ - 11s - loss: 66.2106 - min_1_loss: 66.2106 - softmax_stamp_loss: 1.0321 - multiply_1_loss: 0.0070 - val_loss: 83.6715 - val_min_1_loss: 83.6715 - val_softmax_stamp_loss: 0.6719 - val_multiply_1_loss: 0.0032
+Epoch 79/800
+ - 11s - loss: 66.1305 - min_1_loss: 66.1305 - softmax_stamp_loss: 1.0384 - multiply_1_loss: 0.0071 - val_loss: 85.6952 - val_min_1_loss: 85.6952 - val_softmax_stamp_loss: 0.6597 - val_multiply_1_loss: 0.0030
+Epoch 80/800
+ - 11s - loss: 65.9294 - min_1_loss: 65.9294 - softmax_stamp_loss: 1.0436 - multiply_1_loss: 0.0071 - val_loss: 80.5798 - val_min_1_loss: 80.5798 - val_softmax_stamp_loss: 0.6704 - val_multiply_1_loss: 0.0034
+Epoch 81/800
+ - 11s - loss: 65.6115 - min_1_loss: 65.6115 - softmax_stamp_loss: 1.0468 - multiply_1_loss: 0.0073 - val_loss: 82.8599 - val_min_1_loss: 82.8599 - val_softmax_stamp_loss: 0.6914 - val_multiply_1_loss: 0.0034
+Epoch 82/800
+ - 11s - loss: 65.5485 - min_1_loss: 65.5485 - softmax_stamp_loss: 1.0613 - multiply_1_loss: 0.0073 - val_loss: 84.9479 - val_min_1_loss: 84.9479 - val_softmax_stamp_loss: 0.7090 - val_multiply_1_loss: 0.0032
+Epoch 83/800
+ - 11s - loss: 65.6236 - min_1_loss: 65.6236 - softmax_stamp_loss: 1.0641 - multiply_1_loss: 0.0074 - val_loss: 87.5765 - val_min_1_loss: 87.5765 - val_softmax_stamp_loss: 0.6935 - val_multiply_1_loss: 0.0029
+Epoch 84/800
+ - 11s - loss: 65.2777 - min_1_loss: 65.2777 - softmax_stamp_loss: 1.0619 - multiply_1_loss: 0.0073 - val_loss: 81.1643 - val_min_1_loss: 81.1643 - val_softmax_stamp_loss: 0.6611 - val_multiply_1_loss: 0.0034
+Epoch 85/800
+ - 11s - loss: 65.0829 - min_1_loss: 65.0829 - softmax_stamp_loss: 1.0666 - multiply_1_loss: 0.0075 - val_loss: 83.7136 - val_min_1_loss: 83.7136 - val_softmax_stamp_loss: 0.7009 - val_multiply_1_loss: 0.0032
+Epoch 86/800
+ - 11s - loss: 64.8705 - min_1_loss: 64.8705 - softmax_stamp_loss: 1.0706 - multiply_1_loss: 0.0075 - val_loss: 84.3763 - val_min_1_loss: 84.3763 - val_softmax_stamp_loss: 0.7340 - val_multiply_1_loss: 0.0033
+Epoch 87/800
+ - 11s - loss: 64.8576 - min_1_loss: 64.8576 - softmax_stamp_loss: 1.0788 - multiply_1_loss: 0.0077 - val_loss: 80.7638 - val_min_1_loss: 80.7638 - val_softmax_stamp_loss: 0.6736 - val_multiply_1_loss: 0.0034
+Epoch 88/800
+ - 11s - loss: 64.6358 - min_1_loss: 64.6358 - softmax_stamp_loss: 1.0841 - multiply_1_loss: 0.0077 - val_loss: 85.4184 - val_min_1_loss: 85.4184 - val_softmax_stamp_loss: 0.8002 - val_multiply_1_loss: 0.0035
+Epoch 89/800
+ - 11s - loss: 64.4752 - min_1_loss: 64.4752 - softmax_stamp_loss: 1.0944 - multiply_1_loss: 0.0077 - val_loss: 80.3721 - val_min_1_loss: 80.3721 - val_softmax_stamp_loss: 0.6661 - val_multiply_1_loss: 0.0036
+Epoch 90/800
+ - 11s - loss: 64.5739 - min_1_loss: 64.5739 - softmax_stamp_loss: 1.0950 - multiply_1_loss: 0.0079 - val_loss: 83.1401 - val_min_1_loss: 83.1401 - val_softmax_stamp_loss: 0.7607 - val_multiply_1_loss: 0.0036
+Epoch 91/800
+ - 11s - loss: 64.3412 - min_1_loss: 64.3412 - softmax_stamp_loss: 1.0902 - multiply_1_loss: 0.0080 - val_loss: 84.2085 - val_min_1_loss: 84.2085 - val_softmax_stamp_loss: 0.7819 - val_multiply_1_loss: 0.0036
+Epoch 92/800
+ - 11s - loss: 64.2659 - min_1_loss: 64.2659 - softmax_stamp_loss: 1.1049 - multiply_1_loss: 0.0080 - val_loss: 80.0652 - val_min_1_loss: 80.0652 - val_softmax_stamp_loss: 0.7246 - val_multiply_1_loss: 0.0036
+Epoch 93/800
+ - 11s - loss: 64.2898 - min_1_loss: 64.2898 - softmax_stamp_loss: 1.1078 - multiply_1_loss: 0.0080 - val_loss: 83.5159 - val_min_1_loss: 83.5159 - val_softmax_stamp_loss: 0.7136 - val_multiply_1_loss: 0.0036
+Epoch 94/800
+ - 11s - loss: 64.1347 - min_1_loss: 64.1347 - softmax_stamp_loss: 1.1118 - multiply_1_loss: 0.0081 - val_loss: 81.3655 - val_min_1_loss: 81.3655 - val_softmax_stamp_loss: 0.7242 - val_multiply_1_loss: 0.0036
+Epoch 95/800
+ - 11s - loss: 63.9320 - min_1_loss: 63.9320 - softmax_stamp_loss: 1.1171 - multiply_1_loss: 0.0081 - val_loss: 80.3914 - val_min_1_loss: 80.3914 - val_softmax_stamp_loss: 0.7343 - val_multiply_1_loss: 0.0038
+Epoch 96/800
+ - 11s - loss: 63.7554 - min_1_loss: 63.7554 - softmax_stamp_loss: 1.1219 - multiply_1_loss: 0.0082 - val_loss: 80.6399 - val_min_1_loss: 80.6399 - val_softmax_stamp_loss: 0.7592 - val_multiply_1_loss: 0.0039
+Epoch 97/800
+ - 11s - loss: 63.7752 - min_1_loss: 63.7752 - softmax_stamp_loss: 1.1216 - multiply_1_loss: 0.0082 - val_loss: 81.3816 - val_min_1_loss: 81.3816 - val_softmax_stamp_loss: 0.7497 - val_multiply_1_loss: 0.0037
+Epoch 98/800
+ - 11s - loss: 63.4248 - min_1_loss: 63.4248 - softmax_stamp_loss: 1.1264 - multiply_1_loss: 0.0084 - val_loss: 79.3745 - val_min_1_loss: 79.3745 - val_softmax_stamp_loss: 0.7349 - val_multiply_1_loss: 0.0039
+Epoch 99/800
+ - 11s - loss: 63.4221 - min_1_loss: 63.4221 - softmax_stamp_loss: 1.1287 - multiply_1_loss: 0.0084 - val_loss: 81.4940 - val_min_1_loss: 81.4940 - val_softmax_stamp_loss: 0.7878 - val_multiply_1_loss: 0.0039
+Epoch 100/800
+ - 11s - loss: 63.3680 - min_1_loss: 63.3680 - softmax_stamp_loss: 1.1417 - multiply_1_loss: 0.0085 - val_loss: 78.8630 - val_min_1_loss: 78.8630 - val_softmax_stamp_loss: 0.7461 - val_multiply_1_loss: 0.0040
+Epoch 101/800
+ - 11s - loss: 63.2207 - min_1_loss: 63.2207 - softmax_stamp_loss: 1.1353 - multiply_1_loss: 0.0085 - val_loss: 79.5412 - val_min_1_loss: 79.5412 - val_softmax_stamp_loss: 0.7347 - val_multiply_1_loss: 0.0039
+Epoch 102/800
+ - 11s - loss: 63.1213 - min_1_loss: 63.1213 - softmax_stamp_loss: 1.1441 - multiply_1_loss: 0.0085 - val_loss: 81.1653 - val_min_1_loss: 81.1653 - val_softmax_stamp_loss: 0.8210 - val_multiply_1_loss: 0.0039
+Epoch 103/800
+ - 11s - loss: 62.9805 - min_1_loss: 62.9805 - softmax_stamp_loss: 1.1468 - multiply_1_loss: 0.0086 - val_loss: 81.9028 - val_min_1_loss: 81.9028 - val_softmax_stamp_loss: 0.7956 - val_multiply_1_loss: 0.0038
+Epoch 104/800
+ - 11s - loss: 62.9735 - min_1_loss: 62.9735 - softmax_stamp_loss: 1.1539 - multiply_1_loss: 0.0087 - val_loss: 77.2520 - val_min_1_loss: 77.2520 - val_softmax_stamp_loss: 0.7103 - val_multiply_1_loss: 0.0040
+Epoch 105/800
+ - 11s - loss: 62.7635 - min_1_loss: 62.7635 - softmax_stamp_loss: 1.1527 - multiply_1_loss: 0.0088 - val_loss: 78.1564 - val_min_1_loss: 78.1564 - val_softmax_stamp_loss: 0.7324 - val_multiply_1_loss: 0.0041
+Epoch 106/800
+ - 11s - loss: 62.8076 - min_1_loss: 62.8076 - softmax_stamp_loss: 1.1629 - multiply_1_loss: 0.0089 - val_loss: 79.1817 - val_min_1_loss: 79.1817 - val_softmax_stamp_loss: 0.7895 - val_multiply_1_loss: 0.0043
+Epoch 107/800
+ - 11s - loss: 62.6136 - min_1_loss: 62.6136 - softmax_stamp_loss: 1.1719 - multiply_1_loss: 0.0090 - val_loss: 82.9970 - val_min_1_loss: 82.9970 - val_softmax_stamp_loss: 0.8154 - val_multiply_1_loss: 0.0040
+Epoch 108/800
+ - 11s - loss: 62.6353 - min_1_loss: 62.6353 - softmax_stamp_loss: 1.1653 - multiply_1_loss: 0.0090 - val_loss: 81.2167 - val_min_1_loss: 81.2167 - val_softmax_stamp_loss: 0.7842 - val_multiply_1_loss: 0.0039
+Epoch 109/800
+ - 11s - loss: 62.3271 - min_1_loss: 62.3271 - softmax_stamp_loss: 1.1713 - multiply_1_loss: 0.0091 - val_loss: 81.2503 - val_min_1_loss: 81.2503 - val_softmax_stamp_loss: 0.7407 - val_multiply_1_loss: 0.0039
+Epoch 110/800
+ - 11s - loss: 62.4723 - min_1_loss: 62.4723 - softmax_stamp_loss: 1.1718 - multiply_1_loss: 0.0091 - val_loss: 80.0484 - val_min_1_loss: 80.0484 - val_softmax_stamp_loss: 0.7802 - val_multiply_1_loss: 0.0041
+Epoch 111/800
+ - 11s - loss: 62.3618 - min_1_loss: 62.3618 - softmax_stamp_loss: 1.1786 - multiply_1_loss: 0.0091 - val_loss: 78.7824 - val_min_1_loss: 78.7824 - val_softmax_stamp_loss: 0.7772 - val_multiply_1_loss: 0.0042
+Epoch 112/800
+ - 11s - loss: 62.4017 - min_1_loss: 62.4017 - softmax_stamp_loss: 1.1800 - multiply_1_loss: 0.0092 - val_loss: 81.0966 - val_min_1_loss: 81.0966 - val_softmax_stamp_loss: 0.8273 - val_multiply_1_loss: 0.0041
+Epoch 113/800
+ - 11s - loss: 62.2651 - min_1_loss: 62.2651 - softmax_stamp_loss: 1.1837 - multiply_1_loss: 0.0092 - val_loss: 79.8679 - val_min_1_loss: 79.8679 - val_softmax_stamp_loss: 0.8465 - val_multiply_1_loss: 0.0043
+Epoch 114/800
+ - 11s - loss: 62.1572 - min_1_loss: 62.1572 - softmax_stamp_loss: 1.1909 - multiply_1_loss: 0.0092 - val_loss: 80.6415 - val_min_1_loss: 80.6415 - val_softmax_stamp_loss: 0.8170 - val_multiply_1_loss: 0.0042
+Epoch 115/800
+ - 11s - loss: 62.0832 - min_1_loss: 62.0832 - softmax_stamp_loss: 1.1969 - multiply_1_loss: 0.0093 - val_loss: 80.8507 - val_min_1_loss: 80.8507 - val_softmax_stamp_loss: 0.7514 - val_multiply_1_loss: 0.0040
+Epoch 116/800
+ - 11s - loss: 61.9582 - min_1_loss: 61.9582 - softmax_stamp_loss: 1.1958 - multiply_1_loss: 0.0094 - val_loss: 81.1544 - val_min_1_loss: 81.1544 - val_softmax_stamp_loss: 0.7768 - val_multiply_1_loss: 0.0039
+Epoch 117/800
+ - 11s - loss: 61.9677 - min_1_loss: 61.9677 - softmax_stamp_loss: 1.2029 - multiply_1_loss: 0.0094 - val_loss: 80.4235 - val_min_1_loss: 80.4235 - val_softmax_stamp_loss: 0.8429 - val_multiply_1_loss: 0.0043
+Epoch 118/800
+ - 11s - loss: 61.8942 - min_1_loss: 61.8942 - softmax_stamp_loss: 1.1992 - multiply_1_loss: 0.0094 - val_loss: 78.0558 - val_min_1_loss: 78.0558 - val_softmax_stamp_loss: 0.7821 - val_multiply_1_loss: 0.0042
+Epoch 119/800
+ - 11s - loss: 61.7561 - min_1_loss: 61.7561 - softmax_stamp_loss: 1.2116 - multiply_1_loss: 0.0094 - val_loss: 78.7866 - val_min_1_loss: 78.7866 - val_softmax_stamp_loss: 0.7640 - val_multiply_1_loss: 0.0042
+Epoch 120/800
+ - 11s - loss: 61.6907 - min_1_loss: 61.6907 - softmax_stamp_loss: 1.2149 - multiply_1_loss: 0.0095 - val_loss: 79.8413 - val_min_1_loss: 79.8413 - val_softmax_stamp_loss: 0.8247 - val_multiply_1_loss: 0.0042
+Epoch 121/800
+ - 11s - loss: 61.5797 - min_1_loss: 61.5797 - softmax_stamp_loss: 1.2119 - multiply_1_loss: 0.0095 - val_loss: 74.6904 - val_min_1_loss: 74.6904 - val_softmax_stamp_loss: 0.7818 - val_multiply_1_loss: 0.0046
+Epoch 122/800
+ - 11s - loss: 61.6054 - min_1_loss: 61.6054 - softmax_stamp_loss: 1.2201 - multiply_1_loss: 0.0095 - val_loss: 77.3039 - val_min_1_loss: 77.3039 - val_softmax_stamp_loss: 0.7640 - val_multiply_1_loss: 0.0043
+Epoch 123/800
+ - 11s - loss: 61.4277 - min_1_loss: 61.4277 - softmax_stamp_loss: 1.2285 - multiply_1_loss: 0.0096 - val_loss: 80.5082 - val_min_1_loss: 80.5082 - val_softmax_stamp_loss: 0.8121 - val_multiply_1_loss: 0.0040
+Epoch 124/800
+ - 11s - loss: 61.3972 - min_1_loss: 61.3972 - softmax_stamp_loss: 1.2310 - multiply_1_loss: 0.0096 - val_loss: 79.3207 - val_min_1_loss: 79.3207 - val_softmax_stamp_loss: 0.7800 - val_multiply_1_loss: 0.0041
+Epoch 125/800
+ - 11s - loss: 61.3656 - min_1_loss: 61.3656 - softmax_stamp_loss: 1.2299 - multiply_1_loss: 0.0097 - val_loss: 79.3799 - val_min_1_loss: 79.3799 - val_softmax_stamp_loss: 0.8131 - val_multiply_1_loss: 0.0042
+Epoch 126/800
+ - 11s - loss: 61.1799 - min_1_loss: 61.1799 - softmax_stamp_loss: 1.2373 - multiply_1_loss: 0.0097 - val_loss: 75.3673 - val_min_1_loss: 75.3673 - val_softmax_stamp_loss: 0.8131 - val_multiply_1_loss: 0.0047
+Epoch 127/800
+ - 11s - loss: 61.3050 - min_1_loss: 61.3050 - softmax_stamp_loss: 1.2364 - multiply_1_loss: 0.0098 - val_loss: 78.2738 - val_min_1_loss: 78.2738 - val_softmax_stamp_loss: 0.7951 - val_multiply_1_loss: 0.0043
+Epoch 128/800
+ - 11s - loss: 61.1875 - min_1_loss: 61.1875 - softmax_stamp_loss: 1.2413 - multiply_1_loss: 0.0098 - val_loss: 82.6376 - val_min_1_loss: 82.6376 - val_softmax_stamp_loss: 0.8602 - val_multiply_1_loss: 0.0040
+Epoch 129/800
+ - 11s - loss: 61.2613 - min_1_loss: 61.2613 - softmax_stamp_loss: 1.2465 - multiply_1_loss: 0.0099 - val_loss: 78.3839 - val_min_1_loss: 78.3839 - val_softmax_stamp_loss: 0.8206 - val_multiply_1_loss: 0.0044
+Epoch 130/800
+ - 11s - loss: 61.2924 - min_1_loss: 61.2924 - softmax_stamp_loss: 1.2527 - multiply_1_loss: 0.0100 - val_loss: 78.3659 - val_min_1_loss: 78.3659 - val_softmax_stamp_loss: 0.8210 - val_multiply_1_loss: 0.0043
+Epoch 131/800
+ - 11s - loss: 60.9336 - min_1_loss: 60.9336 - softmax_stamp_loss: 1.2554 - multiply_1_loss: 0.0100 - val_loss: 78.5326 - val_min_1_loss: 78.5326 - val_softmax_stamp_loss: 0.8358 - val_multiply_1_loss: 0.0045
+Epoch 132/800
+ - 11s - loss: 60.7242 - min_1_loss: 60.7242 - softmax_stamp_loss: 1.2521 - multiply_1_loss: 0.0101 - val_loss: 74.7874 - val_min_1_loss: 74.7874 - val_softmax_stamp_loss: 0.7725 - val_multiply_1_loss: 0.0048
+Epoch 133/800
+ - 11s - loss: 60.8135 - min_1_loss: 60.8135 - softmax_stamp_loss: 1.2639 - multiply_1_loss: 0.0101 - val_loss: 83.2960 - val_min_1_loss: 83.2960 - val_softmax_stamp_loss: 0.8384 - val_multiply_1_loss: 0.0040
+Epoch 134/800
+ - 11s - loss: 60.6982 - min_1_loss: 60.6982 - softmax_stamp_loss: 1.2632 - multiply_1_loss: 0.0101 - val_loss: 77.2120 - val_min_1_loss: 77.2120 - val_softmax_stamp_loss: 0.8046 - val_multiply_1_loss: 0.0045
+Epoch 135/800
+ - 11s - loss: 60.8296 - min_1_loss: 60.8296 - softmax_stamp_loss: 1.2634 - multiply_1_loss: 0.0101 - val_loss: 78.6528 - val_min_1_loss: 78.6528 - val_softmax_stamp_loss: 0.8332 - val_multiply_1_loss: 0.0045
+Epoch 136/800
+ - 11s - loss: 60.7565 - min_1_loss: 60.7565 - softmax_stamp_loss: 1.2738 - multiply_1_loss: 0.0103 - val_loss: 77.1970 - val_min_1_loss: 77.1970 - val_softmax_stamp_loss: 0.8154 - val_multiply_1_loss: 0.0047
+Epoch 137/800
+ - 11s - loss: 60.7837 - min_1_loss: 60.7837 - softmax_stamp_loss: 1.2718 - multiply_1_loss: 0.0102 - val_loss: 79.4198 - val_min_1_loss: 79.4198 - val_softmax_stamp_loss: 0.8560 - val_multiply_1_loss: 0.0048
+Epoch 138/800
+ - 11s - loss: 60.7669 - min_1_loss: 60.7669 - softmax_stamp_loss: 1.2764 - multiply_1_loss: 0.0103 - val_loss: 78.4532 - val_min_1_loss: 78.4532 - val_softmax_stamp_loss: 0.7962 - val_multiply_1_loss: 0.0043
+Epoch 139/800
+ - 11s - loss: 60.4605 - min_1_loss: 60.4605 - softmax_stamp_loss: 1.2775 - multiply_1_loss: 0.0103 - val_loss: 78.5548 - val_min_1_loss: 78.5548 - val_softmax_stamp_loss: 0.8462 - val_multiply_1_loss: 0.0043
+Epoch 140/800
+ - 11s - loss: 60.5459 - min_1_loss: 60.5459 - softmax_stamp_loss: 1.2838 - multiply_1_loss: 0.0103 - val_loss: 77.2095 - val_min_1_loss: 77.2095 - val_softmax_stamp_loss: 0.8610 - val_multiply_1_loss: 0.0047
+Epoch 141/800
+ - 11s - loss: 60.5867 - min_1_loss: 60.5867 - softmax_stamp_loss: 1.2878 - multiply_1_loss: 0.0103 - val_loss: 77.8949 - val_min_1_loss: 77.8949 - val_softmax_stamp_loss: 0.7898 - val_multiply_1_loss: 0.0043
+Epoch 142/800
+ - 11s - loss: 60.6273 - min_1_loss: 60.6273 - softmax_stamp_loss: 1.2885 - multiply_1_loss: 0.0104 - val_loss: 78.1737 - val_min_1_loss: 78.1737 - val_softmax_stamp_loss: 0.8038 - val_multiply_1_loss: 0.0043
+Epoch 143/800
+ - 11s - loss: 60.3945 - min_1_loss: 60.3945 - softmax_stamp_loss: 1.3034 - multiply_1_loss: 0.0103 - val_loss: 78.4860 - val_min_1_loss: 78.4860 - val_softmax_stamp_loss: 0.7964 - val_multiply_1_loss: 0.0040
+Epoch 144/800
+ - 11s - loss: 60.3820 - min_1_loss: 60.3820 - softmax_stamp_loss: 1.3036 - multiply_1_loss: 0.0104 - val_loss: 81.3673 - val_min_1_loss: 81.3673 - val_softmax_stamp_loss: 0.8772 - val_multiply_1_loss: 0.0041
+Epoch 145/800
+ - 11s - loss: 60.1818 - min_1_loss: 60.1818 - softmax_stamp_loss: 1.2924 - multiply_1_loss: 0.0105 - val_loss: 76.7188 - val_min_1_loss: 76.7188 - val_softmax_stamp_loss: 0.8291 - val_multiply_1_loss: 0.0045
+Epoch 146/800
+ - 11s - loss: 60.1706 - min_1_loss: 60.1706 - softmax_stamp_loss: 1.3047 - multiply_1_loss: 0.0105 - val_loss: 80.2889 - val_min_1_loss: 80.2889 - val_softmax_stamp_loss: 0.8764 - val_multiply_1_loss: 0.0043
+Epoch 147/800
+ - 11s - loss: 60.2528 - min_1_loss: 60.2528 - softmax_stamp_loss: 1.3143 - multiply_1_loss: 0.0105 - val_loss: 77.0365 - val_min_1_loss: 77.0365 - val_softmax_stamp_loss: 0.8445 - val_multiply_1_loss: 0.0046
+Epoch 148/800
+ - 11s - loss: 60.2089 - min_1_loss: 60.2089 - softmax_stamp_loss: 1.3178 - multiply_1_loss: 0.0106 - val_loss: 77.8171 - val_min_1_loss: 77.8171 - val_softmax_stamp_loss: 0.7995 - val_multiply_1_loss: 0.0043
+Epoch 149/800
+ - 11s - loss: 60.2010 - min_1_loss: 60.2010 - softmax_stamp_loss: 1.3204 - multiply_1_loss: 0.0106 - val_loss: 75.9507 - val_min_1_loss: 75.9507 - val_softmax_stamp_loss: 0.7848 - val_multiply_1_loss: 0.0045
+Epoch 150/800
+ - 11s - loss: 60.1817 - min_1_loss: 60.1817 - softmax_stamp_loss: 1.3161 - multiply_1_loss: 0.0106 - val_loss: 75.8167 - val_min_1_loss: 75.8167 - val_softmax_stamp_loss: 0.8308 - val_multiply_1_loss: 0.0047
+Epoch 151/800
+ - 11s - loss: 60.1621 - min_1_loss: 60.1621 - softmax_stamp_loss: 1.3263 - multiply_1_loss: 0.0106 - val_loss: 78.1297 - val_min_1_loss: 78.1297 - val_softmax_stamp_loss: 0.8155 - val_multiply_1_loss: 0.0044
+Epoch 152/800
+ - 11s - loss: 59.9838 - min_1_loss: 59.9838 - softmax_stamp_loss: 1.3271 - multiply_1_loss: 0.0106 - val_loss: 77.0811 - val_min_1_loss: 77.0811 - val_softmax_stamp_loss: 0.8064 - val_multiply_1_loss: 0.0047
+Epoch 153/800
+ - 11s - loss: 59.9853 - min_1_loss: 59.9853 - softmax_stamp_loss: 1.3264 - multiply_1_loss: 0.0107 - val_loss: 77.2570 - val_min_1_loss: 77.2570 - val_softmax_stamp_loss: 0.8065 - val_multiply_1_loss: 0.0043
+Epoch 154/800
+ - 11s - loss: 60.0751 - min_1_loss: 60.0751 - softmax_stamp_loss: 1.3320 - multiply_1_loss: 0.0107 - val_loss: 77.7332 - val_min_1_loss: 77.7332 - val_softmax_stamp_loss: 0.8621 - val_multiply_1_loss: 0.0044
+Epoch 155/800
+ - 11s - loss: 59.9747 - min_1_loss: 59.9747 - softmax_stamp_loss: 1.3404 - multiply_1_loss: 0.0108 - val_loss: 78.3723 - val_min_1_loss: 78.3723 - val_softmax_stamp_loss: 0.8111 - val_multiply_1_loss: 0.0044
+Epoch 156/800
+ - 11s - loss: 59.9869 - min_1_loss: 59.9869 - softmax_stamp_loss: 1.3369 - multiply_1_loss: 0.0107 - val_loss: 78.0209 - val_min_1_loss: 78.0209 - val_softmax_stamp_loss: 0.8508 - val_multiply_1_loss: 0.0045
+Epoch 157/800
+ - 11s - loss: 59.8770 - min_1_loss: 59.8770 - softmax_stamp_loss: 1.3353 - multiply_1_loss: 0.0107 - val_loss: 79.0522 - val_min_1_loss: 79.0522 - val_softmax_stamp_loss: 0.8042 - val_multiply_1_loss: 0.0041
+Epoch 158/800
+ - 11s - loss: 59.7623 - min_1_loss: 59.7623 - softmax_stamp_loss: 1.3493 - multiply_1_loss: 0.0108 - val_loss: 79.6314 - val_min_1_loss: 79.6314 - val_softmax_stamp_loss: 0.8465 - val_multiply_1_loss: 0.0041
+Epoch 159/800
+ - 11s - loss: 59.5964 - min_1_loss: 59.5964 - softmax_stamp_loss: 1.3489 - multiply_1_loss: 0.0110 - val_loss: 80.8646 - val_min_1_loss: 80.8646 - val_softmax_stamp_loss: 0.8228 - val_multiply_1_loss: 0.0040
+Epoch 160/800
+ - 11s - loss: 59.6925 - min_1_loss: 59.6925 - softmax_stamp_loss: 1.3524 - multiply_1_loss: 0.0109 - val_loss: 77.3786 - val_min_1_loss: 77.3786 - val_softmax_stamp_loss: 0.8257 - val_multiply_1_loss: 0.0045
+Epoch 161/800
+ - 11s - loss: 59.6967 - min_1_loss: 59.6967 - softmax_stamp_loss: 1.3687 - multiply_1_loss: 0.0110 - val_loss: 76.7561 - val_min_1_loss: 76.7561 - val_softmax_stamp_loss: 0.8298 - val_multiply_1_loss: 0.0047
+Epoch 162/800
+ - 11s - loss: 59.7130 - min_1_loss: 59.7130 - softmax_stamp_loss: 1.3570 - multiply_1_loss: 0.0111 - val_loss: 77.2424 - val_min_1_loss: 77.2424 - val_softmax_stamp_loss: 0.8092 - val_multiply_1_loss: 0.0045
+Epoch 163/800
+ - 11s - loss: 59.5423 - min_1_loss: 59.5423 - softmax_stamp_loss: 1.3629 - multiply_1_loss: 0.0111 - val_loss: 77.7537 - val_min_1_loss: 77.7537 - val_softmax_stamp_loss: 0.8143 - val_multiply_1_loss: 0.0042
+Epoch 164/800
+ - 11s - loss: 59.6449 - min_1_loss: 59.6449 - softmax_stamp_loss: 1.3720 - multiply_1_loss: 0.0112 - val_loss: 78.5742 - val_min_1_loss: 78.5742 - val_softmax_stamp_loss: 0.8689 - val_multiply_1_loss: 0.0045
+Epoch 165/800
+ - 11s - loss: 59.5621 - min_1_loss: 59.5621 - softmax_stamp_loss: 1.3707 - multiply_1_loss: 0.0112 - val_loss: 76.1438 - val_min_1_loss: 76.1438 - val_softmax_stamp_loss: 0.8214 - val_multiply_1_loss: 0.0046
+Epoch 166/800
+ - 11s - loss: 59.6808 - min_1_loss: 59.6808 - softmax_stamp_loss: 1.3688 - multiply_1_loss: 0.0113 - val_loss: 78.6691 - val_min_1_loss: 78.6691 - val_softmax_stamp_loss: 0.8773 - val_multiply_1_loss: 0.0045
+Epoch 167/800
+ - 11s - loss: 59.5408 - min_1_loss: 59.5408 - softmax_stamp_loss: 1.3713 - multiply_1_loss: 0.0113 - val_loss: 75.9487 - val_min_1_loss: 75.9487 - val_softmax_stamp_loss: 0.8114 - val_multiply_1_loss: 0.0046
+Epoch 168/800
+ - 11s - loss: 59.5957 - min_1_loss: 59.5957 - softmax_stamp_loss: 1.3765 - multiply_1_loss: 0.0113 - val_loss: 75.8494 - val_min_1_loss: 75.8494 - val_softmax_stamp_loss: 0.8492 - val_multiply_1_loss: 0.0049
+Epoch 169/800
+ - 11s - loss: 59.5530 - min_1_loss: 59.5530 - softmax_stamp_loss: 1.3834 - multiply_1_loss: 0.0113 - val_loss: 77.6821 - val_min_1_loss: 77.6821 - val_softmax_stamp_loss: 0.8239 - val_multiply_1_loss: 0.0045
+Epoch 170/800
+ - 11s - loss: 59.7021 - min_1_loss: 59.7021 - softmax_stamp_loss: 1.3843 - multiply_1_loss: 0.0113 - val_loss: 77.2672 - val_min_1_loss: 77.2672 - val_softmax_stamp_loss: 0.8438 - val_multiply_1_loss: 0.0045
+Epoch 171/800
+ - 11s - loss: 59.4419 - min_1_loss: 59.4419 - softmax_stamp_loss: 1.3916 - multiply_1_loss: 0.0113 - val_loss: 77.2851 - val_min_1_loss: 77.2851 - val_softmax_stamp_loss: 0.8607 - val_multiply_1_loss: 0.0045
+Epoch 172/800
+ - 11s - loss: 59.3827 - min_1_loss: 59.3827 - softmax_stamp_loss: 1.3900 - multiply_1_loss: 0.0114 - val_loss: 77.0542 - val_min_1_loss: 77.0542 - val_softmax_stamp_loss: 0.8221 - val_multiply_1_loss: 0.0044
+Epoch 173/800
+ - 11s - loss: 59.2893 - min_1_loss: 59.2893 - softmax_stamp_loss: 1.4027 - multiply_1_loss: 0.0115 - val_loss: 76.7049 - val_min_1_loss: 76.7049 - val_softmax_stamp_loss: 0.8512 - val_multiply_1_loss: 0.0049
+Epoch 174/800
+ - 11s - loss: 59.3349 - min_1_loss: 59.3349 - softmax_stamp_loss: 1.3962 - multiply_1_loss: 0.0115 - val_loss: 76.1121 - val_min_1_loss: 76.1121 - val_softmax_stamp_loss: 0.8252 - val_multiply_1_loss: 0.0048
+Epoch 175/800
+ - 11s - loss: 59.4519 - min_1_loss: 59.4519 - softmax_stamp_loss: 1.4075 - multiply_1_loss: 0.0115 - val_loss: 77.4467 - val_min_1_loss: 77.4467 - val_softmax_stamp_loss: 0.8823 - val_multiply_1_loss: 0.0047
+Epoch 176/800
+ - 11s - loss: 59.1877 - min_1_loss: 59.1877 - softmax_stamp_loss: 1.4048 - multiply_1_loss: 0.0117 - val_loss: 80.3423 - val_min_1_loss: 80.3423 - val_softmax_stamp_loss: 0.8710 - val_multiply_1_loss: 0.0043
+Epoch 177/800
+ - 11s - loss: 59.4507 - min_1_loss: 59.4507 - softmax_stamp_loss: 1.4026 - multiply_1_loss: 0.0117 - val_loss: 75.7661 - val_min_1_loss: 75.7661 - val_softmax_stamp_loss: 0.8324 - val_multiply_1_loss: 0.0050
+Epoch 178/800
+ - 11s - loss: 59.2978 - min_1_loss: 59.2978 - softmax_stamp_loss: 1.4063 - multiply_1_loss: 0.0117 - val_loss: 76.8726 - val_min_1_loss: 76.8726 - val_softmax_stamp_loss: 0.8166 - val_multiply_1_loss: 0.0046
+Epoch 179/800
+ - 11s - loss: 59.1428 - min_1_loss: 59.1428 - softmax_stamp_loss: 1.4170 - multiply_1_loss: 0.0117 - val_loss: 77.9207 - val_min_1_loss: 77.9207 - val_softmax_stamp_loss: 0.8616 - val_multiply_1_loss: 0.0046
+Epoch 180/800
+ - 11s - loss: 59.1603 - min_1_loss: 59.1603 - softmax_stamp_loss: 1.4180 - multiply_1_loss: 0.0117 - val_loss: 75.5989 - val_min_1_loss: 75.5989 - val_softmax_stamp_loss: 0.8487 - val_multiply_1_loss: 0.0048
+Epoch 181/800
+ - 11s - loss: 59.0799 - min_1_loss: 59.0799 - softmax_stamp_loss: 1.4318 - multiply_1_loss: 0.0118 - val_loss: 76.8901 - val_min_1_loss: 76.8901 - val_softmax_stamp_loss: 0.9182 - val_multiply_1_loss: 0.0048
+Epoch 182/800
+ - 11s - loss: 59.1203 - min_1_loss: 59.1203 - softmax_stamp_loss: 1.4378 - multiply_1_loss: 0.0118 - val_loss: 77.7857 - val_min_1_loss: 77.7857 - val_softmax_stamp_loss: 0.8455 - val_multiply_1_loss: 0.0045
+Epoch 183/800
+ - 11s - loss: 59.0901 - min_1_loss: 59.0901 - softmax_stamp_loss: 1.4416 - multiply_1_loss: 0.0118 - val_loss: 76.9757 - val_min_1_loss: 76.9757 - val_softmax_stamp_loss: 0.8723 - val_multiply_1_loss: 0.0049
+Epoch 184/800
+ - 11s - loss: 59.1201 - min_1_loss: 59.1201 - softmax_stamp_loss: 1.4320 - multiply_1_loss: 0.0118 - val_loss: 77.6869 - val_min_1_loss: 77.6869 - val_softmax_stamp_loss: 0.8700 - val_multiply_1_loss: 0.0048
+Epoch 185/800
+ - 11s - loss: 59.0334 - min_1_loss: 59.0334 - softmax_stamp_loss: 1.4410 - multiply_1_loss: 0.0118 - val_loss: 75.7339 - val_min_1_loss: 75.7339 - val_softmax_stamp_loss: 0.8497 - val_multiply_1_loss: 0.0048
+Epoch 186/800
+ - 11s - loss: 59.1625 - min_1_loss: 59.1625 - softmax_stamp_loss: 1.4457 - multiply_1_loss: 0.0118 - val_loss: 74.9581 - val_min_1_loss: 74.9581 - val_softmax_stamp_loss: 0.8792 - val_multiply_1_loss: 0.0051
+Epoch 187/800
+ - 11s - loss: 59.1416 - min_1_loss: 59.1416 - softmax_stamp_loss: 1.4500 - multiply_1_loss: 0.0119 - val_loss: 76.1243 - val_min_1_loss: 76.1243 - val_softmax_stamp_loss: 0.8637 - val_multiply_1_loss: 0.0049
+Epoch 188/800
+ - 11s - loss: 59.0412 - min_1_loss: 59.0412 - softmax_stamp_loss: 1.4551 - multiply_1_loss: 0.0120 - val_loss: 76.0952 - val_min_1_loss: 76.0952 - val_softmax_stamp_loss: 0.9111 - val_multiply_1_loss: 0.0050
+Epoch 189/800
+ - 11s - loss: 59.0987 - min_1_loss: 59.0987 - softmax_stamp_loss: 1.4531 - multiply_1_loss: 0.0120 - val_loss: 78.2759 - val_min_1_loss: 78.2759 - val_softmax_stamp_loss: 0.8390 - val_multiply_1_loss: 0.0045
+Epoch 190/800
+ - 11s - loss: 58.9697 - min_1_loss: 58.9697 - softmax_stamp_loss: 1.4479 - multiply_1_loss: 0.0121 - val_loss: 75.7046 - val_min_1_loss: 75.7046 - val_softmax_stamp_loss: 0.8914 - val_multiply_1_loss: 0.0050
+Epoch 191/800
+ - 11s - loss: 58.9910 - min_1_loss: 58.9910 - softmax_stamp_loss: 1.4573 - multiply_1_loss: 0.0122 - val_loss: 75.5540 - val_min_1_loss: 75.5540 - val_softmax_stamp_loss: 0.8639 - val_multiply_1_loss: 0.0050
+Epoch 192/800
+ - 11s - loss: 59.1141 - min_1_loss: 59.1141 - softmax_stamp_loss: 1.4529 - multiply_1_loss: 0.0121 - val_loss: 78.5534 - val_min_1_loss: 78.5534 - val_softmax_stamp_loss: 0.9315 - val_multiply_1_loss: 0.0048
+Epoch 193/800
+ - 11s - loss: 59.0394 - min_1_loss: 59.0394 - softmax_stamp_loss: 1.4709 - multiply_1_loss: 0.0122 - val_loss: 75.1023 - val_min_1_loss: 75.1023 - val_softmax_stamp_loss: 0.8738 - val_multiply_1_loss: 0.0052
+Epoch 194/800
+ - 11s - loss: 59.1343 - min_1_loss: 59.1343 - softmax_stamp_loss: 1.4730 - multiply_1_loss: 0.0122 - val_loss: 76.4825 - val_min_1_loss: 76.4825 - val_softmax_stamp_loss: 0.9122 - val_multiply_1_loss: 0.0051
+Epoch 195/800
+ - 11s - loss: 58.9460 - min_1_loss: 58.9460 - softmax_stamp_loss: 1.4750 - multiply_1_loss: 0.0123 - val_loss: 77.7518 - val_min_1_loss: 77.7518 - val_softmax_stamp_loss: 0.9337 - val_multiply_1_loss: 0.0051
+Epoch 196/800
+ - 11s - loss: 58.9073 - min_1_loss: 58.9073 - softmax_stamp_loss: 1.4819 - multiply_1_loss: 0.0122 - val_loss: 75.9398 - val_min_1_loss: 75.9398 - val_softmax_stamp_loss: 0.8943 - val_multiply_1_loss: 0.0052
+Epoch 197/800
+ - 11s - loss: 58.9566 - min_1_loss: 58.9566 - softmax_stamp_loss: 1.4739 - multiply_1_loss: 0.0123 - val_loss: 74.4734 - val_min_1_loss: 74.4734 - val_softmax_stamp_loss: 0.8788 - val_multiply_1_loss: 0.0054
+Epoch 198/800
+ - 11s - loss: 58.9496 - min_1_loss: 58.9496 - softmax_stamp_loss: 1.4821 - multiply_1_loss: 0.0124 - val_loss: 74.9903 - val_min_1_loss: 74.9903 - val_softmax_stamp_loss: 0.8585 - val_multiply_1_loss: 0.0050
+Epoch 199/800
+ - 11s - loss: 59.0607 - min_1_loss: 59.0607 - softmax_stamp_loss: 1.4920 - multiply_1_loss: 0.0124 - val_loss: 76.1040 - val_min_1_loss: 76.1040 - val_softmax_stamp_loss: 0.9131 - val_multiply_1_loss: 0.0051
+Epoch 200/800
+ - 11s - loss: 58.8094 - min_1_loss: 58.8094 - softmax_stamp_loss: 1.4908 - multiply_1_loss: 0.0126 - val_loss: 75.2902 - val_min_1_loss: 75.2902 - val_softmax_stamp_loss: 0.8559 - val_multiply_1_loss: 0.0052
+Epoch 201/800
+ - 11s - loss: 59.0601 - min_1_loss: 59.0601 - softmax_stamp_loss: 1.4909 - multiply_1_loss: 0.0125 - val_loss: 77.4834 - val_min_1_loss: 77.4834 - val_softmax_stamp_loss: 0.8859 - val_multiply_1_loss: 0.0049
+Epoch 202/800
+ - 11s - loss: 58.7842 - min_1_loss: 58.7842 - softmax_stamp_loss: 1.4980 - multiply_1_loss: 0.0126 - val_loss: 78.1370 - val_min_1_loss: 78.1370 - val_softmax_stamp_loss: 0.9065 - val_multiply_1_loss: 0.0047
+Epoch 203/800
+ - 11s - loss: 58.8865 - min_1_loss: 58.8865 - softmax_stamp_loss: 1.5007 - multiply_1_loss: 0.0127 - val_loss: 77.7782 - val_min_1_loss: 77.7782 - val_softmax_stamp_loss: 0.9314 - val_multiply_1_loss: 0.0051
+Epoch 204/800
+ - 11s - loss: 59.0765 - min_1_loss: 59.0765 - softmax_stamp_loss: 1.5064 - multiply_1_loss: 0.0127 - val_loss: 77.4133 - val_min_1_loss: 77.4133 - val_softmax_stamp_loss: 0.9711 - val_multiply_1_loss: 0.0052
+Epoch 205/800
+ - 11s - loss: 58.9325 - min_1_loss: 58.9325 - softmax_stamp_loss: 1.5190 - multiply_1_loss: 0.0127 - val_loss: 76.5460 - val_min_1_loss: 76.5460 - val_softmax_stamp_loss: 0.8824 - val_multiply_1_loss: 0.0051
+Epoch 206/800
+ - 11s - loss: 58.7715 - min_1_loss: 58.7715 - softmax_stamp_loss: 1.5110 - multiply_1_loss: 0.0129 - val_loss: 73.1528 - val_min_1_loss: 73.1528 - val_softmax_stamp_loss: 0.9109 - val_multiply_1_loss: 0.0057
+Epoch 207/800
+ - 11s - loss: 59.0424 - min_1_loss: 59.0424 - softmax_stamp_loss: 1.5146 - multiply_1_loss: 0.0128 - val_loss: 77.1853 - val_min_1_loss: 77.1853 - val_softmax_stamp_loss: 0.9677 - val_multiply_1_loss: 0.0053
+Epoch 208/800
+ - 11s - loss: 58.8849 - min_1_loss: 58.8849 - softmax_stamp_loss: 1.5302 - multiply_1_loss: 0.0129 - val_loss: 75.5130 - val_min_1_loss: 75.5130 - val_softmax_stamp_loss: 0.9292 - val_multiply_1_loss: 0.0054
+Epoch 209/800
+ - 11s - loss: 58.8911 - min_1_loss: 58.8911 - softmax_stamp_loss: 1.5313 - multiply_1_loss: 0.0128 - val_loss: 75.3084 - val_min_1_loss: 75.3084 - val_softmax_stamp_loss: 0.9214 - val_multiply_1_loss: 0.0055
+Epoch 210/800
+ - 11s - loss: 58.7858 - min_1_loss: 58.7858 - softmax_stamp_loss: 1.5293 - multiply_1_loss: 0.0130 - val_loss: 76.4030 - val_min_1_loss: 76.4030 - val_softmax_stamp_loss: 0.9183 - val_multiply_1_loss: 0.0052
+Epoch 211/800
+ - 11s - loss: 58.7211 - min_1_loss: 58.7211 - softmax_stamp_loss: 1.5335 - multiply_1_loss: 0.0130 - val_loss: 75.5341 - val_min_1_loss: 75.5341 - val_softmax_stamp_loss: 0.9556 - val_multiply_1_loss: 0.0055
+Epoch 212/800
+ - 11s - loss: 58.8993 - min_1_loss: 58.8993 - softmax_stamp_loss: 1.5316 - multiply_1_loss: 0.0130 - val_loss: 80.7251 - val_min_1_loss: 80.7251 - val_softmax_stamp_loss: 0.9389 - val_multiply_1_loss: 0.0048
+Epoch 213/800
+ - 12s - loss: 58.9055 - min_1_loss: 58.9055 - softmax_stamp_loss: 1.5351 - multiply_1_loss: 0.0131 - val_loss: 77.7027 - val_min_1_loss: 77.7027 - val_softmax_stamp_loss: 0.9210 - val_multiply_1_loss: 0.0052
+Epoch 214/800
+ - 18s - loss: 58.8297 - min_1_loss: 58.8297 - softmax_stamp_loss: 1.5517 - multiply_1_loss: 0.0131 - val_loss: 79.1717 - val_min_1_loss: 79.1717 - val_softmax_stamp_loss: 1.0064 - val_multiply_1_loss: 0.0052
+Epoch 215/800
+ - 12s - loss: 58.9529 - min_1_loss: 58.9529 - softmax_stamp_loss: 1.5492 - multiply_1_loss: 0.0131 - val_loss: 77.3164 - val_min_1_loss: 77.3164 - val_softmax_stamp_loss: 0.9607 - val_multiply_1_loss: 0.0054
+Epoch 216/800
+ - 15s - loss: 58.7827 - min_1_loss: 58.7827 - softmax_stamp_loss: 1.5514 - multiply_1_loss: 0.0133 - val_loss: 75.2024 - val_min_1_loss: 75.2024 - val_softmax_stamp_loss: 0.9433 - val_multiply_1_loss: 0.0056
+Epoch 217/800
+ - 15s - loss: 58.9108 - min_1_loss: 58.9108 - softmax_stamp_loss: 1.5655 - multiply_1_loss: 0.0134 - val_loss: 77.0632 - val_min_1_loss: 77.0632 - val_softmax_stamp_loss: 0.9672 - val_multiply_1_loss: 0.0054
+Epoch 218/800
+ - 13s - loss: 58.7993 - min_1_loss: 58.7993 - softmax_stamp_loss: 1.5585 - multiply_1_loss: 0.0133 - val_loss: 75.0650 - val_min_1_loss: 75.0650 - val_softmax_stamp_loss: 0.9280 - val_multiply_1_loss: 0.0054
+Epoch 219/800
+ - 13s - loss: 58.9877 - min_1_loss: 58.9877 - softmax_stamp_loss: 1.5661 - multiply_1_loss: 0.0133 - val_loss: 76.5846 - val_min_1_loss: 76.5846 - val_softmax_stamp_loss: 0.9364 - val_multiply_1_loss: 0.0052
+Epoch 220/800
+ - 15s - loss: 58.8579 - min_1_loss: 58.8579 - softmax_stamp_loss: 1.5685 - multiply_1_loss: 0.0134 - val_loss: 75.4760 - val_min_1_loss: 75.4760 - val_softmax_stamp_loss: 0.9543 - val_multiply_1_loss: 0.0057
+Epoch 221/800
+ - 15s - loss: 58.9672 - min_1_loss: 58.9672 - softmax_stamp_loss: 1.5715 - multiply_1_loss: 0.0133 - val_loss: 76.9376 - val_min_1_loss: 76.9376 - val_softmax_stamp_loss: 0.9907 - val_multiply_1_loss: 0.0055
+Epoch 222/800
+ - 12s - loss: 58.6856 - min_1_loss: 58.6856 - softmax_stamp_loss: 1.5872 - multiply_1_loss: 0.0136 - val_loss: 75.8989 - val_min_1_loss: 75.8989 - val_softmax_stamp_loss: 1.0236 - val_multiply_1_loss: 0.0059
+Epoch 223/800
+ - 14s - loss: 58.6486 - min_1_loss: 58.6486 - softmax_stamp_loss: 1.5880 - multiply_1_loss: 0.0136 - val_loss: 75.9805 - val_min_1_loss: 75.9805 - val_softmax_stamp_loss: 0.9822 - val_multiply_1_loss: 0.0059
+Epoch 224/800
+ - 15s - loss: 58.7814 - min_1_loss: 58.7814 - softmax_stamp_loss: 1.5809 - multiply_1_loss: 0.0136 - val_loss: 77.8145 - val_min_1_loss: 77.8145 - val_softmax_stamp_loss: 0.9901 - val_multiply_1_loss: 0.0056
+Epoch 225/800
+ - 15s - loss: 58.7854 - min_1_loss: 58.7854 - softmax_stamp_loss: 1.5905 - multiply_1_loss: 0.0137 - val_loss: 76.8883 - val_min_1_loss: 76.8883 - val_softmax_stamp_loss: 0.9586 - val_multiply_1_loss: 0.0055
+Epoch 226/800
+ - 11s - loss: 58.7535 - min_1_loss: 58.7535 - softmax_stamp_loss: 1.5917 - multiply_1_loss: 0.0137 - val_loss: 77.6688 - val_min_1_loss: 77.6688 - val_softmax_stamp_loss: 0.9810 - val_multiply_1_loss: 0.0055
+Epoch 227/800
+ - 11s - loss: 58.8930 - min_1_loss: 58.8930 - softmax_stamp_loss: 1.6021 - multiply_1_loss: 0.0137 - val_loss: 80.6751 - val_min_1_loss: 80.6751 - val_softmax_stamp_loss: 1.0505 - val_multiply_1_loss: 0.0052
+Epoch 228/800
+ - 11s - loss: 58.9550 - min_1_loss: 58.9550 - softmax_stamp_loss: 1.5974 - multiply_1_loss: 0.0136 - val_loss: 78.8515 - val_min_1_loss: 78.8515 - val_softmax_stamp_loss: 1.0385 - val_multiply_1_loss: 0.0056
+Epoch 229/800
+ - 11s - loss: 58.8077 - min_1_loss: 58.8077 - softmax_stamp_loss: 1.5976 - multiply_1_loss: 0.0138 - val_loss: 76.1078 - val_min_1_loss: 76.1078 - val_softmax_stamp_loss: 0.9959 - val_multiply_1_loss: 0.0059
+Epoch 230/800
+ - 11s - loss: 58.7914 - min_1_loss: 58.7914 - softmax_stamp_loss: 1.6078 - multiply_1_loss: 0.0138 - val_loss: 77.8956 - val_min_1_loss: 77.8956 - val_softmax_stamp_loss: 1.0134 - val_multiply_1_loss: 0.0055
+Epoch 231/800
+ - 11s - loss: 58.8467 - min_1_loss: 58.8467 - softmax_stamp_loss: 1.6168 - multiply_1_loss: 0.0139 - val_loss: 75.6741 - val_min_1_loss: 75.6741 - val_softmax_stamp_loss: 0.9857 - val_multiply_1_loss: 0.0058
+Epoch 232/800
+ - 11s - loss: 59.0231 - min_1_loss: 59.0231 - softmax_stamp_loss: 1.6246 - multiply_1_loss: 0.0138 - val_loss: 78.1777 - val_min_1_loss: 78.1777 - val_softmax_stamp_loss: 1.0318 - val_multiply_1_loss: 0.0056
+Epoch 233/800
+ - 11s - loss: 58.8192 - min_1_loss: 58.8192 - softmax_stamp_loss: 1.6310 - multiply_1_loss: 0.0139 - val_loss: 76.8209 - val_min_1_loss: 76.8209 - val_softmax_stamp_loss: 1.0081 - val_multiply_1_loss: 0.0059
+Epoch 234/800
+ - 11s - loss: 58.8172 - min_1_loss: 58.8172 - softmax_stamp_loss: 1.6290 - multiply_1_loss: 0.0140 - val_loss: 76.2396 - val_min_1_loss: 76.2396 - val_softmax_stamp_loss: 1.0283 - val_multiply_1_loss: 0.0060
+Epoch 235/800
+ - 11s - loss: 58.7628 - min_1_loss: 58.7628 - softmax_stamp_loss: 1.6383 - multiply_1_loss: 0.0140 - val_loss: 78.7794 - val_min_1_loss: 78.7794 - val_softmax_stamp_loss: 1.0148 - val_multiply_1_loss: 0.0055
+Epoch 236/800
+ - 11s - loss: 58.7959 - min_1_loss: 58.7959 - softmax_stamp_loss: 1.6346 - multiply_1_loss: 0.0140 - val_loss: 74.8456 - val_min_1_loss: 74.8456 - val_softmax_stamp_loss: 0.9770 - val_multiply_1_loss: 0.0061
+Epoch 237/800
+ - 11s - loss: 58.6469 - min_1_loss: 58.6469 - softmax_stamp_loss: 1.6319 - multiply_1_loss: 0.0141 - val_loss: 75.3948 - val_min_1_loss: 75.3948 - val_softmax_stamp_loss: 1.0525 - val_multiply_1_loss: 0.0064
+Epoch 238/800
+ - 11s - loss: 58.7652 - min_1_loss: 58.7652 - softmax_stamp_loss: 1.6359 - multiply_1_loss: 0.0142 - val_loss: 76.5842 - val_min_1_loss: 76.5842 - val_softmax_stamp_loss: 0.9979 - val_multiply_1_loss: 0.0059
+Epoch 239/800
+ - 11s - loss: 58.6499 - min_1_loss: 58.6499 - softmax_stamp_loss: 1.6447 - multiply_1_loss: 0.0143 - val_loss: 76.9777 - val_min_1_loss: 76.9777 - val_softmax_stamp_loss: 1.0248 - val_multiply_1_loss: 0.0060
+Epoch 240/800
+ - 11s - loss: 58.6654 - min_1_loss: 58.6654 - softmax_stamp_loss: 1.6547 - multiply_1_loss: 0.0144 - val_loss: 74.9274 - val_min_1_loss: 74.9274 - val_softmax_stamp_loss: 0.9987 - val_multiply_1_loss: 0.0062
+Epoch 241/800
+ - 11s - loss: 58.8363 - min_1_loss: 58.8363 - softmax_stamp_loss: 1.6482 - multiply_1_loss: 0.0145 - val_loss: 75.9767 - val_min_1_loss: 75.9767 - val_softmax_stamp_loss: 0.9793 - val_multiply_1_loss: 0.0061
+Epoch 242/800
+ - 11s - loss: 58.8926 - min_1_loss: 58.8926 - softmax_stamp_loss: 1.6542 - multiply_1_loss: 0.0144 - val_loss: 77.3099 - val_min_1_loss: 77.3099 - val_softmax_stamp_loss: 1.0474 - val_multiply_1_loss: 0.0061
+Epoch 243/800
+ - 11s - loss: 58.6959 - min_1_loss: 58.6959 - softmax_stamp_loss: 1.6631 - multiply_1_loss: 0.0145 - val_loss: 77.6640 - val_min_1_loss: 77.6640 - val_softmax_stamp_loss: 1.0775 - val_multiply_1_loss: 0.0061
+Epoch 244/800
+ - 11s - loss: 58.9080 - min_1_loss: 58.9080 - softmax_stamp_loss: 1.6639 - multiply_1_loss: 0.0146 - val_loss: 76.4451 - val_min_1_loss: 76.4451 - val_softmax_stamp_loss: 1.0307 - val_multiply_1_loss: 0.0063
+Epoch 245/800
+ - 11s - loss: 58.8888 - min_1_loss: 58.8888 - softmax_stamp_loss: 1.6625 - multiply_1_loss: 0.0144 - val_loss: 76.3085 - val_min_1_loss: 76.3085 - val_softmax_stamp_loss: 1.0076 - val_multiply_1_loss: 0.0061
+Epoch 246/800
+ - 11s - loss: 59.0378 - min_1_loss: 59.0378 - softmax_stamp_loss: 1.6696 - multiply_1_loss: 0.0146 - val_loss: 77.2618 - val_min_1_loss: 77.2618 - val_softmax_stamp_loss: 1.0744 - val_multiply_1_loss: 0.0063
+Epoch 247/800
+ - 11s - loss: 58.8425 - min_1_loss: 58.8425 - softmax_stamp_loss: 1.6809 - multiply_1_loss: 0.0146 - val_loss: 79.0828 - val_min_1_loss: 79.0828 - val_softmax_stamp_loss: 1.0870 - val_multiply_1_loss: 0.0058
+Epoch 248/800
+ - 11s - loss: 58.9276 - min_1_loss: 58.9276 - softmax_stamp_loss: 1.6860 - multiply_1_loss: 0.0147 - val_loss: 75.4487 - val_min_1_loss: 75.4487 - val_softmax_stamp_loss: 1.0845 - val_multiply_1_loss: 0.0066
+Epoch 249/800
+ - 11s - loss: 58.9477 - min_1_loss: 58.9477 - softmax_stamp_loss: 1.6977 - multiply_1_loss: 0.0147 - val_loss: 75.9911 - val_min_1_loss: 75.9911 - val_softmax_stamp_loss: 1.0999 - val_multiply_1_loss: 0.0067
+Epoch 250/800
+ - 11s - loss: 58.9431 - min_1_loss: 58.9431 - softmax_stamp_loss: 1.6896 - multiply_1_loss: 0.0149 - val_loss: 76.5215 - val_min_1_loss: 76.5215 - val_softmax_stamp_loss: 1.1005 - val_multiply_1_loss: 0.0068
+Epoch 251/800
+ - 11s - loss: 58.9357 - min_1_loss: 58.9357 - softmax_stamp_loss: 1.6981 - multiply_1_loss: 0.0150 - val_loss: 77.6109 - val_min_1_loss: 77.6109 - val_softmax_stamp_loss: 1.0701 - val_multiply_1_loss: 0.0066
+Epoch 252/800
+ - 11s - loss: 58.9747 - min_1_loss: 58.9747 - softmax_stamp_loss: 1.6945 - multiply_1_loss: 0.0150 - val_loss: 77.9893 - val_min_1_loss: 77.9893 - val_softmax_stamp_loss: 1.0939 - val_multiply_1_loss: 0.0064
+Epoch 253/800
+ - 11s - loss: 58.9304 - min_1_loss: 58.9304 - softmax_stamp_loss: 1.7106 - multiply_1_loss: 0.0151 - val_loss: 76.1123 - val_min_1_loss: 76.1123 - val_softmax_stamp_loss: 1.1259 - val_multiply_1_loss: 0.0068
+Epoch 254/800
+ - 11s - loss: 58.9283 - min_1_loss: 58.9283 - softmax_stamp_loss: 1.7113 - multiply_1_loss: 0.0152 - val_loss: 77.9841 - val_min_1_loss: 77.9841 - val_softmax_stamp_loss: 1.0792 - val_multiply_1_loss: 0.0065
+Epoch 255/800
+ - 11s - loss: 59.1235 - min_1_loss: 59.1235 - softmax_stamp_loss: 1.7136 - multiply_1_loss: 0.0152 - val_loss: 75.6206 - val_min_1_loss: 75.6206 - val_softmax_stamp_loss: 1.0493 - val_multiply_1_loss: 0.0068
+Epoch 256/800
+ - 11s - loss: 59.0794 - min_1_loss: 59.0794 - softmax_stamp_loss: 1.7160 - multiply_1_loss: 0.0152 - val_loss: 77.1141 - val_min_1_loss: 77.1141 - val_softmax_stamp_loss: 1.0727 - val_multiply_1_loss: 0.0066
+Epoch 257/800
+ - 11s - loss: 59.0698 - min_1_loss: 59.0698 - softmax_stamp_loss: 1.7177 - multiply_1_loss: 0.0152 - val_loss: 74.1297 - val_min_1_loss: 74.1297 - val_softmax_stamp_loss: 1.0792 - val_multiply_1_loss: 0.0072
+Epoch 258/800
+ - 11s - loss: 58.9187 - min_1_loss: 58.9187 - softmax_stamp_loss: 1.7309 - multiply_1_loss: 0.0153 - val_loss: 76.9148 - val_min_1_loss: 76.9148 - val_softmax_stamp_loss: 1.1027 - val_multiply_1_loss: 0.0067
+Epoch 259/800
+ - 11s - loss: 58.8459 - min_1_loss: 58.8459 - softmax_stamp_loss: 1.7365 - multiply_1_loss: 0.0154 - val_loss: 78.4762 - val_min_1_loss: 78.4762 - val_softmax_stamp_loss: 1.1161 - val_multiply_1_loss: 0.0065
+Epoch 260/800
+ - 11s - loss: 58.9613 - min_1_loss: 58.9613 - softmax_stamp_loss: 1.7316 - multiply_1_loss: 0.0156 - val_loss: 75.4951 - val_min_1_loss: 75.4951 - val_softmax_stamp_loss: 1.0502 - val_multiply_1_loss: 0.0069
+Epoch 261/800
+ - 11s - loss: 59.0090 - min_1_loss: 59.0090 - softmax_stamp_loss: 1.7538 - multiply_1_loss: 0.0156 - val_loss: 75.5970 - val_min_1_loss: 75.5970 - val_softmax_stamp_loss: 1.1112 - val_multiply_1_loss: 0.0072
+Epoch 262/800
+ - 11s - loss: 58.9781 - min_1_loss: 58.9781 - softmax_stamp_loss: 1.7485 - multiply_1_loss: 0.0157 - val_loss: 75.9826 - val_min_1_loss: 75.9826 - val_softmax_stamp_loss: 1.1187 - val_multiply_1_loss: 0.0072
+Epoch 263/800
+ - 11s - loss: 59.0667 - min_1_loss: 59.0667 - softmax_stamp_loss: 1.7526 - multiply_1_loss: 0.0157 - val_loss: 76.9626 - val_min_1_loss: 76.9626 - val_softmax_stamp_loss: 1.1287 - val_multiply_1_loss: 0.0074
+Epoch 264/800
+ - 11s - loss: 58.9159 - min_1_loss: 58.9159 - softmax_stamp_loss: 1.7515 - multiply_1_loss: 0.0158 - val_loss: 74.8450 - val_min_1_loss: 74.8450 - val_softmax_stamp_loss: 1.0868 - val_multiply_1_loss: 0.0073
+Epoch 265/800
+ - 11s - loss: 59.1455 - min_1_loss: 59.1455 - softmax_stamp_loss: 1.7539 - multiply_1_loss: 0.0158 - val_loss: 78.0332 - val_min_1_loss: 78.0332 - val_softmax_stamp_loss: 1.1437 - val_multiply_1_loss: 0.0071
+Epoch 266/800
+ - 11s - loss: 59.0369 - min_1_loss: 59.0369 - softmax_stamp_loss: 1.7680 - multiply_1_loss: 0.0159 - val_loss: 76.5067 - val_min_1_loss: 76.5067 - val_softmax_stamp_loss: 1.1517 - val_multiply_1_loss: 0.0073
+Epoch 267/800
+ - 11s - loss: 59.1324 - min_1_loss: 59.1324 - softmax_stamp_loss: 1.7799 - multiply_1_loss: 0.0159 - val_loss: 77.1894 - val_min_1_loss: 77.1894 - val_softmax_stamp_loss: 1.1253 - val_multiply_1_loss: 0.0071
+Epoch 268/800
+ - 11s - loss: 59.1206 - min_1_loss: 59.1206 - softmax_stamp_loss: 1.7833 - multiply_1_loss: 0.0159 - val_loss: 75.3088 - val_min_1_loss: 75.3088 - val_softmax_stamp_loss: 1.1173 - val_multiply_1_loss: 0.0070
+Epoch 269/800
+ - 11s - loss: 59.1229 - min_1_loss: 59.1229 - softmax_stamp_loss: 1.7827 - multiply_1_loss: 0.0160 - val_loss: 79.2215 - val_min_1_loss: 79.2215 - val_softmax_stamp_loss: 1.1825 - val_multiply_1_loss: 0.0069
+Epoch 270/800
+ - 11s - loss: 59.1388 - min_1_loss: 59.1388 - softmax_stamp_loss: 1.7844 - multiply_1_loss: 0.0160 - val_loss: 77.4832 - val_min_1_loss: 77.4832 - val_softmax_stamp_loss: 1.1156 - val_multiply_1_loss: 0.0074
+Epoch 271/800
+ - 11s - loss: 59.1531 - min_1_loss: 59.1531 - softmax_stamp_loss: 1.7922 - multiply_1_loss: 0.0162 - val_loss: 74.7511 - val_min_1_loss: 74.7511 - val_softmax_stamp_loss: 1.1246 - val_multiply_1_loss: 0.0076
+Epoch 272/800
+ - 11s - loss: 59.1186 - min_1_loss: 59.1186 - softmax_stamp_loss: 1.8024 - multiply_1_loss: 0.0163 - val_loss: 76.1652 - val_min_1_loss: 76.1652 - val_softmax_stamp_loss: 1.1882 - val_multiply_1_loss: 0.0077
+Epoch 273/800
+ - 11s - loss: 59.2595 - min_1_loss: 59.2595 - softmax_stamp_loss: 1.8061 - multiply_1_loss: 0.0162 - val_loss: 75.5448 - val_min_1_loss: 75.5448 - val_softmax_stamp_loss: 1.1431 - val_multiply_1_loss: 0.0077
+Epoch 274/800
+ - 11s - loss: 59.0933 - min_1_loss: 59.0933 - softmax_stamp_loss: 1.8200 - multiply_1_loss: 0.0163 - val_loss: 76.4706 - val_min_1_loss: 76.4706 - val_softmax_stamp_loss: 1.1866 - val_multiply_1_loss: 0.0080
+Epoch 275/800
+ - 11s - loss: 59.4208 - min_1_loss: 59.4208 - softmax_stamp_loss: 1.8171 - multiply_1_loss: 0.0163 - val_loss: 79.2992 - val_min_1_loss: 79.2992 - val_softmax_stamp_loss: 1.2199 - val_multiply_1_loss: 0.0075
+Epoch 276/800
+ - 11s - loss: 59.1910 - min_1_loss: 59.1910 - softmax_stamp_loss: 1.8231 - multiply_1_loss: 0.0164 - val_loss: 77.0082 - val_min_1_loss: 77.0082 - val_softmax_stamp_loss: 1.1809 - val_multiply_1_loss: 0.0076
+Epoch 277/800
+ - 11s - loss: 59.1578 - min_1_loss: 59.1578 - softmax_stamp_loss: 1.8188 - multiply_1_loss: 0.0165 - val_loss: 76.3948 - val_min_1_loss: 76.3948 - val_softmax_stamp_loss: 1.1869 - val_multiply_1_loss: 0.0080
+Epoch 278/800
+ - 11s - loss: 59.3201 - min_1_loss: 59.3201 - softmax_stamp_loss: 1.8386 - multiply_1_loss: 0.0165 - val_loss: 79.9340 - val_min_1_loss: 79.9340 - val_softmax_stamp_loss: 1.2396 - val_multiply_1_loss: 0.0074
+Epoch 279/800
+ - 11s - loss: 59.3469 - min_1_loss: 59.3469 - softmax_stamp_loss: 1.8313 - multiply_1_loss: 0.0165 - val_loss: 78.4822 - val_min_1_loss: 78.4822 - val_softmax_stamp_loss: 1.2275 - val_multiply_1_loss: 0.0076
+Epoch 280/800
+ - 11s - loss: 59.2683 - min_1_loss: 59.2683 - softmax_stamp_loss: 1.8424 - multiply_1_loss: 0.0166 - val_loss: 75.0430 - val_min_1_loss: 75.0430 - val_softmax_stamp_loss: 1.1810 - val_multiply_1_loss: 0.0079
+Epoch 281/800
+ - 11s - loss: 59.2705 - min_1_loss: 59.2705 - softmax_stamp_loss: 1.8460 - multiply_1_loss: 0.0166 - val_loss: 78.9875 - val_min_1_loss: 78.9875 - val_softmax_stamp_loss: 1.2401 - val_multiply_1_loss: 0.0079
+Epoch 282/800
+ - 11s - loss: 59.3869 - min_1_loss: 59.3869 - softmax_stamp_loss: 1.8559 - multiply_1_loss: 0.0167 - val_loss: 78.4998 - val_min_1_loss: 78.4998 - val_softmax_stamp_loss: 1.2724 - val_multiply_1_loss: 0.0082
+Epoch 283/800
+ - 11s - loss: 59.4566 - min_1_loss: 59.4566 - softmax_stamp_loss: 1.8590 - multiply_1_loss: 0.0168 - val_loss: 77.6303 - val_min_1_loss: 77.6303 - val_softmax_stamp_loss: 1.2351 - val_multiply_1_loss: 0.0081
+Epoch 284/800
+ - 11s - loss: 59.4163 - min_1_loss: 59.4163 - softmax_stamp_loss: 1.8586 - multiply_1_loss: 0.0170 - val_loss: 77.5734 - val_min_1_loss: 77.5734 - val_softmax_stamp_loss: 1.2172 - val_multiply_1_loss: 0.0083
+Epoch 285/800
+ - 11s - loss: 59.4093 - min_1_loss: 59.4093 - softmax_stamp_loss: 1.8605 - multiply_1_loss: 0.0170 - val_loss: 77.8807 - val_min_1_loss: 77.8807 - val_softmax_stamp_loss: 1.2559 - val_multiply_1_loss: 0.0081
+Epoch 286/800
+ - 11s - loss: 59.4339 - min_1_loss: 59.4339 - softmax_stamp_loss: 1.8727 - multiply_1_loss: 0.0170 - val_loss: 75.3055 - val_min_1_loss: 75.3055 - val_softmax_stamp_loss: 1.1950 - val_multiply_1_loss: 0.0083
+Epoch 287/800
+ - 11s - loss: 59.4018 - min_1_loss: 59.4018 - softmax_stamp_loss: 1.8787 - multiply_1_loss: 0.0170 - val_loss: 78.1991 - val_min_1_loss: 78.1991 - val_softmax_stamp_loss: 1.2846 - val_multiply_1_loss: 0.0082
+Epoch 288/800
+ - 11s - loss: 59.1989 - min_1_loss: 59.1989 - softmax_stamp_loss: 1.8797 - multiply_1_loss: 0.0171 - val_loss: 79.9009 - val_min_1_loss: 79.9009 - val_softmax_stamp_loss: 1.3270 - val_multiply_1_loss: 0.0080
+Epoch 289/800
+ - 11s - loss: 59.4141 - min_1_loss: 59.4141 - softmax_stamp_loss: 1.8802 - multiply_1_loss: 0.0171 - val_loss: 79.0857 - val_min_1_loss: 79.0857 - val_softmax_stamp_loss: 1.3156 - val_multiply_1_loss: 0.0082
+Epoch 290/800
+ - 11s - loss: 59.4190 - min_1_loss: 59.4190 - softmax_stamp_loss: 1.8880 - multiply_1_loss: 0.0173 - val_loss: 74.6303 - val_min_1_loss: 74.6303 - val_softmax_stamp_loss: 1.2416 - val_multiply_1_loss: 0.0085
+Epoch 291/800
+ - 11s - loss: 59.3080 - min_1_loss: 59.3080 - softmax_stamp_loss: 1.9190 - multiply_1_loss: 0.0172 - val_loss: 77.0220 - val_min_1_loss: 77.0220 - val_softmax_stamp_loss: 1.3134 - val_multiply_1_loss: 0.0085
+Epoch 292/800
+ - 11s - loss: 59.5435 - min_1_loss: 59.5435 - softmax_stamp_loss: 1.9109 - multiply_1_loss: 0.0172 - val_loss: 78.6167 - val_min_1_loss: 78.6167 - val_softmax_stamp_loss: 1.3038 - val_multiply_1_loss: 0.0085
+Epoch 293/800
+ - 11s - loss: 59.3650 - min_1_loss: 59.3650 - softmax_stamp_loss: 1.9119 - multiply_1_loss: 0.0174 - val_loss: 78.3387 - val_min_1_loss: 78.3387 - val_softmax_stamp_loss: 1.3052 - val_multiply_1_loss: 0.0084
+Epoch 294/800
+ - 11s - loss: 59.5293 - min_1_loss: 59.5293 - softmax_stamp_loss: 1.9151 - multiply_1_loss: 0.0175 - val_loss: 79.9981 - val_min_1_loss: 79.9981 - val_softmax_stamp_loss: 1.3732 - val_multiply_1_loss: 0.0086
+Epoch 295/800
+ - 11s - loss: 59.5924 - min_1_loss: 59.5924 - softmax_stamp_loss: 1.9111 - multiply_1_loss: 0.0174 - val_loss: 79.9154 - val_min_1_loss: 79.9154 - val_softmax_stamp_loss: 1.3848 - val_multiply_1_loss: 0.0086
+Epoch 296/800
+ - 11s - loss: 59.6436 - min_1_loss: 59.6436 - softmax_stamp_loss: 1.9225 - multiply_1_loss: 0.0177 - val_loss: 75.7052 - val_min_1_loss: 75.7052 - val_softmax_stamp_loss: 1.2547 - val_multiply_1_loss: 0.0093
+Epoch 297/800
+ - 11s - loss: 59.6326 - min_1_loss: 59.6326 - softmax_stamp_loss: 1.9311 - multiply_1_loss: 0.0177 - val_loss: 78.9562 - val_min_1_loss: 78.9562 - val_softmax_stamp_loss: 1.4062 - val_multiply_1_loss: 0.0093
+Epoch 298/800
+ - 11s - loss: 59.6876 - min_1_loss: 59.6876 - softmax_stamp_loss: 1.9312 - multiply_1_loss: 0.0178 - val_loss: 78.3620 - val_min_1_loss: 78.3620 - val_softmax_stamp_loss: 1.3323 - val_multiply_1_loss: 0.0087
+Epoch 299/800
+ - 11s - loss: 59.6330 - min_1_loss: 59.6330 - softmax_stamp_loss: 1.9369 - multiply_1_loss: 0.0178 - val_loss: 79.8814 - val_min_1_loss: 79.8814 - val_softmax_stamp_loss: 1.4068 - val_multiply_1_loss: 0.0087
+Epoch 300/800
+ - 11s - loss: 59.5359 - min_1_loss: 59.5359 - softmax_stamp_loss: 1.9482 - multiply_1_loss: 0.0180 - val_loss: 77.4877 - val_min_1_loss: 77.4877 - val_softmax_stamp_loss: 1.3759 - val_multiply_1_loss: 0.0093
+Epoch 301/800
+ - 11s - loss: 59.5333 - min_1_loss: 59.5333 - softmax_stamp_loss: 1.9356 - multiply_1_loss: 0.0178 - val_loss: 80.5413 - val_min_1_loss: 80.5413 - val_softmax_stamp_loss: 1.4293 - val_multiply_1_loss: 0.0089
+Epoch 302/800
+ - 11s - loss: 59.6998 - min_1_loss: 59.6998 - softmax_stamp_loss: 1.9619 - multiply_1_loss: 0.0181 - val_loss: 79.2553 - val_min_1_loss: 79.2553 - val_softmax_stamp_loss: 1.4081 - val_multiply_1_loss: 0.0092
+Epoch 303/800
+ - 11s - loss: 59.4870 - min_1_loss: 59.4870 - softmax_stamp_loss: 1.9679 - multiply_1_loss: 0.0181 - val_loss: 82.2595 - val_min_1_loss: 82.2595 - val_softmax_stamp_loss: 1.4456 - val_multiply_1_loss: 0.0086
+Epoch 304/800
+ - 11s - loss: 59.5371 - min_1_loss: 59.5371 - softmax_stamp_loss: 1.9669 - multiply_1_loss: 0.0182 - val_loss: 78.5618 - val_min_1_loss: 78.5618 - val_softmax_stamp_loss: 1.3622 - val_multiply_1_loss: 0.0091
+Epoch 305/800
+ - 11s - loss: 59.7351 - min_1_loss: 59.7351 - softmax_stamp_loss: 1.9750 - multiply_1_loss: 0.0180 - val_loss: 78.7864 - val_min_1_loss: 78.7864 - val_softmax_stamp_loss: 1.4028 - val_multiply_1_loss: 0.0093
+Epoch 306/800
+ - 11s - loss: 59.7766 - min_1_loss: 59.7766 - softmax_stamp_loss: 1.9743 - multiply_1_loss: 0.0182 - val_loss: 74.6382 - val_min_1_loss: 74.6382 - val_softmax_stamp_loss: 1.3336 - val_multiply_1_loss: 0.0101
+Epoch 307/800
+ - 11s - loss: 59.9557 - min_1_loss: 59.9557 - softmax_stamp_loss: 1.9842 - multiply_1_loss: 0.0183 - val_loss: 80.1244 - val_min_1_loss: 80.1244 - val_softmax_stamp_loss: 1.4350 - val_multiply_1_loss: 0.0095
+Epoch 308/800
+ - 11s - loss: 59.9590 - min_1_loss: 59.9590 - softmax_stamp_loss: 1.9857 - multiply_1_loss: 0.0184 - val_loss: 80.7751 - val_min_1_loss: 80.7751 - val_softmax_stamp_loss: 1.4581 - val_multiply_1_loss: 0.0095
+Epoch 309/800
+ - 11s - loss: 59.9450 - min_1_loss: 59.9450 - softmax_stamp_loss: 2.0019 - multiply_1_loss: 0.0185 - val_loss: 80.2325 - val_min_1_loss: 80.2325 - val_softmax_stamp_loss: 1.4692 - val_multiply_1_loss: 0.0094
+Epoch 310/800
+ - 11s - loss: 59.6684 - min_1_loss: 59.6684 - softmax_stamp_loss: 1.9876 - multiply_1_loss: 0.0186 - val_loss: 79.9622 - val_min_1_loss: 79.9622 - val_softmax_stamp_loss: 1.4158 - val_multiply_1_loss: 0.0094
+Epoch 311/800
+ - 11s - loss: 59.7098 - min_1_loss: 59.7098 - softmax_stamp_loss: 2.0090 - multiply_1_loss: 0.0186 - val_loss: 80.4471 - val_min_1_loss: 80.4471 - val_softmax_stamp_loss: 1.4775 - val_multiply_1_loss: 0.0097
+Epoch 312/800
+ - 11s - loss: 59.8990 - min_1_loss: 59.8990 - softmax_stamp_loss: 2.0075 - multiply_1_loss: 0.0187 - val_loss: 82.5957 - val_min_1_loss: 82.5957 - val_softmax_stamp_loss: 1.5412 - val_multiply_1_loss: 0.0097
+Epoch 313/800
+ - 11s - loss: 59.8498 - min_1_loss: 59.8498 - softmax_stamp_loss: 2.0230 - multiply_1_loss: 0.0187 - val_loss: 79.3932 - val_min_1_loss: 79.3932 - val_softmax_stamp_loss: 1.5151 - val_multiply_1_loss: 0.0098
+Epoch 314/800
+ - 11s - loss: 59.8412 - min_1_loss: 59.8412 - softmax_stamp_loss: 2.0325 - multiply_1_loss: 0.0188 - val_loss: 79.1197 - val_min_1_loss: 79.1197 - val_softmax_stamp_loss: 1.4883 - val_multiply_1_loss: 0.0099
+Epoch 315/800
+ - 11s - loss: 60.0177 - min_1_loss: 60.0177 - softmax_stamp_loss: 2.0328 - multiply_1_loss: 0.0188 - val_loss: 76.6136 - val_min_1_loss: 76.6136 - val_softmax_stamp_loss: 1.4582 - val_multiply_1_loss: 0.0104
+Epoch 316/800
+ - 11s - loss: 60.0754 - min_1_loss: 60.0754 - softmax_stamp_loss: 2.0494 - multiply_1_loss: 0.0188 - val_loss: 79.3434 - val_min_1_loss: 79.3434 - val_softmax_stamp_loss: 1.4881 - val_multiply_1_loss: 0.0099
+Epoch 317/800
+ - 11s - loss: 59.9016 - min_1_loss: 59.9016 - softmax_stamp_loss: 2.0450 - multiply_1_loss: 0.0189 - val_loss: 80.1710 - val_min_1_loss: 80.1710 - val_softmax_stamp_loss: 1.5544 - val_multiply_1_loss: 0.0099
+Epoch 318/800
+ - 11s - loss: 59.8288 - min_1_loss: 59.8288 - softmax_stamp_loss: 2.0558 - multiply_1_loss: 0.0190 - val_loss: 80.1059 - val_min_1_loss: 80.1059 - val_softmax_stamp_loss: 1.5725 - val_multiply_1_loss: 0.0103
+Epoch 319/800
+ - 11s - loss: 60.1107 - min_1_loss: 60.1107 - softmax_stamp_loss: 2.0538 - multiply_1_loss: 0.0191 - val_loss: 79.4248 - val_min_1_loss: 79.4248 - val_softmax_stamp_loss: 1.5469 - val_multiply_1_loss: 0.0103
+Epoch 320/800
+ - 11s - loss: 59.7809 - min_1_loss: 59.7809 - softmax_stamp_loss: 2.0652 - multiply_1_loss: 0.0191 - val_loss: 82.5717 - val_min_1_loss: 82.5717 - val_softmax_stamp_loss: 1.6355 - val_multiply_1_loss: 0.0100
+Epoch 321/800
+ - 11s - loss: 60.1939 - min_1_loss: 60.1939 - softmax_stamp_loss: 2.0841 - multiply_1_loss: 0.0192 - val_loss: 78.9800 - val_min_1_loss: 78.9800 - val_softmax_stamp_loss: 1.5273 - val_multiply_1_loss: 0.0099
+Epoch 322/800
+ - 11s - loss: 60.1178 - min_1_loss: 60.1178 - softmax_stamp_loss: 2.0891 - multiply_1_loss: 0.0192 - val_loss: 79.9115 - val_min_1_loss: 79.9115 - val_softmax_stamp_loss: 1.5326 - val_multiply_1_loss: 0.0102
+Epoch 323/800
+ - 11s - loss: 60.0611 - min_1_loss: 60.0611 - softmax_stamp_loss: 2.0861 - multiply_1_loss: 0.0195 - val_loss: 78.5150 - val_min_1_loss: 78.5150 - val_softmax_stamp_loss: 1.5735 - val_multiply_1_loss: 0.0107
+Epoch 324/800
+ - 11s - loss: 59.9289 - min_1_loss: 59.9289 - softmax_stamp_loss: 2.0937 - multiply_1_loss: 0.0195 - val_loss: 77.5497 - val_min_1_loss: 77.5497 - val_softmax_stamp_loss: 1.5521 - val_multiply_1_loss: 0.0111
+Epoch 325/800
+ - 11s - loss: 60.1038 - min_1_loss: 60.1038 - softmax_stamp_loss: 2.1006 - multiply_1_loss: 0.0195 - val_loss: 79.8374 - val_min_1_loss: 79.8374 - val_softmax_stamp_loss: 1.6083 - val_multiply_1_loss: 0.0109
+Epoch 326/800
+ - 11s - loss: 60.0627 - min_1_loss: 60.0627 - softmax_stamp_loss: 2.1072 - multiply_1_loss: 0.0196 - val_loss: 78.3693 - val_min_1_loss: 78.3693 - val_softmax_stamp_loss: 1.5546 - val_multiply_1_loss: 0.0111
+Epoch 327/800
+ - 11s - loss: 60.1381 - min_1_loss: 60.1381 - softmax_stamp_loss: 2.1082 - multiply_1_loss: 0.0198 - val_loss: 80.0533 - val_min_1_loss: 80.0533 - val_softmax_stamp_loss: 1.6185 - val_multiply_1_loss: 0.0108
+Epoch 328/800
+ - 11s - loss: 60.2046 - min_1_loss: 60.2046 - softmax_stamp_loss: 2.1243 - multiply_1_loss: 0.0197 - val_loss: 79.3759 - val_min_1_loss: 79.3759 - val_softmax_stamp_loss: 1.6036 - val_multiply_1_loss: 0.0110
+Epoch 329/800
+ - 11s - loss: 60.1675 - min_1_loss: 60.1675 - softmax_stamp_loss: 2.1202 - multiply_1_loss: 0.0198 - val_loss: 79.2947 - val_min_1_loss: 79.2947 - val_softmax_stamp_loss: 1.6405 - val_multiply_1_loss: 0.0111
+Epoch 330/800
+ - 11s - loss: 60.3082 - min_1_loss: 60.3082 - softmax_stamp_loss: 2.1311 - multiply_1_loss: 0.0197 - val_loss: 78.6283 - val_min_1_loss: 78.6283 - val_softmax_stamp_loss: 1.5973 - val_multiply_1_loss: 0.0111
+Epoch 331/800
+ - 11s - loss: 60.1733 - min_1_loss: 60.1733 - softmax_stamp_loss: 2.1310 - multiply_1_loss: 0.0199 - val_loss: 81.4074 - val_min_1_loss: 81.4074 - val_softmax_stamp_loss: 1.7060 - val_multiply_1_loss: 0.0111
+Epoch 332/800
+ - 11s - loss: 60.0371 - min_1_loss: 60.0371 - softmax_stamp_loss: 2.1364 - multiply_1_loss: 0.0200 - val_loss: 82.6061 - val_min_1_loss: 82.6061 - val_softmax_stamp_loss: 1.7310 - val_multiply_1_loss: 0.0107
+Epoch 333/800
+ - 11s - loss: 60.2075 - min_1_loss: 60.2075 - softmax_stamp_loss: 2.1469 - multiply_1_loss: 0.0201 - val_loss: 79.1211 - val_min_1_loss: 79.1211 - val_softmax_stamp_loss: 1.6568 - val_multiply_1_loss: 0.0116
+Epoch 334/800
+ - 11s - loss: 60.1289 - min_1_loss: 60.1289 - softmax_stamp_loss: 2.1530 - multiply_1_loss: 0.0201 - val_loss: 79.1425 - val_min_1_loss: 79.1425 - val_softmax_stamp_loss: 1.6334 - val_multiply_1_loss: 0.0116
+Epoch 335/800
+ - 11s - loss: 60.2221 - min_1_loss: 60.2221 - softmax_stamp_loss: 2.1582 - multiply_1_loss: 0.0203 - val_loss: 79.6137 - val_min_1_loss: 79.6137 - val_softmax_stamp_loss: 1.7150 - val_multiply_1_loss: 0.0117
+Epoch 336/800
+ - 11s - loss: 60.4605 - min_1_loss: 60.4605 - softmax_stamp_loss: 2.1596 - multiply_1_loss: 0.0202 - val_loss: 78.0291 - val_min_1_loss: 78.0291 - val_softmax_stamp_loss: 1.6434 - val_multiply_1_loss: 0.0116
+Epoch 337/800
+ - 11s - loss: 60.2358 - min_1_loss: 60.2358 - softmax_stamp_loss: 2.1669 - multiply_1_loss: 0.0204 - val_loss: 77.8833 - val_min_1_loss: 77.8833 - val_softmax_stamp_loss: 1.6836 - val_multiply_1_loss: 0.0122
+Epoch 338/800
+ - 11s - loss: 60.4794 - min_1_loss: 60.4794 - softmax_stamp_loss: 2.1715 - multiply_1_loss: 0.0204 - val_loss: 82.1725 - val_min_1_loss: 82.1725 - val_softmax_stamp_loss: 1.7468 - val_multiply_1_loss: 0.0115
+Epoch 339/800
+ - 11s - loss: 60.2458 - min_1_loss: 60.2458 - softmax_stamp_loss: 2.1652 - multiply_1_loss: 0.0204 - val_loss: 81.0424 - val_min_1_loss: 81.0424 - val_softmax_stamp_loss: 1.7346 - val_multiply_1_loss: 0.0117
+Epoch 340/800
+ - 11s - loss: 60.5271 - min_1_loss: 60.5271 - softmax_stamp_loss: 2.1888 - multiply_1_loss: 0.0206 - val_loss: 83.2799 - val_min_1_loss: 83.2799 - val_softmax_stamp_loss: 1.8100 - val_multiply_1_loss: 0.0115
+Epoch 341/800
+ - 11s - loss: 60.3126 - min_1_loss: 60.3126 - softmax_stamp_loss: 2.1926 - multiply_1_loss: 0.0206 - val_loss: 82.0728 - val_min_1_loss: 82.0728 - val_softmax_stamp_loss: 1.7639 - val_multiply_1_loss: 0.0118
+Epoch 342/800
+ - 11s - loss: 60.5113 - min_1_loss: 60.5113 - softmax_stamp_loss: 2.1930 - multiply_1_loss: 0.0206 - val_loss: 80.3350 - val_min_1_loss: 80.3350 - val_softmax_stamp_loss: 1.7015 - val_multiply_1_loss: 0.0120
+Epoch 343/800
+ - 11s - loss: 60.3833 - min_1_loss: 60.3833 - softmax_stamp_loss: 2.2074 - multiply_1_loss: 0.0208 - val_loss: 86.6281 - val_min_1_loss: 86.6281 - val_softmax_stamp_loss: 1.8414 - val_multiply_1_loss: 0.0114
+Epoch 344/800
+ - 11s - loss: 60.5158 - min_1_loss: 60.5158 - softmax_stamp_loss: 2.2157 - multiply_1_loss: 0.0207 - val_loss: 78.3022 - val_min_1_loss: 78.3022 - val_softmax_stamp_loss: 1.6787 - val_multiply_1_loss: 0.0119
+Epoch 345/800
+ - 11s - loss: 60.6356 - min_1_loss: 60.6356 - softmax_stamp_loss: 2.2214 - multiply_1_loss: 0.0209 - val_loss: 80.4123 - val_min_1_loss: 80.4123 - val_softmax_stamp_loss: 1.7767 - val_multiply_1_loss: 0.0123
+Epoch 346/800
+ - 11s - loss: 60.7149 - min_1_loss: 60.7149 - softmax_stamp_loss: 2.2275 - multiply_1_loss: 0.0210 - val_loss: 80.4111 - val_min_1_loss: 80.4111 - val_softmax_stamp_loss: 1.7983 - val_multiply_1_loss: 0.0125
+Epoch 347/800
+ - 11s - loss: 60.5159 - min_1_loss: 60.5159 - softmax_stamp_loss: 2.2398 - multiply_1_loss: 0.0210 - val_loss: 78.2669 - val_min_1_loss: 78.2669 - val_softmax_stamp_loss: 1.7079 - val_multiply_1_loss: 0.0127
+Epoch 348/800
+ - 11s - loss: 60.5262 - min_1_loss: 60.5262 - softmax_stamp_loss: 2.2318 - multiply_1_loss: 0.0212 - val_loss: 80.1696 - val_min_1_loss: 80.1696 - val_softmax_stamp_loss: 1.8075 - val_multiply_1_loss: 0.0126
+Epoch 349/800
+ - 11s - loss: 60.7073 - min_1_loss: 60.7073 - softmax_stamp_loss: 2.2440 - multiply_1_loss: 0.0211 - val_loss: 80.6059 - val_min_1_loss: 80.6059 - val_softmax_stamp_loss: 1.7907 - val_multiply_1_loss: 0.0122
+Epoch 350/800
+ - 11s - loss: 60.7513 - min_1_loss: 60.7513 - softmax_stamp_loss: 2.2453 - multiply_1_loss: 0.0210 - val_loss: 82.9059 - val_min_1_loss: 82.9059 - val_softmax_stamp_loss: 1.8481 - val_multiply_1_loss: 0.0124
+Epoch 351/800
+ - 11s - loss: 60.7278 - min_1_loss: 60.7278 - softmax_stamp_loss: 2.2538 - multiply_1_loss: 0.0212 - val_loss: 78.6997 - val_min_1_loss: 78.6997 - val_softmax_stamp_loss: 1.7856 - val_multiply_1_loss: 0.0126
+Epoch 352/800
+ - 11s - loss: 60.8952 - min_1_loss: 60.8952 - softmax_stamp_loss: 2.2650 - multiply_1_loss: 0.0212 - val_loss: 78.7246 - val_min_1_loss: 78.7246 - val_softmax_stamp_loss: 1.7596 - val_multiply_1_loss: 0.0128
+Epoch 353/800
+ - 11s - loss: 60.9742 - min_1_loss: 60.9742 - softmax_stamp_loss: 2.2601 - multiply_1_loss: 0.0215 - val_loss: 84.6063 - val_min_1_loss: 84.6063 - val_softmax_stamp_loss: 1.9362 - val_multiply_1_loss: 0.0125
+Epoch 354/800
+ - 11s - loss: 60.8592 - min_1_loss: 60.8592 - softmax_stamp_loss: 2.2826 - multiply_1_loss: 0.0215 - val_loss: 82.7896 - val_min_1_loss: 82.7896 - val_softmax_stamp_loss: 1.9005 - val_multiply_1_loss: 0.0130
+Epoch 355/800
+ - 11s - loss: 60.7071 - min_1_loss: 60.7071 - softmax_stamp_loss: 2.2789 - multiply_1_loss: 0.0215 - val_loss: 79.4354 - val_min_1_loss: 79.4354 - val_softmax_stamp_loss: 1.8638 - val_multiply_1_loss: 0.0133
+Epoch 356/800
+ - 11s - loss: 60.6763 - min_1_loss: 60.6763 - softmax_stamp_loss: 2.2877 - multiply_1_loss: 0.0217 - val_loss: 81.4601 - val_min_1_loss: 81.4601 - val_softmax_stamp_loss: 1.8814 - val_multiply_1_loss: 0.0132
+Epoch 357/800
+ - 11s - loss: 60.8837 - min_1_loss: 60.8837 - softmax_stamp_loss: 2.3008 - multiply_1_loss: 0.0218 - val_loss: 80.3464 - val_min_1_loss: 80.3464 - val_softmax_stamp_loss: 1.8556 - val_multiply_1_loss: 0.0132
+Epoch 358/800
+ - 11s - loss: 60.7612 - min_1_loss: 60.7612 - softmax_stamp_loss: 2.2921 - multiply_1_loss: 0.0217 - val_loss: 79.0981 - val_min_1_loss: 79.0981 - val_softmax_stamp_loss: 1.8525 - val_multiply_1_loss: 0.0135
+Epoch 359/800
+ - 11s - loss: 60.8036 - min_1_loss: 60.8036 - softmax_stamp_loss: 2.2943 - multiply_1_loss: 0.0218 - val_loss: 82.1058 - val_min_1_loss: 82.1058 - val_softmax_stamp_loss: 1.9101 - val_multiply_1_loss: 0.0131
+Epoch 360/800
+ - 11s - loss: 60.7789 - min_1_loss: 60.7789 - softmax_stamp_loss: 2.3109 - multiply_1_loss: 0.0219 - val_loss: 78.9317 - val_min_1_loss: 78.9317 - val_softmax_stamp_loss: 1.8255 - val_multiply_1_loss: 0.0133
+Epoch 361/800
+ - 11s - loss: 60.8435 - min_1_loss: 60.8435 - softmax_stamp_loss: 2.3233 - multiply_1_loss: 0.0219 - val_loss: 77.8832 - val_min_1_loss: 77.8832 - val_softmax_stamp_loss: 1.8158 - val_multiply_1_loss: 0.0137
+Epoch 362/800
+ - 11s - loss: 60.7630 - min_1_loss: 60.7630 - softmax_stamp_loss: 2.3194 - multiply_1_loss: 0.0220 - val_loss: 81.6662 - val_min_1_loss: 81.6662 - val_softmax_stamp_loss: 1.9608 - val_multiply_1_loss: 0.0133
+Epoch 363/800
+ - 11s - loss: 60.9355 - min_1_loss: 60.9355 - softmax_stamp_loss: 2.3288 - multiply_1_loss: 0.0220 - val_loss: 80.3663 - val_min_1_loss: 80.3663 - val_softmax_stamp_loss: 1.8800 - val_multiply_1_loss: 0.0135
+Epoch 364/800
+ - 11s - loss: 61.0745 - min_1_loss: 61.0745 - softmax_stamp_loss: 2.3185 - multiply_1_loss: 0.0221 - val_loss: 80.9721 - val_min_1_loss: 80.9721 - val_softmax_stamp_loss: 1.9818 - val_multiply_1_loss: 0.0137
+Epoch 365/800
+ - 11s - loss: 61.0347 - min_1_loss: 61.0347 - softmax_stamp_loss: 2.3413 - multiply_1_loss: 0.0222 - val_loss: 80.2684 - val_min_1_loss: 80.2684 - val_softmax_stamp_loss: 1.9458 - val_multiply_1_loss: 0.0144
+Epoch 366/800
+ - 11s - loss: 61.2282 - min_1_loss: 61.2282 - softmax_stamp_loss: 2.3512 - multiply_1_loss: 0.0222 - val_loss: 79.6834 - val_min_1_loss: 79.6834 - val_softmax_stamp_loss: 1.9355 - val_multiply_1_loss: 0.0142
+Epoch 367/800
+ - 11s - loss: 60.9908 - min_1_loss: 60.9908 - softmax_stamp_loss: 2.3491 - multiply_1_loss: 0.0223 - val_loss: 82.5074 - val_min_1_loss: 82.5074 - val_softmax_stamp_loss: 1.9672 - val_multiply_1_loss: 0.0139
+Epoch 368/800
+ - 11s - loss: 61.0774 - min_1_loss: 61.0774 - softmax_stamp_loss: 2.3503 - multiply_1_loss: 0.0225 - val_loss: 78.5239 - val_min_1_loss: 78.5239 - val_softmax_stamp_loss: 1.9110 - val_multiply_1_loss: 0.0140
+Epoch 369/800
+ - 11s - loss: 61.0889 - min_1_loss: 61.0889 - softmax_stamp_loss: 2.3698 - multiply_1_loss: 0.0224 - val_loss: 80.8558 - val_min_1_loss: 80.8558 - val_softmax_stamp_loss: 1.9855 - val_multiply_1_loss: 0.0139
+Epoch 370/800
+ - 11s - loss: 61.1884 - min_1_loss: 61.1884 - softmax_stamp_loss: 2.3704 - multiply_1_loss: 0.0225 - val_loss: 78.2561 - val_min_1_loss: 78.2561 - val_softmax_stamp_loss: 1.9208 - val_multiply_1_loss: 0.0144
+Epoch 371/800
+ - 11s - loss: 60.9788 - min_1_loss: 60.9788 - softmax_stamp_loss: 2.3782 - multiply_1_loss: 0.0226 - val_loss: 83.1821 - val_min_1_loss: 83.1821 - val_softmax_stamp_loss: 2.0686 - val_multiply_1_loss: 0.0141
+Epoch 372/800
+ - 11s - loss: 61.2746 - min_1_loss: 61.2746 - softmax_stamp_loss: 2.3773 - multiply_1_loss: 0.0226 - val_loss: 84.7422 - val_min_1_loss: 84.7422 - val_softmax_stamp_loss: 2.0914 - val_multiply_1_loss: 0.0141
+Epoch 373/800
+ - 11s - loss: 61.0751 - min_1_loss: 61.0751 - softmax_stamp_loss: 2.3789 - multiply_1_loss: 0.0226 - val_loss: 80.2271 - val_min_1_loss: 80.2271 - val_softmax_stamp_loss: 1.9684 - val_multiply_1_loss: 0.0144
+Epoch 374/800
+ - 11s - loss: 61.2550 - min_1_loss: 61.2550 - softmax_stamp_loss: 2.3879 - multiply_1_loss: 0.0227 - val_loss: 78.7619 - val_min_1_loss: 78.7619 - val_softmax_stamp_loss: 1.8811 - val_multiply_1_loss: 0.0145
+Epoch 375/800
+ - 11s - loss: 61.1487 - min_1_loss: 61.1487 - softmax_stamp_loss: 2.3923 - multiply_1_loss: 0.0228 - val_loss: 78.9573 - val_min_1_loss: 78.9573 - val_softmax_stamp_loss: 1.9506 - val_multiply_1_loss: 0.0145
+Epoch 376/800
+ - 11s - loss: 61.1596 - min_1_loss: 61.1596 - softmax_stamp_loss: 2.3875 - multiply_1_loss: 0.0228 - val_loss: 80.1419 - val_min_1_loss: 80.1419 - val_softmax_stamp_loss: 1.9968 - val_multiply_1_loss: 0.0148
+Epoch 377/800
+ - 11s - loss: 61.1393 - min_1_loss: 61.1393 - softmax_stamp_loss: 2.3927 - multiply_1_loss: 0.0230 - val_loss: 81.8249 - val_min_1_loss: 81.8249 - val_softmax_stamp_loss: 2.0676 - val_multiply_1_loss: 0.0145
+Epoch 378/800
+ - 11s - loss: 61.1701 - min_1_loss: 61.1701 - softmax_stamp_loss: 2.3966 - multiply_1_loss: 0.0230 - val_loss: 81.7557 - val_min_1_loss: 81.7557 - val_softmax_stamp_loss: 2.0476 - val_multiply_1_loss: 0.0146
+Epoch 379/800
+ - 11s - loss: 61.5339 - min_1_loss: 61.5339 - softmax_stamp_loss: 2.4066 - multiply_1_loss: 0.0230 - val_loss: 81.9188 - val_min_1_loss: 81.9188 - val_softmax_stamp_loss: 2.0194 - val_multiply_1_loss: 0.0146
+Epoch 380/800
+ - 11s - loss: 61.2860 - min_1_loss: 61.2860 - softmax_stamp_loss: 2.4086 - multiply_1_loss: 0.0231 - val_loss: 79.8772 - val_min_1_loss: 79.8772 - val_softmax_stamp_loss: 1.9886 - val_multiply_1_loss: 0.0149
+Epoch 381/800
+ - 11s - loss: 61.2050 - min_1_loss: 61.2050 - softmax_stamp_loss: 2.4254 - multiply_1_loss: 0.0231 - val_loss: 80.1634 - val_min_1_loss: 80.1634 - val_softmax_stamp_loss: 2.0226 - val_multiply_1_loss: 0.0150
+Epoch 382/800
+ - 11s - loss: 61.3080 - min_1_loss: 61.3080 - softmax_stamp_loss: 2.4195 - multiply_1_loss: 0.0233 - val_loss: 77.2958 - val_min_1_loss: 77.2958 - val_softmax_stamp_loss: 2.0124 - val_multiply_1_loss: 0.0155
+Epoch 383/800
+ - 11s - loss: 61.5091 - min_1_loss: 61.5091 - softmax_stamp_loss: 2.4306 - multiply_1_loss: 0.0234 - val_loss: 81.4334 - val_min_1_loss: 81.4334 - val_softmax_stamp_loss: 2.1022 - val_multiply_1_loss: 0.0152
+Epoch 384/800
+ - 11s - loss: 61.4175 - min_1_loss: 61.4175 - softmax_stamp_loss: 2.4427 - multiply_1_loss: 0.0234 - val_loss: 81.1947 - val_min_1_loss: 81.1947 - val_softmax_stamp_loss: 2.0609 - val_multiply_1_loss: 0.0152
+Epoch 385/800
+ - 11s - loss: 61.6937 - min_1_loss: 61.6937 - softmax_stamp_loss: 2.4487 - multiply_1_loss: 0.0234 - val_loss: 83.7294 - val_min_1_loss: 83.7294 - val_softmax_stamp_loss: 2.0905 - val_multiply_1_loss: 0.0149
+Epoch 386/800
+ - 11s - loss: 61.6595 - min_1_loss: 61.6595 - softmax_stamp_loss: 2.4464 - multiply_1_loss: 0.0234 - val_loss: 80.4053 - val_min_1_loss: 80.4053 - val_softmax_stamp_loss: 2.0913 - val_multiply_1_loss: 0.0155
+Epoch 387/800
+ - 11s - loss: 61.4241 - min_1_loss: 61.4241 - softmax_stamp_loss: 2.4459 - multiply_1_loss: 0.0235 - val_loss: 79.8616 - val_min_1_loss: 79.8616 - val_softmax_stamp_loss: 2.0588 - val_multiply_1_loss: 0.0155
+Epoch 388/800
+ - 11s - loss: 61.4399 - min_1_loss: 61.4399 - softmax_stamp_loss: 2.4512 - multiply_1_loss: 0.0236 - val_loss: 80.9906 - val_min_1_loss: 80.9906 - val_softmax_stamp_loss: 2.0851 - val_multiply_1_loss: 0.0156
+Epoch 389/800
+ - 11s - loss: 61.3543 - min_1_loss: 61.3543 - softmax_stamp_loss: 2.4683 - multiply_1_loss: 0.0238 - val_loss: 81.3180 - val_min_1_loss: 81.3180 - val_softmax_stamp_loss: 2.0818 - val_multiply_1_loss: 0.0156
+Epoch 390/800
+ - 11s - loss: 61.6120 - min_1_loss: 61.6120 - softmax_stamp_loss: 2.4731 - multiply_1_loss: 0.0238 - val_loss: 83.6266 - val_min_1_loss: 83.6266 - val_softmax_stamp_loss: 2.1480 - val_multiply_1_loss: 0.0153
+Epoch 391/800
+ - 11s - loss: 61.8641 - min_1_loss: 61.8641 - softmax_stamp_loss: 2.4697 - multiply_1_loss: 0.0238 - val_loss: 80.5404 - val_min_1_loss: 80.5404 - val_softmax_stamp_loss: 2.1261 - val_multiply_1_loss: 0.0154
+Epoch 392/800
+ - 11s - loss: 61.5494 - min_1_loss: 61.5494 - softmax_stamp_loss: 2.4801 - multiply_1_loss: 0.0236 - val_loss: 79.2706 - val_min_1_loss: 79.2706 - val_softmax_stamp_loss: 2.0611 - val_multiply_1_loss: 0.0159
+Epoch 393/800
+ - 11s - loss: 61.6958 - min_1_loss: 61.6958 - softmax_stamp_loss: 2.4806 - multiply_1_loss: 0.0240 - val_loss: 80.5795 - val_min_1_loss: 80.5795 - val_softmax_stamp_loss: 2.0740 - val_multiply_1_loss: 0.0162
+Epoch 394/800
+ - 11s - loss: 61.8126 - min_1_loss: 61.8126 - softmax_stamp_loss: 2.4822 - multiply_1_loss: 0.0239 - val_loss: 81.4690 - val_min_1_loss: 81.4690 - val_softmax_stamp_loss: 2.1167 - val_multiply_1_loss: 0.0160
+Epoch 395/800
+ - 11s - loss: 61.6858 - min_1_loss: 61.6858 - softmax_stamp_loss: 2.4956 - multiply_1_loss: 0.0239 - val_loss: 80.4478 - val_min_1_loss: 80.4478 - val_softmax_stamp_loss: 2.1379 - val_multiply_1_loss: 0.0160
+Epoch 396/800
+ - 11s - loss: 61.7848 - min_1_loss: 61.7848 - softmax_stamp_loss: 2.4932 - multiply_1_loss: 0.0241 - val_loss: 80.1691 - val_min_1_loss: 80.1691 - val_softmax_stamp_loss: 2.1603 - val_multiply_1_loss: 0.0163
+Epoch 397/800
+ - 11s - loss: 61.6596 - min_1_loss: 61.6596 - softmax_stamp_loss: 2.5038 - multiply_1_loss: 0.0241 - val_loss: 82.7652 - val_min_1_loss: 82.7652 - val_softmax_stamp_loss: 2.1665 - val_multiply_1_loss: 0.0162
+Epoch 398/800
+ - 11s - loss: 61.8188 - min_1_loss: 61.8188 - softmax_stamp_loss: 2.5169 - multiply_1_loss: 0.0241 - val_loss: 82.5620 - val_min_1_loss: 82.5620 - val_softmax_stamp_loss: 2.1828 - val_multiply_1_loss: 0.0159
+Epoch 399/800
+ - 11s - loss: 61.9388 - min_1_loss: 61.9388 - softmax_stamp_loss: 2.5051 - multiply_1_loss: 0.0243 - val_loss: 78.8435 - val_min_1_loss: 78.8435 - val_softmax_stamp_loss: 2.1154 - val_multiply_1_loss: 0.0169
+Epoch 400/800
+ - 11s - loss: 61.8333 - min_1_loss: 61.8333 - softmax_stamp_loss: 2.5278 - multiply_1_loss: 0.0243 - val_loss: 78.8325 - val_min_1_loss: 78.8325 - val_softmax_stamp_loss: 2.1383 - val_multiply_1_loss: 0.0167
+Epoch 401/800
+ - 11s - loss: 62.0983 - min_1_loss: 62.0983 - softmax_stamp_loss: 2.5366 - multiply_1_loss: 0.0244 - val_loss: 78.7933 - val_min_1_loss: 78.7933 - val_softmax_stamp_loss: 2.1387 - val_multiply_1_loss: 0.0167
+Epoch 402/800
+ - 11s - loss: 61.8070 - min_1_loss: 61.8070 - softmax_stamp_loss: 2.5373 - multiply_1_loss: 0.0244 - val_loss: 80.4017 - val_min_1_loss: 80.4017 - val_softmax_stamp_loss: 2.1723 - val_multiply_1_loss: 0.0165
+Epoch 403/800
+ - 11s - loss: 61.7013 - min_1_loss: 61.7013 - softmax_stamp_loss: 2.5430 - multiply_1_loss: 0.0246 - val_loss: 78.9816 - val_min_1_loss: 78.9816 - val_softmax_stamp_loss: 2.1506 - val_multiply_1_loss: 0.0171
+Epoch 404/800
+ - 11s - loss: 61.7802 - min_1_loss: 61.7802 - softmax_stamp_loss: 2.5399 - multiply_1_loss: 0.0246 - val_loss: 78.1695 - val_min_1_loss: 78.1695 - val_softmax_stamp_loss: 2.1297 - val_multiply_1_loss: 0.0170
+Epoch 405/800
+ - 11s - loss: 61.6574 - min_1_loss: 61.6574 - softmax_stamp_loss: 2.5447 - multiply_1_loss: 0.0246 - val_loss: 80.9609 - val_min_1_loss: 80.9609 - val_softmax_stamp_loss: 2.1584 - val_multiply_1_loss: 0.0166
+Epoch 406/800
+ - 11s - loss: 61.6855 - min_1_loss: 61.6855 - softmax_stamp_loss: 2.5513 - multiply_1_loss: 0.0246 - val_loss: 79.7217 - val_min_1_loss: 79.7217 - val_softmax_stamp_loss: 2.1746 - val_multiply_1_loss: 0.0168
+Epoch 407/800
+ - 11s - loss: 61.7606 - min_1_loss: 61.7606 - softmax_stamp_loss: 2.5611 - multiply_1_loss: 0.0247 - val_loss: 80.0933 - val_min_1_loss: 80.0933 - val_softmax_stamp_loss: 2.2033 - val_multiply_1_loss: 0.0169
+Epoch 408/800
+ - 11s - loss: 61.9584 - min_1_loss: 61.9584 - softmax_stamp_loss: 2.5782 - multiply_1_loss: 0.0246 - val_loss: 82.3444 - val_min_1_loss: 82.3444 - val_softmax_stamp_loss: 2.2386 - val_multiply_1_loss: 0.0169
+Epoch 409/800
+ - 11s - loss: 62.1084 - min_1_loss: 62.1084 - softmax_stamp_loss: 2.5715 - multiply_1_loss: 0.0248 - val_loss: 80.4074 - val_min_1_loss: 80.4074 - val_softmax_stamp_loss: 2.2190 - val_multiply_1_loss: 0.0170
+Epoch 410/800
+ - 11s - loss: 61.8236 - min_1_loss: 61.8236 - softmax_stamp_loss: 2.5834 - multiply_1_loss: 0.0248 - val_loss: 82.7927 - val_min_1_loss: 82.7927 - val_softmax_stamp_loss: 2.3141 - val_multiply_1_loss: 0.0171
+Epoch 411/800
+ - 11s - loss: 61.8762 - min_1_loss: 61.8762 - softmax_stamp_loss: 2.5870 - multiply_1_loss: 0.0248 - val_loss: 83.4166 - val_min_1_loss: 83.4166 - val_softmax_stamp_loss: 2.2962 - val_multiply_1_loss: 0.0170
+Epoch 412/800
+ - 11s - loss: 62.0214 - min_1_loss: 62.0214 - softmax_stamp_loss: 2.5891 - multiply_1_loss: 0.0248 - val_loss: 78.2042 - val_min_1_loss: 78.2042 - val_softmax_stamp_loss: 2.1906 - val_multiply_1_loss: 0.0173
+Epoch 413/800
+ - 11s - loss: 62.0712 - min_1_loss: 62.0712 - softmax_stamp_loss: 2.5845 - multiply_1_loss: 0.0249 - val_loss: 79.9538 - val_min_1_loss: 79.9538 - val_softmax_stamp_loss: 2.2584 - val_multiply_1_loss: 0.0175
+Epoch 414/800
+ - 11s - loss: 62.1299 - min_1_loss: 62.1299 - softmax_stamp_loss: 2.5889 - multiply_1_loss: 0.0251 - val_loss: 79.7310 - val_min_1_loss: 79.7310 - val_softmax_stamp_loss: 2.2564 - val_multiply_1_loss: 0.0177
+Epoch 415/800
+ - 11s - loss: 61.9420 - min_1_loss: 61.9420 - softmax_stamp_loss: 2.5938 - multiply_1_loss: 0.0251 - val_loss: 80.6920 - val_min_1_loss: 80.6920 - val_softmax_stamp_loss: 2.2815 - val_multiply_1_loss: 0.0178
+Epoch 416/800
+ - 11s - loss: 62.1556 - min_1_loss: 62.1556 - softmax_stamp_loss: 2.5919 - multiply_1_loss: 0.0253 - val_loss: 83.8770 - val_min_1_loss: 83.8770 - val_softmax_stamp_loss: 2.3171 - val_multiply_1_loss: 0.0175
+Epoch 417/800
+ - 11s - loss: 62.4184 - min_1_loss: 62.4184 - softmax_stamp_loss: 2.6026 - multiply_1_loss: 0.0252 - val_loss: 81.7569 - val_min_1_loss: 81.7569 - val_softmax_stamp_loss: 2.3334 - val_multiply_1_loss: 0.0179
+Epoch 418/800
+ - 11s - loss: 62.3381 - min_1_loss: 62.3381 - softmax_stamp_loss: 2.6128 - multiply_1_loss: 0.0252 - val_loss: 80.9614 - val_min_1_loss: 80.9614 - val_softmax_stamp_loss: 2.2888 - val_multiply_1_loss: 0.0174
+Epoch 419/800
+ - 11s - loss: 62.1581 - min_1_loss: 62.1581 - softmax_stamp_loss: 2.6155 - multiply_1_loss: 0.0253 - val_loss: 79.6218 - val_min_1_loss: 79.6218 - val_softmax_stamp_loss: 2.2865 - val_multiply_1_loss: 0.0180
+Epoch 420/800
+ - 11s - loss: 62.1732 - min_1_loss: 62.1732 - softmax_stamp_loss: 2.6230 - multiply_1_loss: 0.0254 - val_loss: 80.3457 - val_min_1_loss: 80.3457 - val_softmax_stamp_loss: 2.2611 - val_multiply_1_loss: 0.0180
+Epoch 421/800
+ - 11s - loss: 62.2936 - min_1_loss: 62.2936 - softmax_stamp_loss: 2.6232 - multiply_1_loss: 0.0255 - val_loss: 80.6890 - val_min_1_loss: 80.6890 - val_softmax_stamp_loss: 2.3324 - val_multiply_1_loss: 0.0184
+Epoch 422/800
+ - 11s - loss: 62.2415 - min_1_loss: 62.2415 - softmax_stamp_loss: 2.6326 - multiply_1_loss: 0.0255 - val_loss: 82.1979 - val_min_1_loss: 82.1979 - val_softmax_stamp_loss: 2.3369 - val_multiply_1_loss: 0.0181
+Epoch 423/800
+ - 11s - loss: 62.2666 - min_1_loss: 62.2666 - softmax_stamp_loss: 2.6328 - multiply_1_loss: 0.0255 - val_loss: 80.6941 - val_min_1_loss: 80.6941 - val_softmax_stamp_loss: 2.3300 - val_multiply_1_loss: 0.0182
+Epoch 424/800
+ - 11s - loss: 62.3299 - min_1_loss: 62.3299 - softmax_stamp_loss: 2.6441 - multiply_1_loss: 0.0255 - val_loss: 79.8279 - val_min_1_loss: 79.8279 - val_softmax_stamp_loss: 2.3237 - val_multiply_1_loss: 0.0185
+Epoch 425/800
+ - 11s - loss: 62.2633 - min_1_loss: 62.2633 - softmax_stamp_loss: 2.6369 - multiply_1_loss: 0.0256 - val_loss: 82.8864 - val_min_1_loss: 82.8864 - val_softmax_stamp_loss: 2.3493 - val_multiply_1_loss: 0.0182
+Epoch 426/800
+ - 11s - loss: 62.6295 - min_1_loss: 62.6295 - softmax_stamp_loss: 2.6439 - multiply_1_loss: 0.0255 - val_loss: 81.3651 - val_min_1_loss: 81.3651 - val_softmax_stamp_loss: 2.3787 - val_multiply_1_loss: 0.0189
+Epoch 427/800
+ - 11s - loss: 62.3911 - min_1_loss: 62.3911 - softmax_stamp_loss: 2.6574 - multiply_1_loss: 0.0257 - val_loss: 80.2711 - val_min_1_loss: 80.2711 - val_softmax_stamp_loss: 2.3221 - val_multiply_1_loss: 0.0184
+Epoch 428/800
+ - 11s - loss: 62.3742 - min_1_loss: 62.3742 - softmax_stamp_loss: 2.6471 - multiply_1_loss: 0.0257 - val_loss: 82.1193 - val_min_1_loss: 82.1193 - val_softmax_stamp_loss: 2.3349 - val_multiply_1_loss: 0.0187
+Epoch 429/800
+ - 11s - loss: 62.4216 - min_1_loss: 62.4216 - softmax_stamp_loss: 2.6590 - multiply_1_loss: 0.0258 - val_loss: 81.1018 - val_min_1_loss: 81.1018 - val_softmax_stamp_loss: 2.3666 - val_multiply_1_loss: 0.0185
+Epoch 430/800
+ - 11s - loss: 62.4041 - min_1_loss: 62.4041 - softmax_stamp_loss: 2.6685 - multiply_1_loss: 0.0258 - val_loss: 80.7220 - val_min_1_loss: 80.7220 - val_softmax_stamp_loss: 2.3356 - val_multiply_1_loss: 0.0187
+Epoch 431/800
+ - 11s - loss: 62.7212 - min_1_loss: 62.7212 - softmax_stamp_loss: 2.6652 - multiply_1_loss: 0.0259 - val_loss: 84.5075 - val_min_1_loss: 84.5075 - val_softmax_stamp_loss: 2.4375 - val_multiply_1_loss: 0.0188
+Epoch 432/800
+ - 11s - loss: 62.6573 - min_1_loss: 62.6573 - softmax_stamp_loss: 2.6635 - multiply_1_loss: 0.0258 - val_loss: 83.7539 - val_min_1_loss: 83.7539 - val_softmax_stamp_loss: 2.4517 - val_multiply_1_loss: 0.0188
+Epoch 433/800
+ - 11s - loss: 62.5170 - min_1_loss: 62.5170 - softmax_stamp_loss: 2.6665 - multiply_1_loss: 0.0260 - val_loss: 83.4363 - val_min_1_loss: 83.4363 - val_softmax_stamp_loss: 2.4235 - val_multiply_1_loss: 0.0189
+Epoch 434/800
+ - 11s - loss: 62.5023 - min_1_loss: 62.5023 - softmax_stamp_loss: 2.6856 - multiply_1_loss: 0.0261 - val_loss: 80.0281 - val_min_1_loss: 80.0281 - val_softmax_stamp_loss: 2.3906 - val_multiply_1_loss: 0.0191
+Epoch 435/800
+ - 11s - loss: 62.2826 - min_1_loss: 62.2826 - softmax_stamp_loss: 2.6807 - multiply_1_loss: 0.0261 - val_loss: 79.1675 - val_min_1_loss: 79.1675 - val_softmax_stamp_loss: 2.3697 - val_multiply_1_loss: 0.0195
+Epoch 436/800
+ - 11s - loss: 62.3174 - min_1_loss: 62.3174 - softmax_stamp_loss: 2.6824 - multiply_1_loss: 0.0262 - val_loss: 86.0200 - val_min_1_loss: 86.0200 - val_softmax_stamp_loss: 2.4839 - val_multiply_1_loss: 0.0188
+Epoch 437/800
+ - 11s - loss: 62.2879 - min_1_loss: 62.2879 - softmax_stamp_loss: 2.6877 - multiply_1_loss: 0.0263 - val_loss: 83.0163 - val_min_1_loss: 83.0163 - val_softmax_stamp_loss: 2.4367 - val_multiply_1_loss: 0.0191
+Epoch 438/800
+ - 11s - loss: 62.5087 - min_1_loss: 62.5087 - softmax_stamp_loss: 2.6902 - multiply_1_loss: 0.0263 - val_loss: 80.9496 - val_min_1_loss: 80.9496 - val_softmax_stamp_loss: 2.3691 - val_multiply_1_loss: 0.0194
+Epoch 439/800
+ - 11s - loss: 62.4190 - min_1_loss: 62.4190 - softmax_stamp_loss: 2.6954 - multiply_1_loss: 0.0264 - val_loss: 81.5570 - val_min_1_loss: 81.5570 - val_softmax_stamp_loss: 2.4116 - val_multiply_1_loss: 0.0192
+Epoch 440/800
+ - 11s - loss: 62.4256 - min_1_loss: 62.4256 - softmax_stamp_loss: 2.6983 - multiply_1_loss: 0.0263 - val_loss: 81.2995 - val_min_1_loss: 81.2995 - val_softmax_stamp_loss: 2.4140 - val_multiply_1_loss: 0.0196
+Epoch 441/800
+ - 11s - loss: 62.5983 - min_1_loss: 62.5983 - softmax_stamp_loss: 2.7045 - multiply_1_loss: 0.0263 - val_loss: 82.7457 - val_min_1_loss: 82.7457 - val_softmax_stamp_loss: 2.4469 - val_multiply_1_loss: 0.0196
+Epoch 442/800
+ - 11s - loss: 62.5507 - min_1_loss: 62.5507 - softmax_stamp_loss: 2.7031 - multiply_1_loss: 0.0263 - val_loss: 79.5843 - val_min_1_loss: 79.5843 - val_softmax_stamp_loss: 2.3959 - val_multiply_1_loss: 0.0202
+Epoch 443/800
+ - 11s - loss: 62.5867 - min_1_loss: 62.5867 - softmax_stamp_loss: 2.7102 - multiply_1_loss: 0.0266 - val_loss: 83.2035 - val_min_1_loss: 83.2035 - val_softmax_stamp_loss: 2.4553 - val_multiply_1_loss: 0.0195
+Epoch 444/800
+ - 11s - loss: 62.8379 - min_1_loss: 62.8379 - softmax_stamp_loss: 2.7149 - multiply_1_loss: 0.0266 - val_loss: 82.7084 - val_min_1_loss: 82.7084 - val_softmax_stamp_loss: 2.4644 - val_multiply_1_loss: 0.0195
+Epoch 445/800
+ - 11s - loss: 62.7375 - min_1_loss: 62.7375 - softmax_stamp_loss: 2.7223 - multiply_1_loss: 0.0266 - val_loss: 82.0872 - val_min_1_loss: 82.0872 - val_softmax_stamp_loss: 2.4536 - val_multiply_1_loss: 0.0194
+Epoch 446/800
+ - 11s - loss: 62.6136 - min_1_loss: 62.6136 - softmax_stamp_loss: 2.7250 - multiply_1_loss: 0.0266 - val_loss: 80.6976 - val_min_1_loss: 80.6976 - val_softmax_stamp_loss: 2.4473 - val_multiply_1_loss: 0.0199
+Epoch 447/800
+ - 11s - loss: 62.7641 - min_1_loss: 62.7641 - softmax_stamp_loss: 2.7301 - multiply_1_loss: 0.0267 - val_loss: 78.2739 - val_min_1_loss: 78.2739 - val_softmax_stamp_loss: 2.3943 - val_multiply_1_loss: 0.0203
+Epoch 448/800
+ - 11s - loss: 62.9531 - min_1_loss: 62.9531 - softmax_stamp_loss: 2.7245 - multiply_1_loss: 0.0268 - val_loss: 80.5821 - val_min_1_loss: 80.5821 - val_softmax_stamp_loss: 2.4349 - val_multiply_1_loss: 0.0201
+Epoch 449/800
+ - 11s - loss: 62.7852 - min_1_loss: 62.7852 - softmax_stamp_loss: 2.7333 - multiply_1_loss: 0.0269 - val_loss: 84.0289 - val_min_1_loss: 84.0289 - val_softmax_stamp_loss: 2.4797 - val_multiply_1_loss: 0.0200
+Epoch 450/800
+ - 11s - loss: 62.9280 - min_1_loss: 62.9280 - softmax_stamp_loss: 2.7401 - multiply_1_loss: 0.0268 - val_loss: 79.8931 - val_min_1_loss: 79.8931 - val_softmax_stamp_loss: 2.4250 - val_multiply_1_loss: 0.0201
+Epoch 451/800
+ - 11s - loss: 62.7794 - min_1_loss: 62.7794 - softmax_stamp_loss: 2.7417 - multiply_1_loss: 0.0268 - val_loss: 80.9124 - val_min_1_loss: 80.9124 - val_softmax_stamp_loss: 2.4618 - val_multiply_1_loss: 0.0201
+Epoch 452/800
+ - 11s - loss: 62.8383 - min_1_loss: 62.8383 - softmax_stamp_loss: 2.7477 - multiply_1_loss: 0.0269 - val_loss: 82.1039 - val_min_1_loss: 82.1039 - val_softmax_stamp_loss: 2.4767 - val_multiply_1_loss: 0.0205
+Epoch 453/800
+ - 11s - loss: 62.7144 - min_1_loss: 62.7144 - softmax_stamp_loss: 2.7492 - multiply_1_loss: 0.0270 - val_loss: 81.7757 - val_min_1_loss: 81.7757 - val_softmax_stamp_loss: 2.4783 - val_multiply_1_loss: 0.0204
+Epoch 454/800
+ - 11s - loss: 62.9833 - min_1_loss: 62.9833 - softmax_stamp_loss: 2.7545 - multiply_1_loss: 0.0271 - val_loss: 80.8860 - val_min_1_loss: 80.8860 - val_softmax_stamp_loss: 2.4871 - val_multiply_1_loss: 0.0209
+Epoch 455/800
+ - 11s - loss: 63.0462 - min_1_loss: 63.0462 - softmax_stamp_loss: 2.7579 - multiply_1_loss: 0.0272 - val_loss: 79.7705 - val_min_1_loss: 79.7705 - val_softmax_stamp_loss: 2.4798 - val_multiply_1_loss: 0.0209
+Epoch 456/800
+ - 11s - loss: 63.0582 - min_1_loss: 63.0582 - softmax_stamp_loss: 2.7655 - multiply_1_loss: 0.0272 - val_loss: 79.0901 - val_min_1_loss: 79.0901 - val_softmax_stamp_loss: 2.4345 - val_multiply_1_loss: 0.0207
+Epoch 457/800
+ - 11s - loss: 63.0492 - min_1_loss: 63.0492 - softmax_stamp_loss: 2.7652 - multiply_1_loss: 0.0272 - val_loss: 80.4215 - val_min_1_loss: 80.4215 - val_softmax_stamp_loss: 2.4547 - val_multiply_1_loss: 0.0209
+Epoch 458/800
+ - 11s - loss: 63.1594 - min_1_loss: 63.1594 - softmax_stamp_loss: 2.7609 - multiply_1_loss: 0.0272 - val_loss: 80.9740 - val_min_1_loss: 80.9740 - val_softmax_stamp_loss: 2.5124 - val_multiply_1_loss: 0.0207
+Epoch 459/800
+ - 11s - loss: 63.0709 - min_1_loss: 63.0709 - softmax_stamp_loss: 2.7684 - multiply_1_loss: 0.0273 - val_loss: 81.2199 - val_min_1_loss: 81.2199 - val_softmax_stamp_loss: 2.4900 - val_multiply_1_loss: 0.0210
+Epoch 460/800
+ - 11s - loss: 63.0481 - min_1_loss: 63.0481 - softmax_stamp_loss: 2.7785 - multiply_1_loss: 0.0273 - val_loss: 81.1246 - val_min_1_loss: 81.1246 - val_softmax_stamp_loss: 2.5311 - val_multiply_1_loss: 0.0210
+Epoch 461/800
+ - 11s - loss: 62.8665 - min_1_loss: 62.8665 - softmax_stamp_loss: 2.7770 - multiply_1_loss: 0.0273 - val_loss: 81.8795 - val_min_1_loss: 81.8795 - val_softmax_stamp_loss: 2.5432 - val_multiply_1_loss: 0.0209
+Epoch 462/800
+ - 11s - loss: 63.2386 - min_1_loss: 63.2386 - softmax_stamp_loss: 2.7801 - multiply_1_loss: 0.0273 - val_loss: 83.7837 - val_min_1_loss: 83.7837 - val_softmax_stamp_loss: 2.5369 - val_multiply_1_loss: 0.0204
+Epoch 463/800
+ - 11s - loss: 62.9947 - min_1_loss: 62.9947 - softmax_stamp_loss: 2.7866 - multiply_1_loss: 0.0275 - val_loss: 80.6611 - val_min_1_loss: 80.6611 - val_softmax_stamp_loss: 2.5012 - val_multiply_1_loss: 0.0212
+Epoch 464/800
+ - 11s - loss: 63.0739 - min_1_loss: 63.0739 - softmax_stamp_loss: 2.7898 - multiply_1_loss: 0.0274 - val_loss: 80.6542 - val_min_1_loss: 80.6542 - val_softmax_stamp_loss: 2.5212 - val_multiply_1_loss: 0.0210
+Epoch 465/800
+ - 11s - loss: 63.1859 - min_1_loss: 63.1859 - softmax_stamp_loss: 2.7885 - multiply_1_loss: 0.0275 - val_loss: 80.4329 - val_min_1_loss: 80.4329 - val_softmax_stamp_loss: 2.5345 - val_multiply_1_loss: 0.0212
+Epoch 466/800
+ - 15s - loss: 63.1698 - min_1_loss: 63.1698 - softmax_stamp_loss: 2.7897 - multiply_1_loss: 0.0276 - val_loss: 80.1671 - val_min_1_loss: 80.1671 - val_softmax_stamp_loss: 2.4969 - val_multiply_1_loss: 0.0214
+Epoch 467/800
+ - 15s - loss: 63.1889 - min_1_loss: 63.1889 - softmax_stamp_loss: 2.7945 - multiply_1_loss: 0.0276 - val_loss: 81.7942 - val_min_1_loss: 81.7942 - val_softmax_stamp_loss: 2.5109 - val_multiply_1_loss: 0.0214
+Epoch 468/800
+ - 15s - loss: 63.1043 - min_1_loss: 63.1043 - softmax_stamp_loss: 2.7974 - multiply_1_loss: 0.0277 - val_loss: 81.2092 - val_min_1_loss: 81.2092 - val_softmax_stamp_loss: 2.5385 - val_multiply_1_loss: 0.0216
+Epoch 469/800
+ - 12s - loss: 63.0045 - min_1_loss: 63.0045 - softmax_stamp_loss: 2.8009 - multiply_1_loss: 0.0277 - val_loss: 82.1691 - val_min_1_loss: 82.1691 - val_softmax_stamp_loss: 2.5752 - val_multiply_1_loss: 0.0216
+Epoch 470/800
+ - 14s - loss: 63.2051 - min_1_loss: 63.2051 - softmax_stamp_loss: 2.8081 - multiply_1_loss: 0.0278 - val_loss: 83.0499 - val_min_1_loss: 83.0499 - val_softmax_stamp_loss: 2.6003 - val_multiply_1_loss: 0.0215
+Epoch 471/800
+ - 15s - loss: 62.9038 - min_1_loss: 62.9038 - softmax_stamp_loss: 2.8067 - multiply_1_loss: 0.0278 - val_loss: 82.1537 - val_min_1_loss: 82.1537 - val_softmax_stamp_loss: 2.5892 - val_multiply_1_loss: 0.0217
+Epoch 472/800
+ - 15s - loss: 62.9969 - min_1_loss: 62.9969 - softmax_stamp_loss: 2.8091 - multiply_1_loss: 0.0278 - val_loss: 81.7406 - val_min_1_loss: 81.7406 - val_softmax_stamp_loss: 2.5877 - val_multiply_1_loss: 0.0216
+Epoch 473/800
+ - 11s - loss: 63.2465 - min_1_loss: 63.2465 - softmax_stamp_loss: 2.8138 - multiply_1_loss: 0.0278 - val_loss: 79.4488 - val_min_1_loss: 79.4488 - val_softmax_stamp_loss: 2.5594 - val_multiply_1_loss: 0.0221
+Epoch 474/800
+ - 14s - loss: 63.2712 - min_1_loss: 63.2712 - softmax_stamp_loss: 2.8161 - multiply_1_loss: 0.0279 - val_loss: 82.2099 - val_min_1_loss: 82.2099 - val_softmax_stamp_loss: 2.5828 - val_multiply_1_loss: 0.0217
+Epoch 475/800
+ - 15s - loss: 63.3289 - min_1_loss: 63.3289 - softmax_stamp_loss: 2.8235 - multiply_1_loss: 0.0279 - val_loss: 81.9669 - val_min_1_loss: 81.9669 - val_softmax_stamp_loss: 2.5988 - val_multiply_1_loss: 0.0219
+Epoch 476/800
+ - 15s - loss: 63.5629 - min_1_loss: 63.5629 - softmax_stamp_loss: 2.8218 - multiply_1_loss: 0.0280 - val_loss: 80.2345 - val_min_1_loss: 80.2345 - val_softmax_stamp_loss: 2.5644 - val_multiply_1_loss: 0.0222
+Epoch 477/800
+ - 11s - loss: 63.1744 - min_1_loss: 63.1744 - softmax_stamp_loss: 2.8234 - multiply_1_loss: 0.0280 - val_loss: 81.1783 - val_min_1_loss: 81.1783 - val_softmax_stamp_loss: 2.5899 - val_multiply_1_loss: 0.0224
+Epoch 478/800
+ - 15s - loss: 63.5452 - min_1_loss: 63.5452 - softmax_stamp_loss: 2.8256 - multiply_1_loss: 0.0281 - val_loss: 81.5669 - val_min_1_loss: 81.5669 - val_softmax_stamp_loss: 2.5767 - val_multiply_1_loss: 0.0223
+Epoch 479/800
+ - 11s - loss: 63.5712 - min_1_loss: 63.5712 - softmax_stamp_loss: 2.8261 - multiply_1_loss: 0.0281 - val_loss: 84.5630 - val_min_1_loss: 84.5630 - val_softmax_stamp_loss: 2.6341 - val_multiply_1_loss: 0.0221
+Epoch 480/800
+ - 11s - loss: 63.5215 - min_1_loss: 63.5215 - softmax_stamp_loss: 2.8259 - multiply_1_loss: 0.0281 - val_loss: 81.5102 - val_min_1_loss: 81.5102 - val_softmax_stamp_loss: 2.5905 - val_multiply_1_loss: 0.0223
+Epoch 481/800
+ - 11s - loss: 63.7045 - min_1_loss: 63.7045 - softmax_stamp_loss: 2.8275 - multiply_1_loss: 0.0283 - val_loss: 83.5451 - val_min_1_loss: 83.5451 - val_softmax_stamp_loss: 2.6362 - val_multiply_1_loss: 0.0225
+Epoch 482/800
+ - 16s - loss: 63.6918 - min_1_loss: 63.6918 - softmax_stamp_loss: 2.8390 - multiply_1_loss: 0.0282 - val_loss: 82.5648 - val_min_1_loss: 82.5648 - val_softmax_stamp_loss: 2.5890 - val_multiply_1_loss: 0.0225
+Epoch 483/800
+ - 13s - loss: 63.5544 - min_1_loss: 63.5544 - softmax_stamp_loss: 2.8474 - multiply_1_loss: 0.0283 - val_loss: 81.0484 - val_min_1_loss: 81.0484 - val_softmax_stamp_loss: 2.6209 - val_multiply_1_loss: 0.0227
+Epoch 484/800
+ - 15s - loss: 63.4563 - min_1_loss: 63.4563 - softmax_stamp_loss: 2.8412 - multiply_1_loss: 0.0283 - val_loss: 83.6602 - val_min_1_loss: 83.6602 - val_softmax_stamp_loss: 2.6543 - val_multiply_1_loss: 0.0225
+Epoch 485/800
+ - 15s - loss: 63.5983 - min_1_loss: 63.5983 - softmax_stamp_loss: 2.8442 - multiply_1_loss: 0.0284 - val_loss: 81.6702 - val_min_1_loss: 81.6702 - val_softmax_stamp_loss: 2.6257 - val_multiply_1_loss: 0.0226
+Epoch 486/800
+ - 12s - loss: 63.4911 - min_1_loss: 63.4911 - softmax_stamp_loss: 2.8480 - multiply_1_loss: 0.0284 - val_loss: 82.2060 - val_min_1_loss: 82.2060 - val_softmax_stamp_loss: 2.6498 - val_multiply_1_loss: 0.0228
+Epoch 487/800
+ - 14s - loss: 63.3994 - min_1_loss: 63.3994 - softmax_stamp_loss: 2.8535 - multiply_1_loss: 0.0284 - val_loss: 83.2948 - val_min_1_loss: 83.2948 - val_softmax_stamp_loss: 2.6597 - val_multiply_1_loss: 0.0228
+Epoch 488/800
+ - 15s - loss: 63.7699 - min_1_loss: 63.7699 - softmax_stamp_loss: 2.8560 - multiply_1_loss: 0.0284 - val_loss: 82.5278 - val_min_1_loss: 82.5278 - val_softmax_stamp_loss: 2.6602 - val_multiply_1_loss: 0.0231
+Epoch 489/800
+ - 15s - loss: 63.6136 - min_1_loss: 63.6136 - softmax_stamp_loss: 2.8538 - multiply_1_loss: 0.0286 - val_loss: 82.5930 - val_min_1_loss: 82.5930 - val_softmax_stamp_loss: 2.6747 - val_multiply_1_loss: 0.0230
+Epoch 490/800
+ - 11s - loss: 63.4883 - min_1_loss: 63.4883 - softmax_stamp_loss: 2.8589 - multiply_1_loss: 0.0286 - val_loss: 84.6521 - val_min_1_loss: 84.6521 - val_softmax_stamp_loss: 2.6808 - val_multiply_1_loss: 0.0230
+Epoch 491/800
+ - 14s - loss: 63.9408 - min_1_loss: 63.9408 - softmax_stamp_loss: 2.8649 - multiply_1_loss: 0.0285 - val_loss: 84.3595 - val_min_1_loss: 84.3595 - val_softmax_stamp_loss: 2.6958 - val_multiply_1_loss: 0.0230
+Epoch 492/800
+ - 11s - loss: 63.5885 - min_1_loss: 63.5885 - softmax_stamp_loss: 2.8658 - multiply_1_loss: 0.0286 - val_loss: 83.7909 - val_min_1_loss: 83.7909 - val_softmax_stamp_loss: 2.6885 - val_multiply_1_loss: 0.0231
+Epoch 493/800
+ - 11s - loss: 63.7129 - min_1_loss: 63.7129 - softmax_stamp_loss: 2.8713 - multiply_1_loss: 0.0287 - val_loss: 85.3071 - val_min_1_loss: 85.3071 - val_softmax_stamp_loss: 2.7071 - val_multiply_1_loss: 0.0229
+Epoch 494/800
+ - 11s - loss: 63.5267 - min_1_loss: 63.5267 - softmax_stamp_loss: 2.8669 - multiply_1_loss: 0.0286 - val_loss: 84.0971 - val_min_1_loss: 84.0971 - val_softmax_stamp_loss: 2.6805 - val_multiply_1_loss: 0.0231
+Epoch 495/800
+ - 11s - loss: 63.6275 - min_1_loss: 63.6275 - softmax_stamp_loss: 2.8606 - multiply_1_loss: 0.0287 - val_loss: 82.8682 - val_min_1_loss: 82.8682 - val_softmax_stamp_loss: 2.6642 - val_multiply_1_loss: 0.0230
+Epoch 496/800
+ - 11s - loss: 63.5935 - min_1_loss: 63.5935 - softmax_stamp_loss: 2.8764 - multiply_1_loss: 0.0288 - val_loss: 81.7274 - val_min_1_loss: 81.7274 - val_softmax_stamp_loss: 2.6615 - val_multiply_1_loss: 0.0233
+Epoch 497/800
+ - 11s - loss: 64.0008 - min_1_loss: 64.0008 - softmax_stamp_loss: 2.8761 - multiply_1_loss: 0.0286 - val_loss: 82.4231 - val_min_1_loss: 82.4231 - val_softmax_stamp_loss: 2.6426 - val_multiply_1_loss: 0.0233
+Epoch 498/800
+ - 11s - loss: 63.9949 - min_1_loss: 63.9949 - softmax_stamp_loss: 2.8753 - multiply_1_loss: 0.0287 - val_loss: 84.5740 - val_min_1_loss: 84.5740 - val_softmax_stamp_loss: 2.6947 - val_multiply_1_loss: 0.0234
+Epoch 499/800
+ - 11s - loss: 63.9382 - min_1_loss: 63.9382 - softmax_stamp_loss: 2.8813 - multiply_1_loss: 0.0288 - val_loss: 84.0745 - val_min_1_loss: 84.0745 - val_softmax_stamp_loss: 2.7164 - val_multiply_1_loss: 0.0236
+Epoch 500/800
+ - 11s - loss: 63.5350 - min_1_loss: 63.5350 - softmax_stamp_loss: 2.8850 - multiply_1_loss: 0.0289 - val_loss: 82.2262 - val_min_1_loss: 82.2262 - val_softmax_stamp_loss: 2.6887 - val_multiply_1_loss: 0.0234
+Epoch 501/800
+ - 11s - loss: 63.4446 - min_1_loss: 63.4446 - softmax_stamp_loss: 2.8877 - multiply_1_loss: 0.0289 - val_loss: 82.2865 - val_min_1_loss: 82.2865 - val_softmax_stamp_loss: 2.6680 - val_multiply_1_loss: 0.0235
+Epoch 502/800
+ - 11s - loss: 63.6845 - min_1_loss: 63.6845 - softmax_stamp_loss: 2.8894 - multiply_1_loss: 0.0289 - val_loss: 85.6665 - val_min_1_loss: 85.6665 - val_softmax_stamp_loss: 2.7234 - val_multiply_1_loss: 0.0234
+Epoch 503/800
+ - 11s - loss: 63.7854 - min_1_loss: 63.7854 - softmax_stamp_loss: 2.8896 - multiply_1_loss: 0.0289 - val_loss: 83.0247 - val_min_1_loss: 83.0247 - val_softmax_stamp_loss: 2.7018 - val_multiply_1_loss: 0.0237
+Epoch 504/800
+ - 11s - loss: 63.8424 - min_1_loss: 63.8424 - softmax_stamp_loss: 2.8930 - multiply_1_loss: 0.0290 - val_loss: 82.4524 - val_min_1_loss: 82.4524 - val_softmax_stamp_loss: 2.7086 - val_multiply_1_loss: 0.0238
+Epoch 505/800
+ - 11s - loss: 63.9110 - min_1_loss: 63.9110 - softmax_stamp_loss: 2.8919 - multiply_1_loss: 0.0290 - val_loss: 87.3265 - val_min_1_loss: 87.3265 - val_softmax_stamp_loss: 2.7838 - val_multiply_1_loss: 0.0238
+Epoch 506/800
+ - 11s - loss: 63.7694 - min_1_loss: 63.7694 - softmax_stamp_loss: 2.8964 - multiply_1_loss: 0.0291 - val_loss: 81.2376 - val_min_1_loss: 81.2376 - val_softmax_stamp_loss: 2.7102 - val_multiply_1_loss: 0.0239
+Epoch 507/800
+ - 11s - loss: 63.7591 - min_1_loss: 63.7591 - softmax_stamp_loss: 2.8968 - multiply_1_loss: 0.0291 - val_loss: 80.6577 - val_min_1_loss: 80.6577 - val_softmax_stamp_loss: 2.6702 - val_multiply_1_loss: 0.0240
+Epoch 508/800
+ - 11s - loss: 64.0430 - min_1_loss: 64.0430 - softmax_stamp_loss: 2.8995 - multiply_1_loss: 0.0292 - val_loss: 82.6527 - val_min_1_loss: 82.6527 - val_softmax_stamp_loss: 2.7036 - val_multiply_1_loss: 0.0240
+Epoch 509/800
+ - 11s - loss: 63.8755 - min_1_loss: 63.8755 - softmax_stamp_loss: 2.9030 - multiply_1_loss: 0.0292 - val_loss: 83.7294 - val_min_1_loss: 83.7294 - val_softmax_stamp_loss: 2.7228 - val_multiply_1_loss: 0.0237
+Epoch 510/800
+ - 11s - loss: 64.0920 - min_1_loss: 64.0920 - softmax_stamp_loss: 2.9027 - multiply_1_loss: 0.0292 - val_loss: 82.6281 - val_min_1_loss: 82.6281 - val_softmax_stamp_loss: 2.7242 - val_multiply_1_loss: 0.0239
+Epoch 511/800
+ - 11s - loss: 64.0669 - min_1_loss: 64.0669 - softmax_stamp_loss: 2.9071 - multiply_1_loss: 0.0292 - val_loss: 83.7346 - val_min_1_loss: 83.7346 - val_softmax_stamp_loss: 2.7419 - val_multiply_1_loss: 0.0240
+Epoch 512/800
+ - 11s - loss: 63.9702 - min_1_loss: 63.9702 - softmax_stamp_loss: 2.9012 - multiply_1_loss: 0.0293 - val_loss: 84.7672 - val_min_1_loss: 84.7672 - val_softmax_stamp_loss: 2.7598 - val_multiply_1_loss: 0.0242
+Epoch 513/800
+ - 11s - loss: 64.0464 - min_1_loss: 64.0464 - softmax_stamp_loss: 2.9088 - multiply_1_loss: 0.0293 - val_loss: 81.1743 - val_min_1_loss: 81.1743 - val_softmax_stamp_loss: 2.7060 - val_multiply_1_loss: 0.0241
+Epoch 514/800
+ - 11s - loss: 63.7025 - min_1_loss: 63.7025 - softmax_stamp_loss: 2.9116 - multiply_1_loss: 0.0293 - val_loss: 82.2398 - val_min_1_loss: 82.2398 - val_softmax_stamp_loss: 2.7391 - val_multiply_1_loss: 0.0244
+Epoch 515/800
+ - 11s - loss: 63.9545 - min_1_loss: 63.9545 - softmax_stamp_loss: 2.9122 - multiply_1_loss: 0.0294 - val_loss: 83.6494 - val_min_1_loss: 83.6494 - val_softmax_stamp_loss: 2.7407 - val_multiply_1_loss: 0.0242
+Epoch 516/800
+ - 11s - loss: 63.9449 - min_1_loss: 63.9449 - softmax_stamp_loss: 2.9251 - multiply_1_loss: 0.0294 - val_loss: 83.8895 - val_min_1_loss: 83.8895 - val_softmax_stamp_loss: 2.7636 - val_multiply_1_loss: 0.0242
+Epoch 517/800
+ - 11s - loss: 63.9955 - min_1_loss: 63.9955 - softmax_stamp_loss: 2.9222 - multiply_1_loss: 0.0295 - val_loss: 81.6305 - val_min_1_loss: 81.6305 - val_softmax_stamp_loss: 2.7274 - val_multiply_1_loss: 0.0244
+Epoch 518/800
+ - 13s - loss: 63.9957 - min_1_loss: 63.9957 - softmax_stamp_loss: 2.9288 - multiply_1_loss: 0.0294 - val_loss: 83.9869 - val_min_1_loss: 83.9869 - val_softmax_stamp_loss: 2.7796 - val_multiply_1_loss: 0.0243
+Epoch 519/800
+ - 11s - loss: 63.9967 - min_1_loss: 63.9967 - softmax_stamp_loss: 2.9249 - multiply_1_loss: 0.0294 - val_loss: 81.9105 - val_min_1_loss: 81.9105 - val_softmax_stamp_loss: 2.7284 - val_multiply_1_loss: 0.0245
+Epoch 520/800
+ - 11s - loss: 64.1341 - min_1_loss: 64.1341 - softmax_stamp_loss: 2.9284 - multiply_1_loss: 0.0295 - val_loss: 82.0517 - val_min_1_loss: 82.0517 - val_softmax_stamp_loss: 2.7622 - val_multiply_1_loss: 0.0247
+Epoch 521/800
+ - 11s - loss: 63.9852 - min_1_loss: 63.9852 - softmax_stamp_loss: 2.9300 - multiply_1_loss: 0.0295 - val_loss: 83.0077 - val_min_1_loss: 83.0077 - val_softmax_stamp_loss: 2.7624 - val_multiply_1_loss: 0.0245
+Epoch 522/800
+ - 11s - loss: 64.1835 - min_1_loss: 64.1835 - softmax_stamp_loss: 2.9325 - multiply_1_loss: 0.0295 - val_loss: 83.7179 - val_min_1_loss: 83.7179 - val_softmax_stamp_loss: 2.7769 - val_multiply_1_loss: 0.0249
+Epoch 523/800
+ - 11s - loss: 64.2108 - min_1_loss: 64.2108 - softmax_stamp_loss: 2.9377 - multiply_1_loss: 0.0296 - val_loss: 84.0287 - val_min_1_loss: 84.0287 - val_softmax_stamp_loss: 2.7497 - val_multiply_1_loss: 0.0245
+Epoch 524/800
+ - 11s - loss: 64.5696 - min_1_loss: 64.5696 - softmax_stamp_loss: 2.9415 - multiply_1_loss: 0.0296 - val_loss: 81.8898 - val_min_1_loss: 81.8898 - val_softmax_stamp_loss: 2.7612 - val_multiply_1_loss: 0.0251
+Epoch 525/800
+ - 11s - loss: 64.4066 - min_1_loss: 64.4066 - softmax_stamp_loss: 2.9384 - multiply_1_loss: 0.0296 - val_loss: 82.4942 - val_min_1_loss: 82.4942 - val_softmax_stamp_loss: 2.7800 - val_multiply_1_loss: 0.0249
+Epoch 526/800
+ - 11s - loss: 64.1449 - min_1_loss: 64.1449 - softmax_stamp_loss: 2.9366 - multiply_1_loss: 0.0297 - val_loss: 81.2312 - val_min_1_loss: 81.2312 - val_softmax_stamp_loss: 2.7580 - val_multiply_1_loss: 0.0251
+Epoch 527/800
+ - 11s - loss: 64.1811 - min_1_loss: 64.1811 - softmax_stamp_loss: 2.9407 - multiply_1_loss: 0.0296 - val_loss: 82.6874 - val_min_1_loss: 82.6874 - val_softmax_stamp_loss: 2.7840 - val_multiply_1_loss: 0.0251
+Epoch 528/800
+ - 11s - loss: 64.3009 - min_1_loss: 64.3009 - softmax_stamp_loss: 2.9450 - multiply_1_loss: 0.0297 - val_loss: 82.1465 - val_min_1_loss: 82.1465 - val_softmax_stamp_loss: 2.7758 - val_multiply_1_loss: 0.0250
+Epoch 529/800
+ - 11s - loss: 64.3206 - min_1_loss: 64.3206 - softmax_stamp_loss: 2.9413 - multiply_1_loss: 0.0297 - val_loss: 85.5630 - val_min_1_loss: 85.5630 - val_softmax_stamp_loss: 2.8071 - val_multiply_1_loss: 0.0250
+Epoch 530/800
+ - 11s - loss: 64.2502 - min_1_loss: 64.2502 - softmax_stamp_loss: 2.9453 - multiply_1_loss: 0.0298 - val_loss: 83.4618 - val_min_1_loss: 83.4618 - val_softmax_stamp_loss: 2.7866 - val_multiply_1_loss: 0.0252
+Epoch 531/800
+ - 11s - loss: 64.1069 - min_1_loss: 64.1069 - softmax_stamp_loss: 2.9465 - multiply_1_loss: 0.0298 - val_loss: 83.0935 - val_min_1_loss: 83.0935 - val_softmax_stamp_loss: 2.7906 - val_multiply_1_loss: 0.0252
+Epoch 532/800
+ - 11s - loss: 64.7213 - min_1_loss: 64.7213 - softmax_stamp_loss: 2.9482 - multiply_1_loss: 0.0299 - val_loss: 85.1455 - val_min_1_loss: 85.1455 - val_softmax_stamp_loss: 2.8227 - val_multiply_1_loss: 0.0253
+Epoch 533/800
+ - 11s - loss: 64.4379 - min_1_loss: 64.4379 - softmax_stamp_loss: 2.9504 - multiply_1_loss: 0.0298 - val_loss: 83.4242 - val_min_1_loss: 83.4242 - val_softmax_stamp_loss: 2.8083 - val_multiply_1_loss: 0.0253
+Epoch 534/800
+ - 11s - loss: 64.5586 - min_1_loss: 64.5586 - softmax_stamp_loss: 2.9519 - multiply_1_loss: 0.0300 - val_loss: 82.9573 - val_min_1_loss: 82.9573 - val_softmax_stamp_loss: 2.7954 - val_multiply_1_loss: 0.0254
+Epoch 535/800
+ - 11s - loss: 64.3009 - min_1_loss: 64.3009 - softmax_stamp_loss: 2.9525 - multiply_1_loss: 0.0300 - val_loss: 81.4477 - val_min_1_loss: 81.4477 - val_softmax_stamp_loss: 2.7634 - val_multiply_1_loss: 0.0253
+Epoch 536/800
+ - 11s - loss: 64.5160 - min_1_loss: 64.5160 - softmax_stamp_loss: 2.9538 - multiply_1_loss: 0.0299 - val_loss: 84.6676 - val_min_1_loss: 84.6676 - val_softmax_stamp_loss: 2.8189 - val_multiply_1_loss: 0.0254
+Epoch 537/800
+ - 11s - loss: 64.6509 - min_1_loss: 64.6509 - softmax_stamp_loss: 2.9586 - multiply_1_loss: 0.0300 - val_loss: 83.0881 - val_min_1_loss: 83.0881 - val_softmax_stamp_loss: 2.8088 - val_multiply_1_loss: 0.0257
+Epoch 538/800
+ - 11s - loss: 64.5333 - min_1_loss: 64.5333 - softmax_stamp_loss: 2.9596 - multiply_1_loss: 0.0300 - val_loss: 83.4976 - val_min_1_loss: 83.4976 - val_softmax_stamp_loss: 2.8226 - val_multiply_1_loss: 0.0253
+Epoch 539/800
+ - 11s - loss: 64.3682 - min_1_loss: 64.3682 - softmax_stamp_loss: 2.9571 - multiply_1_loss: 0.0301 - val_loss: 83.8094 - val_min_1_loss: 83.8094 - val_softmax_stamp_loss: 2.8181 - val_multiply_1_loss: 0.0255
+Epoch 540/800
+ - 11s - loss: 64.4197 - min_1_loss: 64.4197 - softmax_stamp_loss: 2.9595 - multiply_1_loss: 0.0301 - val_loss: 82.8270 - val_min_1_loss: 82.8270 - val_softmax_stamp_loss: 2.8151 - val_multiply_1_loss: 0.0257
+Epoch 541/800
+ - 11s - loss: 64.3508 - min_1_loss: 64.3508 - softmax_stamp_loss: 2.9561 - multiply_1_loss: 0.0300 - val_loss: 85.7557 - val_min_1_loss: 85.7557 - val_softmax_stamp_loss: 2.8270 - val_multiply_1_loss: 0.0257
+Epoch 542/800
+ - 11s - loss: 64.2350 - min_1_loss: 64.2350 - softmax_stamp_loss: 2.9717 - multiply_1_loss: 0.0302 - val_loss: 86.0798 - val_min_1_loss: 86.0798 - val_softmax_stamp_loss: 2.8504 - val_multiply_1_loss: 0.0257
+Epoch 543/800
+ - 11s - loss: 64.2199 - min_1_loss: 64.2199 - softmax_stamp_loss: 2.9715 - multiply_1_loss: 0.0302 - val_loss: 82.1221 - val_min_1_loss: 82.1221 - val_softmax_stamp_loss: 2.7929 - val_multiply_1_loss: 0.0258
+Epoch 544/800
+ - 11s - loss: 64.7347 - min_1_loss: 64.7347 - softmax_stamp_loss: 2.9742 - multiply_1_loss: 0.0302 - val_loss: 82.2854 - val_min_1_loss: 82.2854 - val_softmax_stamp_loss: 2.8101 - val_multiply_1_loss: 0.0259
+Epoch 545/800
+ - 11s - loss: 64.4668 - min_1_loss: 64.4668 - softmax_stamp_loss: 2.9672 - multiply_1_loss: 0.0301 - val_loss: 85.8520 - val_min_1_loss: 85.8520 - val_softmax_stamp_loss: 2.8478 - val_multiply_1_loss: 0.0258
+Epoch 546/800
+ - 11s - loss: 64.6063 - min_1_loss: 64.6063 - softmax_stamp_loss: 2.9713 - multiply_1_loss: 0.0302 - val_loss: 81.8123 - val_min_1_loss: 81.8123 - val_softmax_stamp_loss: 2.8230 - val_multiply_1_loss: 0.0261
+Epoch 547/800
+ - 11s - loss: 64.7012 - min_1_loss: 64.7012 - softmax_stamp_loss: 2.9729 - multiply_1_loss: 0.0302 - val_loss: 83.4848 - val_min_1_loss: 83.4848 - val_softmax_stamp_loss: 2.8425 - val_multiply_1_loss: 0.0260
+Epoch 548/800
+ - 11s - loss: 64.5961 - min_1_loss: 64.5961 - softmax_stamp_loss: 2.9736 - multiply_1_loss: 0.0302 - val_loss: 85.0410 - val_min_1_loss: 85.0410 - val_softmax_stamp_loss: 2.8453 - val_multiply_1_loss: 0.0260
+Epoch 549/800
+ - 11s - loss: 64.7060 - min_1_loss: 64.7060 - softmax_stamp_loss: 2.9780 - multiply_1_loss: 0.0303 - val_loss: 85.0378 - val_min_1_loss: 85.0378 - val_softmax_stamp_loss: 2.8427 - val_multiply_1_loss: 0.0258
+Epoch 550/800
+ - 11s - loss: 64.7244 - min_1_loss: 64.7244 - softmax_stamp_loss: 2.9800 - multiply_1_loss: 0.0303 - val_loss: 84.4510 - val_min_1_loss: 84.4510 - val_softmax_stamp_loss: 2.8653 - val_multiply_1_loss: 0.0260
+Epoch 551/800
+ - 11s - loss: 64.6993 - min_1_loss: 64.6993 - softmax_stamp_loss: 2.9875 - multiply_1_loss: 0.0304 - val_loss: 85.0238 - val_min_1_loss: 85.0238 - val_softmax_stamp_loss: 2.8608 - val_multiply_1_loss: 0.0262
+Epoch 552/800
+ - 11s - loss: 64.7223 - min_1_loss: 64.7223 - softmax_stamp_loss: 2.9855 - multiply_1_loss: 0.0304 - val_loss: 83.2866 - val_min_1_loss: 83.2866 - val_softmax_stamp_loss: 2.8434 - val_multiply_1_loss: 0.0261
+Epoch 553/800
+ - 11s - loss: 64.6192 - min_1_loss: 64.6192 - softmax_stamp_loss: 2.9819 - multiply_1_loss: 0.0303 - val_loss: 83.0859 - val_min_1_loss: 83.0859 - val_softmax_stamp_loss: 2.8504 - val_multiply_1_loss: 0.0262
+Epoch 554/800
+ - 11s - loss: 64.5012 - min_1_loss: 64.5012 - softmax_stamp_loss: 2.9878 - multiply_1_loss: 0.0304 - val_loss: 82.7145 - val_min_1_loss: 82.7145 - val_softmax_stamp_loss: 2.8541 - val_multiply_1_loss: 0.0264
+Epoch 555/800
+ - 11s - loss: 64.7823 - min_1_loss: 64.7823 - softmax_stamp_loss: 2.9838 - multiply_1_loss: 0.0304 - val_loss: 83.7100 - val_min_1_loss: 83.7100 - val_softmax_stamp_loss: 2.8474 - val_multiply_1_loss: 0.0262
+Epoch 556/800
+ - 11s - loss: 64.7840 - min_1_loss: 64.7840 - softmax_stamp_loss: 2.9891 - multiply_1_loss: 0.0304 - val_loss: 81.3292 - val_min_1_loss: 81.3292 - val_softmax_stamp_loss: 2.8315 - val_multiply_1_loss: 0.0264
+Epoch 557/800
+ - 11s - loss: 65.0745 - min_1_loss: 65.0745 - softmax_stamp_loss: 2.9889 - multiply_1_loss: 0.0305 - val_loss: 82.1971 - val_min_1_loss: 82.1971 - val_softmax_stamp_loss: 2.8672 - val_multiply_1_loss: 0.0268
+Epoch 558/800
+ - 11s - loss: 64.9641 - min_1_loss: 64.9641 - softmax_stamp_loss: 2.9939 - multiply_1_loss: 0.0305 - val_loss: 84.4175 - val_min_1_loss: 84.4175 - val_softmax_stamp_loss: 2.8815 - val_multiply_1_loss: 0.0263
+Epoch 559/800
+ - 11s - loss: 65.0450 - min_1_loss: 65.0450 - softmax_stamp_loss: 2.9927 - multiply_1_loss: 0.0304 - val_loss: 84.1889 - val_min_1_loss: 84.1889 - val_softmax_stamp_loss: 2.8799 - val_multiply_1_loss: 0.0267
+Epoch 560/800
+ - 11s - loss: 65.2824 - min_1_loss: 65.2824 - softmax_stamp_loss: 2.9893 - multiply_1_loss: 0.0306 - val_loss: 83.5322 - val_min_1_loss: 83.5322 - val_softmax_stamp_loss: 2.8728 - val_multiply_1_loss: 0.0266
+Epoch 561/800
+ - 11s - loss: 65.0549 - min_1_loss: 65.0549 - softmax_stamp_loss: 2.9972 - multiply_1_loss: 0.0305 - val_loss: 82.6481 - val_min_1_loss: 82.6481 - val_softmax_stamp_loss: 2.8634 - val_multiply_1_loss: 0.0266
+Epoch 562/800
+ - 11s - loss: 64.8179 - min_1_loss: 64.8179 - softmax_stamp_loss: 2.9951 - multiply_1_loss: 0.0306 - val_loss: 83.4953 - val_min_1_loss: 83.4953 - val_softmax_stamp_loss: 2.8756 - val_multiply_1_loss: 0.0267
+Epoch 563/800
+ - 11s - loss: 64.9007 - min_1_loss: 64.9007 - softmax_stamp_loss: 3.0023 - multiply_1_loss: 0.0307 - val_loss: 84.5296 - val_min_1_loss: 84.5296 - val_softmax_stamp_loss: 2.8837 - val_multiply_1_loss: 0.0266
+Epoch 564/800
+ - 11s - loss: 64.9146 - min_1_loss: 64.9146 - softmax_stamp_loss: 2.9988 - multiply_1_loss: 0.0306 - val_loss: 83.9003 - val_min_1_loss: 83.9003 - val_softmax_stamp_loss: 2.8788 - val_multiply_1_loss: 0.0267
+Epoch 565/800
+ - 11s - loss: 65.1264 - min_1_loss: 65.1264 - softmax_stamp_loss: 3.0020 - multiply_1_loss: 0.0307 - val_loss: 87.1185 - val_min_1_loss: 87.1185 - val_softmax_stamp_loss: 2.9182 - val_multiply_1_loss: 0.0268
+Epoch 566/800
+ - 11s - loss: 65.1134 - min_1_loss: 65.1134 - softmax_stamp_loss: 3.0005 - multiply_1_loss: 0.0307 - val_loss: 83.6121 - val_min_1_loss: 83.6121 - val_softmax_stamp_loss: 2.8883 - val_multiply_1_loss: 0.0272
+Epoch 567/800
+ - 11s - loss: 64.8441 - min_1_loss: 64.8441 - softmax_stamp_loss: 3.0040 - multiply_1_loss: 0.0307 - val_loss: 85.1430 - val_min_1_loss: 85.1430 - val_softmax_stamp_loss: 2.9007 - val_multiply_1_loss: 0.0268
+Epoch 568/800
+ - 11s - loss: 65.1320 - min_1_loss: 65.1320 - softmax_stamp_loss: 3.0047 - multiply_1_loss: 0.0307 - val_loss: 83.7906 - val_min_1_loss: 83.7906 - val_softmax_stamp_loss: 2.8870 - val_multiply_1_loss: 0.0269
+Epoch 569/800
+ - 11s - loss: 64.8002 - min_1_loss: 64.8002 - softmax_stamp_loss: 3.0044 - multiply_1_loss: 0.0307 - val_loss: 83.8487 - val_min_1_loss: 83.8487 - val_softmax_stamp_loss: 2.8953 - val_multiply_1_loss: 0.0271
+Epoch 570/800
+ - 11s - loss: 65.0997 - min_1_loss: 65.0997 - softmax_stamp_loss: 3.0012 - multiply_1_loss: 0.0308 - val_loss: 85.8102 - val_min_1_loss: 85.8102 - val_softmax_stamp_loss: 2.8924 - val_multiply_1_loss: 0.0270
+Epoch 571/800
+ - 11s - loss: 65.1240 - min_1_loss: 65.1240 - softmax_stamp_loss: 3.0055 - multiply_1_loss: 0.0308 - val_loss: 85.8934 - val_min_1_loss: 85.8934 - val_softmax_stamp_loss: 2.8984 - val_multiply_1_loss: 0.0268
+Epoch 572/800
+ - 11s - loss: 65.0941 - min_1_loss: 65.0941 - softmax_stamp_loss: 3.0095 - multiply_1_loss: 0.0308 - val_loss: 84.2972 - val_min_1_loss: 84.2972 - val_softmax_stamp_loss: 2.9027 - val_multiply_1_loss: 0.0272
+Epoch 573/800
+ - 11s - loss: 65.2772 - min_1_loss: 65.2772 - softmax_stamp_loss: 3.0108 - multiply_1_loss: 0.0308 - val_loss: 83.4890 - val_min_1_loss: 83.4890 - val_softmax_stamp_loss: 2.8835 - val_multiply_1_loss: 0.0273
+Epoch 574/800
+ - 11s - loss: 64.7662 - min_1_loss: 64.7662 - softmax_stamp_loss: 3.0123 - multiply_1_loss: 0.0309 - val_loss: 85.6835 - val_min_1_loss: 85.6835 - val_softmax_stamp_loss: 2.8991 - val_multiply_1_loss: 0.0271
+Epoch 575/800
+ - 11s - loss: 64.8617 - min_1_loss: 64.8617 - softmax_stamp_loss: 3.0086 - multiply_1_loss: 0.0308 - val_loss: 83.3072 - val_min_1_loss: 83.3072 - val_softmax_stamp_loss: 2.8927 - val_multiply_1_loss: 0.0271
+Epoch 576/800
+ - 11s - loss: 65.0227 - min_1_loss: 65.0227 - softmax_stamp_loss: 3.0192 - multiply_1_loss: 0.0310 - val_loss: 83.8538 - val_min_1_loss: 83.8538 - val_softmax_stamp_loss: 2.9079 - val_multiply_1_loss: 0.0272
+Epoch 577/800
+ - 11s - loss: 64.6798 - min_1_loss: 64.6798 - softmax_stamp_loss: 3.0173 - multiply_1_loss: 0.0310 - val_loss: 83.8890 - val_min_1_loss: 83.8890 - val_softmax_stamp_loss: 2.8975 - val_multiply_1_loss: 0.0274
+Epoch 578/800
+ - 11s - loss: 64.8576 - min_1_loss: 64.8576 - softmax_stamp_loss: 3.0243 - multiply_1_loss: 0.0310 - val_loss: 85.3392 - val_min_1_loss: 85.3392 - val_softmax_stamp_loss: 2.9187 - val_multiply_1_loss: 0.0274
+Epoch 579/800
+ - 11s - loss: 65.2590 - min_1_loss: 65.2590 - softmax_stamp_loss: 3.0195 - multiply_1_loss: 0.0309 - val_loss: 82.0132 - val_min_1_loss: 82.0132 - val_softmax_stamp_loss: 2.8894 - val_multiply_1_loss: 0.0275
+Epoch 580/800
+ - 11s - loss: 64.8790 - min_1_loss: 64.8790 - softmax_stamp_loss: 3.0232 - multiply_1_loss: 0.0310 - val_loss: 81.0674 - val_min_1_loss: 81.0674 - val_softmax_stamp_loss: 2.8853 - val_multiply_1_loss: 0.0276
+Epoch 581/800
+ - 11s - loss: 65.0996 - min_1_loss: 65.0996 - softmax_stamp_loss: 3.0200 - multiply_1_loss: 0.0310 - val_loss: 83.1217 - val_min_1_loss: 83.1217 - val_softmax_stamp_loss: 2.8880 - val_multiply_1_loss: 0.0275
+Epoch 582/800
+ - 11s - loss: 65.2481 - min_1_loss: 65.2481 - softmax_stamp_loss: 3.0206 - multiply_1_loss: 0.0310 - val_loss: 86.2527 - val_min_1_loss: 86.2527 - val_softmax_stamp_loss: 2.9276 - val_multiply_1_loss: 0.0273
+Epoch 583/800
+ - 11s - loss: 64.9487 - min_1_loss: 64.9487 - softmax_stamp_loss: 3.0259 - multiply_1_loss: 0.0311 - val_loss: 80.8546 - val_min_1_loss: 80.8546 - val_softmax_stamp_loss: 2.8891 - val_multiply_1_loss: 0.0277
+Epoch 584/800
+ - 11s - loss: 64.9935 - min_1_loss: 64.9935 - softmax_stamp_loss: 3.0244 - multiply_1_loss: 0.0312 - val_loss: 84.0075 - val_min_1_loss: 84.0075 - val_softmax_stamp_loss: 2.9116 - val_multiply_1_loss: 0.0275
+Epoch 585/800
+ - 11s - loss: 64.9918 - min_1_loss: 64.9918 - softmax_stamp_loss: 3.0275 - multiply_1_loss: 0.0311 - val_loss: 86.0315 - val_min_1_loss: 86.0315 - val_softmax_stamp_loss: 2.9315 - val_multiply_1_loss: 0.0277
+Epoch 586/800
+ - 11s - loss: 65.3212 - min_1_loss: 65.3212 - softmax_stamp_loss: 3.0309 - multiply_1_loss: 0.0312 - val_loss: 84.1944 - val_min_1_loss: 84.1944 - val_softmax_stamp_loss: 2.9238 - val_multiply_1_loss: 0.0277
+Epoch 587/800
+ - 11s - loss: 65.0547 - min_1_loss: 65.0547 - softmax_stamp_loss: 3.0341 - multiply_1_loss: 0.0312 - val_loss: 83.6420 - val_min_1_loss: 83.6420 - val_softmax_stamp_loss: 2.9231 - val_multiply_1_loss: 0.0277
+Epoch 588/800
+ - 11s - loss: 65.2624 - min_1_loss: 65.2624 - softmax_stamp_loss: 3.0329 - multiply_1_loss: 0.0313 - val_loss: 82.1548 - val_min_1_loss: 82.1548 - val_softmax_stamp_loss: 2.9157 - val_multiply_1_loss: 0.0277
+Epoch 589/800
+ - 11s - loss: 65.6495 - min_1_loss: 65.6495 - softmax_stamp_loss: 3.0296 - multiply_1_loss: 0.0312 - val_loss: 83.4677 - val_min_1_loss: 83.4677 - val_softmax_stamp_loss: 2.9174 - val_multiply_1_loss: 0.0279
+Epoch 590/800
+ - 11s - loss: 65.2112 - min_1_loss: 65.2112 - softmax_stamp_loss: 3.0339 - multiply_1_loss: 0.0313 - val_loss: 85.4937 - val_min_1_loss: 85.4937 - val_softmax_stamp_loss: 2.9438 - val_multiply_1_loss: 0.0277
+Epoch 591/800
+ - 11s - loss: 65.0770 - min_1_loss: 65.0770 - softmax_stamp_loss: 3.0370 - multiply_1_loss: 0.0313 - val_loss: 84.1226 - val_min_1_loss: 84.1226 - val_softmax_stamp_loss: 2.9273 - val_multiply_1_loss: 0.0280
+Epoch 592/800
+ - 11s - loss: 64.9292 - min_1_loss: 64.9292 - softmax_stamp_loss: 3.0322 - multiply_1_loss: 0.0313 - val_loss: 84.4792 - val_min_1_loss: 84.4792 - val_softmax_stamp_loss: 2.9440 - val_multiply_1_loss: 0.0281
+Epoch 593/800
+ - 11s - loss: 65.1926 - min_1_loss: 65.1926 - softmax_stamp_loss: 3.0341 - multiply_1_loss: 0.0314 - val_loss: 81.8467 - val_min_1_loss: 81.8467 - val_softmax_stamp_loss: 2.9186 - val_multiply_1_loss: 0.0282
+Epoch 594/800
+ - 11s - loss: 65.6456 - min_1_loss: 65.6456 - softmax_stamp_loss: 3.0357 - multiply_1_loss: 0.0313 - val_loss: 83.2811 - val_min_1_loss: 83.2811 - val_softmax_stamp_loss: 2.9169 - val_multiply_1_loss: 0.0279
+Epoch 595/800
+ - 11s - loss: 65.6412 - min_1_loss: 65.6412 - softmax_stamp_loss: 3.0316 - multiply_1_loss: 0.0314 - val_loss: 83.5221 - val_min_1_loss: 83.5221 - val_softmax_stamp_loss: 2.9250 - val_multiply_1_loss: 0.0281
+Epoch 596/800
+ - 11s - loss: 65.5992 - min_1_loss: 65.5992 - softmax_stamp_loss: 3.0352 - multiply_1_loss: 0.0313 - val_loss: 85.4815 - val_min_1_loss: 85.4815 - val_softmax_stamp_loss: 2.9460 - val_multiply_1_loss: 0.0282
+Epoch 597/800
+ - 11s - loss: 65.6740 - min_1_loss: 65.6740 - softmax_stamp_loss: 3.0403 - multiply_1_loss: 0.0314 - val_loss: 83.6977 - val_min_1_loss: 83.6977 - val_softmax_stamp_loss: 2.9250 - val_multiply_1_loss: 0.0281
+Epoch 598/800
+ - 11s - loss: 65.5876 - min_1_loss: 65.5876 - softmax_stamp_loss: 3.0396 - multiply_1_loss: 0.0315 - val_loss: 82.2869 - val_min_1_loss: 82.2869 - val_softmax_stamp_loss: 2.9149 - val_multiply_1_loss: 0.0282
+Epoch 599/800
+ - 11s - loss: 65.6450 - min_1_loss: 65.6450 - softmax_stamp_loss: 3.0417 - multiply_1_loss: 0.0315 - val_loss: 82.2554 - val_min_1_loss: 82.2554 - val_softmax_stamp_loss: 2.9259 - val_multiply_1_loss: 0.0284
+Epoch 600/800
+ - 11s - loss: 65.4769 - min_1_loss: 65.4769 - softmax_stamp_loss: 3.0471 - multiply_1_loss: 0.0316 - val_loss: 83.7529 - val_min_1_loss: 83.7529 - val_softmax_stamp_loss: 2.9519 - val_multiply_1_loss: 0.0283
+Epoch 601/800
+ - 11s - loss: 65.1065 - min_1_loss: 65.1065 - softmax_stamp_loss: 3.0470 - multiply_1_loss: 0.0316 - val_loss: 83.0833 - val_min_1_loss: 83.0833 - val_softmax_stamp_loss: 2.9454 - val_multiply_1_loss: 0.0283
+Epoch 602/800
+ - 11s - loss: 65.4241 - min_1_loss: 65.4241 - softmax_stamp_loss: 3.0460 - multiply_1_loss: 0.0315 - val_loss: 82.7519 - val_min_1_loss: 82.7519 - val_softmax_stamp_loss: 2.9401 - val_multiply_1_loss: 0.0283
+Epoch 603/800
+ - 11s - loss: 65.2636 - min_1_loss: 65.2636 - softmax_stamp_loss: 3.0441 - multiply_1_loss: 0.0316 - val_loss: 82.7562 - val_min_1_loss: 82.7562 - val_softmax_stamp_loss: 2.9350 - val_multiply_1_loss: 0.0282
+Epoch 604/800
+ - 11s - loss: 65.6490 - min_1_loss: 65.6490 - softmax_stamp_loss: 3.0468 - multiply_1_loss: 0.0316 - val_loss: 82.9997 - val_min_1_loss: 82.9997 - val_softmax_stamp_loss: 2.9441 - val_multiply_1_loss: 0.0285
+Epoch 605/800
+ - 11s - loss: 65.9170 - min_1_loss: 65.9170 - softmax_stamp_loss: 3.0466 - multiply_1_loss: 0.0315 - val_loss: 84.4199 - val_min_1_loss: 84.4199 - val_softmax_stamp_loss: 2.9718 - val_multiply_1_loss: 0.0284
+Epoch 606/800
+ - 11s - loss: 65.6137 - min_1_loss: 65.6137 - softmax_stamp_loss: 3.0482 - multiply_1_loss: 0.0316 - val_loss: 82.0714 - val_min_1_loss: 82.0714 - val_softmax_stamp_loss: 2.9467 - val_multiply_1_loss: 0.0285
+Epoch 607/800
+ - 11s - loss: 65.7043 - min_1_loss: 65.7043 - softmax_stamp_loss: 3.0516 - multiply_1_loss: 0.0317 - val_loss: 82.8980 - val_min_1_loss: 82.8980 - val_softmax_stamp_loss: 2.9496 - val_multiply_1_loss: 0.0287
+Epoch 608/800
+ - 11s - loss: 65.6781 - min_1_loss: 65.6781 - softmax_stamp_loss: 3.0501 - multiply_1_loss: 0.0317 - val_loss: 84.8623 - val_min_1_loss: 84.8623 - val_softmax_stamp_loss: 2.9672 - val_multiply_1_loss: 0.0287
+Epoch 609/800
+ - 11s - loss: 65.7351 - min_1_loss: 65.7351 - softmax_stamp_loss: 3.0490 - multiply_1_loss: 0.0317 - val_loss: 83.3398 - val_min_1_loss: 83.3398 - val_softmax_stamp_loss: 2.9577 - val_multiply_1_loss: 0.0285
+Epoch 610/800
+ - 11s - loss: 65.6588 - min_1_loss: 65.6588 - softmax_stamp_loss: 3.0527 - multiply_1_loss: 0.0317 - val_loss: 83.7425 - val_min_1_loss: 83.7425 - val_softmax_stamp_loss: 2.9533 - val_multiply_1_loss: 0.0285
+Epoch 611/800
+ - 11s - loss: 66.0559 - min_1_loss: 66.0559 - softmax_stamp_loss: 3.0560 - multiply_1_loss: 0.0316 - val_loss: 84.0362 - val_min_1_loss: 84.0362 - val_softmax_stamp_loss: 2.9610 - val_multiply_1_loss: 0.0287
+Epoch 612/800
+ - 11s - loss: 65.7732 - min_1_loss: 65.7732 - softmax_stamp_loss: 3.0543 - multiply_1_loss: 0.0317 - val_loss: 83.9055 - val_min_1_loss: 83.9055 - val_softmax_stamp_loss: 2.9623 - val_multiply_1_loss: 0.0288
+Epoch 613/800
+ - 11s - loss: 65.9356 - min_1_loss: 65.9356 - softmax_stamp_loss: 3.0534 - multiply_1_loss: 0.0316 - val_loss: 83.7990 - val_min_1_loss: 83.7990 - val_softmax_stamp_loss: 2.9583 - val_multiply_1_loss: 0.0286
+Epoch 614/800
+ - 11s - loss: 65.6869 - min_1_loss: 65.6869 - softmax_stamp_loss: 3.0501 - multiply_1_loss: 0.0317 - val_loss: 83.1684 - val_min_1_loss: 83.1684 - val_softmax_stamp_loss: 2.9641 - val_multiply_1_loss: 0.0289
+Epoch 615/800
+ - 11s - loss: 65.6306 - min_1_loss: 65.6306 - softmax_stamp_loss: 3.0519 - multiply_1_loss: 0.0317 - val_loss: 85.8741 - val_min_1_loss: 85.8741 - val_softmax_stamp_loss: 2.9719 - val_multiply_1_loss: 0.0287
+Epoch 616/800
+ - 11s - loss: 65.5957 - min_1_loss: 65.5957 - softmax_stamp_loss: 3.0589 - multiply_1_loss: 0.0319 - val_loss: 85.8914 - val_min_1_loss: 85.8914 - val_softmax_stamp_loss: 2.9650 - val_multiply_1_loss: 0.0287
+Epoch 617/800
+ - 11s - loss: 65.6435 - min_1_loss: 65.6435 - softmax_stamp_loss: 3.0605 - multiply_1_loss: 0.0318 - val_loss: 86.1074 - val_min_1_loss: 86.1074 - val_softmax_stamp_loss: 2.9882 - val_multiply_1_loss: 0.0289
+Epoch 618/800
+ - 11s - loss: 65.8327 - min_1_loss: 65.8327 - softmax_stamp_loss: 3.0608 - multiply_1_loss: 0.0318 - val_loss: 84.3789 - val_min_1_loss: 84.3789 - val_softmax_stamp_loss: 2.9645 - val_multiply_1_loss: 0.0289
+Epoch 619/800
+ - 11s - loss: 65.6972 - min_1_loss: 65.6972 - softmax_stamp_loss: 3.0634 - multiply_1_loss: 0.0319 - val_loss: 84.7125 - val_min_1_loss: 84.7125 - val_softmax_stamp_loss: 2.9811 - val_multiply_1_loss: 0.0291
+Epoch 620/800
+ - 11s - loss: 65.6116 - min_1_loss: 65.6116 - softmax_stamp_loss: 3.0650 - multiply_1_loss: 0.0319 - val_loss: 83.2237 - val_min_1_loss: 83.2237 - val_softmax_stamp_loss: 2.9592 - val_multiply_1_loss: 0.0291
+Epoch 621/800
+ - 11s - loss: 66.1270 - min_1_loss: 66.1270 - softmax_stamp_loss: 3.0566 - multiply_1_loss: 0.0318 - val_loss: 86.1255 - val_min_1_loss: 86.1255 - val_softmax_stamp_loss: 2.9801 - val_multiply_1_loss: 0.0290
+Epoch 622/800
+ - 11s - loss: 66.1821 - min_1_loss: 66.1821 - softmax_stamp_loss: 3.0672 - multiply_1_loss: 0.0318 - val_loss: 85.0735 - val_min_1_loss: 85.0735 - val_softmax_stamp_loss: 2.9743 - val_multiply_1_loss: 0.0290
+Epoch 623/800
+ - 11s - loss: 66.1450 - min_1_loss: 66.1450 - softmax_stamp_loss: 3.0575 - multiply_1_loss: 0.0319 - val_loss: 84.2182 - val_min_1_loss: 84.2182 - val_softmax_stamp_loss: 2.9802 - val_multiply_1_loss: 0.0292
+Epoch 624/800
+ - 11s - loss: 65.7038 - min_1_loss: 65.7038 - softmax_stamp_loss: 3.0678 - multiply_1_loss: 0.0319 - val_loss: 82.7000 - val_min_1_loss: 82.7000 - val_softmax_stamp_loss: 2.9824 - val_multiply_1_loss: 0.0293
+Epoch 625/800
+ - 11s - loss: 66.1593 - min_1_loss: 66.1593 - softmax_stamp_loss: 3.0587 - multiply_1_loss: 0.0319 - val_loss: 83.5635 - val_min_1_loss: 83.5635 - val_softmax_stamp_loss: 2.9767 - val_multiply_1_loss: 0.0290
+Epoch 626/800
+ - 11s - loss: 66.0567 - min_1_loss: 66.0567 - softmax_stamp_loss: 3.0660 - multiply_1_loss: 0.0320 - val_loss: 85.8308 - val_min_1_loss: 85.8308 - val_softmax_stamp_loss: 2.9904 - val_multiply_1_loss: 0.0291
+Epoch 627/800
+ - 11s - loss: 65.9973 - min_1_loss: 65.9973 - softmax_stamp_loss: 3.0710 - multiply_1_loss: 0.0319 - val_loss: 86.5140 - val_min_1_loss: 86.5140 - val_softmax_stamp_loss: 2.9983 - val_multiply_1_loss: 0.0291
+Epoch 628/800
+ - 11s - loss: 65.9290 - min_1_loss: 65.9290 - softmax_stamp_loss: 3.0636 - multiply_1_loss: 0.0319 - val_loss: 86.4890 - val_min_1_loss: 86.4890 - val_softmax_stamp_loss: 2.9993 - val_multiply_1_loss: 0.0290
+Epoch 629/800
+ - 11s - loss: 65.7833 - min_1_loss: 65.7833 - softmax_stamp_loss: 3.0659 - multiply_1_loss: 0.0319 - val_loss: 82.2053 - val_min_1_loss: 82.2053 - val_softmax_stamp_loss: 2.9750 - val_multiply_1_loss: 0.0291
+Epoch 630/800
+ - 11s - loss: 66.0569 - min_1_loss: 66.0569 - softmax_stamp_loss: 3.0698 - multiply_1_loss: 0.0320 - val_loss: 85.7903 - val_min_1_loss: 85.7903 - val_softmax_stamp_loss: 2.9937 - val_multiply_1_loss: 0.0293
+Epoch 631/800
+ - 11s - loss: 65.9560 - min_1_loss: 65.9560 - softmax_stamp_loss: 3.0700 - multiply_1_loss: 0.0320 - val_loss: 85.9422 - val_min_1_loss: 85.9422 - val_softmax_stamp_loss: 2.9923 - val_multiply_1_loss: 0.0291
+Epoch 632/800
+ - 11s - loss: 65.9889 - min_1_loss: 65.9889 - softmax_stamp_loss: 3.0754 - multiply_1_loss: 0.0320 - val_loss: 89.0169 - val_min_1_loss: 89.0169 - val_softmax_stamp_loss: 3.0230 - val_multiply_1_loss: 0.0290
+Epoch 633/800
+ - 11s - loss: 65.6661 - min_1_loss: 65.6661 - softmax_stamp_loss: 3.0773 - multiply_1_loss: 0.0321 - val_loss: 84.1628 - val_min_1_loss: 84.1628 - val_softmax_stamp_loss: 2.9900 - val_multiply_1_loss: 0.0291
+Epoch 634/800
+ - 11s - loss: 66.1553 - min_1_loss: 66.1553 - softmax_stamp_loss: 3.0712 - multiply_1_loss: 0.0321 - val_loss: 84.9038 - val_min_1_loss: 84.9038 - val_softmax_stamp_loss: 2.9907 - val_multiply_1_loss: 0.0293
+Epoch 635/800
+ - 11s - loss: 65.9182 - min_1_loss: 65.9182 - softmax_stamp_loss: 3.0761 - multiply_1_loss: 0.0321 - val_loss: 85.1587 - val_min_1_loss: 85.1587 - val_softmax_stamp_loss: 2.9969 - val_multiply_1_loss: 0.0294
+Epoch 636/800
+ - 11s - loss: 66.0602 - min_1_loss: 66.0602 - softmax_stamp_loss: 3.0774 - multiply_1_loss: 0.0321 - val_loss: 85.6959 - val_min_1_loss: 85.6959 - val_softmax_stamp_loss: 2.9936 - val_multiply_1_loss: 0.0293
+Epoch 637/800
+ - 11s - loss: 66.0969 - min_1_loss: 66.0969 - softmax_stamp_loss: 3.0779 - multiply_1_loss: 0.0321 - val_loss: 83.6326 - val_min_1_loss: 83.6326 - val_softmax_stamp_loss: 2.9766 - val_multiply_1_loss: 0.0294
+Epoch 638/800
+ - 11s - loss: 66.2126 - min_1_loss: 66.2126 - softmax_stamp_loss: 3.0759 - multiply_1_loss: 0.0321 - val_loss: 84.5920 - val_min_1_loss: 84.5920 - val_softmax_stamp_loss: 2.9782 - val_multiply_1_loss: 0.0293
+Epoch 639/800
+ - 11s - loss: 66.2518 - min_1_loss: 66.2518 - softmax_stamp_loss: 3.0749 - multiply_1_loss: 0.0321 - val_loss: 87.0623 - val_min_1_loss: 87.0623 - val_softmax_stamp_loss: 3.0140 - val_multiply_1_loss: 0.0295
+Epoch 640/800
+ - 11s - loss: 66.2034 - min_1_loss: 66.2034 - softmax_stamp_loss: 3.0763 - multiply_1_loss: 0.0321 - val_loss: 87.0164 - val_min_1_loss: 87.0164 - val_softmax_stamp_loss: 3.0133 - val_multiply_1_loss: 0.0294
+Epoch 641/800
+ - 11s - loss: 66.1476 - min_1_loss: 66.1476 - softmax_stamp_loss: 3.0823 - multiply_1_loss: 0.0321 - val_loss: 84.0463 - val_min_1_loss: 84.0463 - val_softmax_stamp_loss: 2.9939 - val_multiply_1_loss: 0.0294
+Epoch 642/800
+ - 11s - loss: 66.1458 - min_1_loss: 66.1458 - softmax_stamp_loss: 3.0810 - multiply_1_loss: 0.0322 - val_loss: 90.2692 - val_min_1_loss: 90.2692 - val_softmax_stamp_loss: 3.0254 - val_multiply_1_loss: 0.0293
+Epoch 643/800
+ - 11s - loss: 66.3865 - min_1_loss: 66.3865 - softmax_stamp_loss: 3.0806 - multiply_1_loss: 0.0322 - val_loss: 85.3361 - val_min_1_loss: 85.3361 - val_softmax_stamp_loss: 3.0148 - val_multiply_1_loss: 0.0296
+Epoch 644/800
+ - 11s - loss: 66.0299 - min_1_loss: 66.0299 - softmax_stamp_loss: 3.0775 - multiply_1_loss: 0.0322 - val_loss: 85.8168 - val_min_1_loss: 85.8168 - val_softmax_stamp_loss: 3.0117 - val_multiply_1_loss: 0.0295
+Epoch 645/800
+ - 11s - loss: 66.0097 - min_1_loss: 66.0097 - softmax_stamp_loss: 3.0806 - multiply_1_loss: 0.0322 - val_loss: 81.7640 - val_min_1_loss: 81.7640 - val_softmax_stamp_loss: 2.9881 - val_multiply_1_loss: 0.0298
+Epoch 646/800
+ - 11s - loss: 66.5170 - min_1_loss: 66.5170 - softmax_stamp_loss: 3.0761 - multiply_1_loss: 0.0322 - val_loss: 82.6354 - val_min_1_loss: 82.6354 - val_softmax_stamp_loss: 3.0013 - val_multiply_1_loss: 0.0297
+Epoch 647/800
+ - 11s - loss: 66.1959 - min_1_loss: 66.1959 - softmax_stamp_loss: 3.0871 - multiply_1_loss: 0.0322 - val_loss: 85.7062 - val_min_1_loss: 85.7062 - val_softmax_stamp_loss: 3.0118 - val_multiply_1_loss: 0.0296
+Epoch 648/800
+ - 11s - loss: 66.2993 - min_1_loss: 66.2993 - softmax_stamp_loss: 3.0850 - multiply_1_loss: 0.0322 - val_loss: 86.3114 - val_min_1_loss: 86.3114 - val_softmax_stamp_loss: 3.0214 - val_multiply_1_loss: 0.0297
+Epoch 649/800
+ - 11s - loss: 66.2360 - min_1_loss: 66.2360 - softmax_stamp_loss: 3.0829 - multiply_1_loss: 0.0322 - val_loss: 84.1106 - val_min_1_loss: 84.1106 - val_softmax_stamp_loss: 3.0064 - val_multiply_1_loss: 0.0297
+Epoch 650/800
+ - 11s - loss: 66.3096 - min_1_loss: 66.3096 - softmax_stamp_loss: 3.0839 - multiply_1_loss: 0.0323 - val_loss: 85.1654 - val_min_1_loss: 85.1654 - val_softmax_stamp_loss: 3.0146 - val_multiply_1_loss: 0.0297
+Epoch 651/800
+ - 11s - loss: 66.3696 - min_1_loss: 66.3696 - softmax_stamp_loss: 3.0841 - multiply_1_loss: 0.0323 - val_loss: 84.9864 - val_min_1_loss: 84.9864 - val_softmax_stamp_loss: 3.0070 - val_multiply_1_loss: 0.0300
+Epoch 652/800
+ - 11s - loss: 66.5341 - min_1_loss: 66.5341 - softmax_stamp_loss: 3.0893 - multiply_1_loss: 0.0323 - val_loss: 84.9917 - val_min_1_loss: 84.9917 - val_softmax_stamp_loss: 3.0216 - val_multiply_1_loss: 0.0299
+Epoch 653/800
+ - 11s - loss: 66.2177 - min_1_loss: 66.2177 - softmax_stamp_loss: 3.0892 - multiply_1_loss: 0.0323 - val_loss: 83.8927 - val_min_1_loss: 83.8927 - val_softmax_stamp_loss: 3.0069 - val_multiply_1_loss: 0.0299
+Epoch 654/800
+ - 11s - loss: 66.2133 - min_1_loss: 66.2133 - softmax_stamp_loss: 3.0911 - multiply_1_loss: 0.0323 - val_loss: 86.5677 - val_min_1_loss: 86.5677 - val_softmax_stamp_loss: 3.0211 - val_multiply_1_loss: 0.0298
+Epoch 655/800
+ - 11s - loss: 66.2566 - min_1_loss: 66.2566 - softmax_stamp_loss: 3.0865 - multiply_1_loss: 0.0324 - val_loss: 83.9351 - val_min_1_loss: 83.9351 - val_softmax_stamp_loss: 3.0158 - val_multiply_1_loss: 0.0300
+Epoch 656/800
+ - 11s - loss: 66.3651 - min_1_loss: 66.3651 - softmax_stamp_loss: 3.0886 - multiply_1_loss: 0.0323 - val_loss: 86.8197 - val_min_1_loss: 86.8197 - val_softmax_stamp_loss: 3.0373 - val_multiply_1_loss: 0.0299
+Epoch 657/800
+ - 11s - loss: 66.5426 - min_1_loss: 66.5426 - softmax_stamp_loss: 3.0879 - multiply_1_loss: 0.0324 - val_loss: 85.8721 - val_min_1_loss: 85.8721 - val_softmax_stamp_loss: 3.0277 - val_multiply_1_loss: 0.0299
+Epoch 658/800
+ - 11s - loss: 66.6960 - min_1_loss: 66.6960 - softmax_stamp_loss: 3.0909 - multiply_1_loss: 0.0324 - val_loss: 85.3124 - val_min_1_loss: 85.3124 - val_softmax_stamp_loss: 3.0253 - val_multiply_1_loss: 0.0300
+Epoch 659/800
+ - 11s - loss: 66.6735 - min_1_loss: 66.6735 - softmax_stamp_loss: 3.0909 - multiply_1_loss: 0.0324 - val_loss: 88.5980 - val_min_1_loss: 88.5980 - val_softmax_stamp_loss: 3.0541 - val_multiply_1_loss: 0.0300
+Epoch 660/800
+ - 11s - loss: 66.2415 - min_1_loss: 66.2415 - softmax_stamp_loss: 3.0920 - multiply_1_loss: 0.0324 - val_loss: 86.0068 - val_min_1_loss: 86.0068 - val_softmax_stamp_loss: 3.0305 - val_multiply_1_loss: 0.0300
+Epoch 661/800
+ - 11s - loss: 66.5412 - min_1_loss: 66.5412 - softmax_stamp_loss: 3.0915 - multiply_1_loss: 0.0324 - val_loss: 83.7649 - val_min_1_loss: 83.7649 - val_softmax_stamp_loss: 3.0195 - val_multiply_1_loss: 0.0302
+Epoch 662/800
+ - 11s - loss: 66.4913 - min_1_loss: 66.4913 - softmax_stamp_loss: 3.0925 - multiply_1_loss: 0.0325 - val_loss: 84.5006 - val_min_1_loss: 84.5006 - val_softmax_stamp_loss: 3.0209 - val_multiply_1_loss: 0.0302
+Epoch 663/800
+ - 11s - loss: 66.6263 - min_1_loss: 66.6263 - softmax_stamp_loss: 3.0888 - multiply_1_loss: 0.0324 - val_loss: 82.8739 - val_min_1_loss: 82.8739 - val_softmax_stamp_loss: 3.0137 - val_multiply_1_loss: 0.0302
+Epoch 664/800
+ - 11s - loss: 66.7988 - min_1_loss: 66.7988 - softmax_stamp_loss: 3.0911 - multiply_1_loss: 0.0325 - val_loss: 83.4076 - val_min_1_loss: 83.4076 - val_softmax_stamp_loss: 3.0284 - val_multiply_1_loss: 0.0301
+Epoch 665/800
+ - 11s - loss: 66.7622 - min_1_loss: 66.7622 - softmax_stamp_loss: 3.0946 - multiply_1_loss: 0.0325 - val_loss: 82.2700 - val_min_1_loss: 82.2700 - val_softmax_stamp_loss: 3.0127 - val_multiply_1_loss: 0.0301
+Epoch 666/800
+ - 11s - loss: 66.9289 - min_1_loss: 66.9289 - softmax_stamp_loss: 3.0967 - multiply_1_loss: 0.0325 - val_loss: 82.5605 - val_min_1_loss: 82.5605 - val_softmax_stamp_loss: 3.0234 - val_multiply_1_loss: 0.0302
+Epoch 667/800
+ - 11s - loss: 67.0322 - min_1_loss: 67.0322 - softmax_stamp_loss: 3.0968 - multiply_1_loss: 0.0325 - val_loss: 84.5274 - val_min_1_loss: 84.5274 - val_softmax_stamp_loss: 3.0235 - val_multiply_1_loss: 0.0302
+Epoch 668/800
+ - 11s - loss: 66.9382 - min_1_loss: 66.9382 - softmax_stamp_loss: 3.0954 - multiply_1_loss: 0.0325 - val_loss: 81.9678 - val_min_1_loss: 81.9678 - val_softmax_stamp_loss: 3.0208 - val_multiply_1_loss: 0.0303
+Epoch 669/800
+ - 11s - loss: 66.8853 - min_1_loss: 66.8853 - softmax_stamp_loss: 3.0965 - multiply_1_loss: 0.0325 - val_loss: 82.1269 - val_min_1_loss: 82.1269 - val_softmax_stamp_loss: 3.0115 - val_multiply_1_loss: 0.0305
+Epoch 670/800
+ - 11s - loss: 66.8234 - min_1_loss: 66.8234 - softmax_stamp_loss: 3.0962 - multiply_1_loss: 0.0325 - val_loss: 81.6528 - val_min_1_loss: 81.6528 - val_softmax_stamp_loss: 3.0105 - val_multiply_1_loss: 0.0301
+Epoch 671/800
+ - 11s - loss: 66.9893 - min_1_loss: 66.9893 - softmax_stamp_loss: 3.1002 - multiply_1_loss: 0.0324 - val_loss: 84.5591 - val_min_1_loss: 84.5591 - val_softmax_stamp_loss: 3.0132 - val_multiply_1_loss: 0.0302
+Epoch 672/800
+ - 11s - loss: 66.7770 - min_1_loss: 66.7770 - softmax_stamp_loss: 3.0957 - multiply_1_loss: 0.0326 - val_loss: 82.1792 - val_min_1_loss: 82.1792 - val_softmax_stamp_loss: 3.0136 - val_multiply_1_loss: 0.0304
+Epoch 673/800
+ - 11s - loss: 66.3800 - min_1_loss: 66.3800 - softmax_stamp_loss: 3.0990 - multiply_1_loss: 0.0326 - val_loss: 83.3124 - val_min_1_loss: 83.3124 - val_softmax_stamp_loss: 3.0283 - val_multiply_1_loss: 0.0304
+Epoch 674/800
+ - 11s - loss: 66.5917 - min_1_loss: 66.5917 - softmax_stamp_loss: 3.1009 - multiply_1_loss: 0.0326 - val_loss: 81.7390 - val_min_1_loss: 81.7390 - val_softmax_stamp_loss: 3.0224 - val_multiply_1_loss: 0.0305
+Epoch 675/800
+ - 11s - loss: 66.7668 - min_1_loss: 66.7668 - softmax_stamp_loss: 3.1031 - multiply_1_loss: 0.0328 - val_loss: 82.2672 - val_min_1_loss: 82.2672 - val_softmax_stamp_loss: 3.0317 - val_multiply_1_loss: 0.0306
+Epoch 676/800
+ - 11s - loss: 66.8714 - min_1_loss: 66.8714 - softmax_stamp_loss: 3.1026 - multiply_1_loss: 0.0326 - val_loss: 85.0359 - val_min_1_loss: 85.0359 - val_softmax_stamp_loss: 3.0350 - val_multiply_1_loss: 0.0306
+Epoch 677/800
+ - 11s - loss: 66.6532 - min_1_loss: 66.6532 - softmax_stamp_loss: 3.0997 - multiply_1_loss: 0.0327 - val_loss: 84.4651 - val_min_1_loss: 84.4651 - val_softmax_stamp_loss: 3.0253 - val_multiply_1_loss: 0.0305
+Epoch 678/800
+ - 11s - loss: 66.6986 - min_1_loss: 66.6986 - softmax_stamp_loss: 3.1025 - multiply_1_loss: 0.0327 - val_loss: 84.5580 - val_min_1_loss: 84.5580 - val_softmax_stamp_loss: 3.0368 - val_multiply_1_loss: 0.0305
+Epoch 679/800
+ - 11s - loss: 66.9034 - min_1_loss: 66.9034 - softmax_stamp_loss: 3.1022 - multiply_1_loss: 0.0327 - val_loss: 87.9464 - val_min_1_loss: 87.9464 - val_softmax_stamp_loss: 3.0576 - val_multiply_1_loss: 0.0305
+Epoch 680/800
+ - 11s - loss: 66.7040 - min_1_loss: 66.7040 - softmax_stamp_loss: 3.1066 - multiply_1_loss: 0.0327 - val_loss: 81.1059 - val_min_1_loss: 81.1059 - val_softmax_stamp_loss: 3.0150 - val_multiply_1_loss: 0.0307
+Epoch 681/800
+ - 11s - loss: 66.8311 - min_1_loss: 66.8311 - softmax_stamp_loss: 3.1061 - multiply_1_loss: 0.0327 - val_loss: 82.9328 - val_min_1_loss: 82.9328 - val_softmax_stamp_loss: 3.0300 - val_multiply_1_loss: 0.0308
+Epoch 682/800
+ - 11s - loss: 66.9501 - min_1_loss: 66.9501 - softmax_stamp_loss: 3.1062 - multiply_1_loss: 0.0327 - val_loss: 83.7172 - val_min_1_loss: 83.7172 - val_softmax_stamp_loss: 3.0333 - val_multiply_1_loss: 0.0307
+Epoch 683/800
+ - 11s - loss: 66.9167 - min_1_loss: 66.9167 - softmax_stamp_loss: 3.1061 - multiply_1_loss: 0.0329 - val_loss: 85.8573 - val_min_1_loss: 85.8573 - val_softmax_stamp_loss: 3.0456 - val_multiply_1_loss: 0.0306
+Epoch 684/800
+ - 11s - loss: 67.0200 - min_1_loss: 67.0200 - softmax_stamp_loss: 3.0999 - multiply_1_loss: 0.0328 - val_loss: 84.7797 - val_min_1_loss: 84.7797 - val_softmax_stamp_loss: 3.0440 - val_multiply_1_loss: 0.0306
+Epoch 685/800
+ - 11s - loss: 67.0021 - min_1_loss: 67.0021 - softmax_stamp_loss: 3.1093 - multiply_1_loss: 0.0327 - val_loss: 84.9109 - val_min_1_loss: 84.9109 - val_softmax_stamp_loss: 3.0424 - val_multiply_1_loss: 0.0306
+Epoch 686/800
+ - 11s - loss: 66.7875 - min_1_loss: 66.7875 - softmax_stamp_loss: 3.1107 - multiply_1_loss: 0.0328 - val_loss: 84.5313 - val_min_1_loss: 84.5313 - val_softmax_stamp_loss: 3.0397 - val_multiply_1_loss: 0.0308
+Epoch 687/800
+ - 11s - loss: 67.0784 - min_1_loss: 67.0784 - softmax_stamp_loss: 3.1071 - multiply_1_loss: 0.0327 - val_loss: 86.2131 - val_min_1_loss: 86.2131 - val_softmax_stamp_loss: 3.0619 - val_multiply_1_loss: 0.0309
+Epoch 688/800
+ - 11s - loss: 67.1462 - min_1_loss: 67.1462 - softmax_stamp_loss: 3.1071 - multiply_1_loss: 0.0328 - val_loss: 85.5056 - val_min_1_loss: 85.5056 - val_softmax_stamp_loss: 3.0499 - val_multiply_1_loss: 0.0307
+Epoch 689/800
+ - 11s - loss: 67.3954 - min_1_loss: 67.3954 - softmax_stamp_loss: 3.1041 - multiply_1_loss: 0.0328 - val_loss: 84.5955 - val_min_1_loss: 84.5955 - val_softmax_stamp_loss: 3.0538 - val_multiply_1_loss: 0.0308
+Epoch 690/800
+ - 11s - loss: 67.2190 - min_1_loss: 67.2190 - softmax_stamp_loss: 3.1063 - multiply_1_loss: 0.0328 - val_loss: 83.6999 - val_min_1_loss: 83.6999 - val_softmax_stamp_loss: 3.0429 - val_multiply_1_loss: 0.0308
+Epoch 691/800
+ - 11s - loss: 67.3425 - min_1_loss: 67.3425 - softmax_stamp_loss: 3.1098 - multiply_1_loss: 0.0328 - val_loss: 86.9990 - val_min_1_loss: 86.9990 - val_softmax_stamp_loss: 3.0565 - val_multiply_1_loss: 0.0307
+Epoch 692/800
+ - 11s - loss: 67.0346 - min_1_loss: 67.0346 - softmax_stamp_loss: 3.1102 - multiply_1_loss: 0.0328 - val_loss: 87.5302 - val_min_1_loss: 87.5302 - val_softmax_stamp_loss: 3.0699 - val_multiply_1_loss: 0.0307
+Epoch 693/800
+ - 11s - loss: 67.1231 - min_1_loss: 67.1231 - softmax_stamp_loss: 3.1081 - multiply_1_loss: 0.0329 - val_loss: 83.5109 - val_min_1_loss: 83.5109 - val_softmax_stamp_loss: 3.0464 - val_multiply_1_loss: 0.0308
+Epoch 694/800
+ - 11s - loss: 67.1658 - min_1_loss: 67.1658 - softmax_stamp_loss: 3.1071 - multiply_1_loss: 0.0328 - val_loss: 84.1231 - val_min_1_loss: 84.1231 - val_softmax_stamp_loss: 3.0423 - val_multiply_1_loss: 0.0309
+Epoch 695/800
+ - 11s - loss: 67.1026 - min_1_loss: 67.1026 - softmax_stamp_loss: 3.1099 - multiply_1_loss: 0.0328 - val_loss: 83.2645 - val_min_1_loss: 83.2645 - val_softmax_stamp_loss: 3.0410 - val_multiply_1_loss: 0.0310
+Epoch 696/800
+ - 11s - loss: 67.4031 - min_1_loss: 67.4031 - softmax_stamp_loss: 3.1096 - multiply_1_loss: 0.0328 - val_loss: 83.6328 - val_min_1_loss: 83.6328 - val_softmax_stamp_loss: 3.0514 - val_multiply_1_loss: 0.0310
+Epoch 697/800
+ - 14s - loss: 67.0347 - min_1_loss: 67.0347 - softmax_stamp_loss: 3.1120 - multiply_1_loss: 0.0330 - val_loss: 81.2261 - val_min_1_loss: 81.2261 - val_softmax_stamp_loss: 3.0444 - val_multiply_1_loss: 0.0311
+Epoch 698/800
+ - 15s - loss: 67.2297 - min_1_loss: 67.2297 - softmax_stamp_loss: 3.1132 - multiply_1_loss: 0.0330 - val_loss: 82.8163 - val_min_1_loss: 82.8163 - val_softmax_stamp_loss: 3.0603 - val_multiply_1_loss: 0.0310
+Epoch 699/800
+ - 13s - loss: 67.0794 - min_1_loss: 67.0794 - softmax_stamp_loss: 3.1161 - multiply_1_loss: 0.0330 - val_loss: 83.6610 - val_min_1_loss: 83.6610 - val_softmax_stamp_loss: 3.0575 - val_multiply_1_loss: 0.0311
+Epoch 700/800
+ - 13s - loss: 67.3525 - min_1_loss: 67.3525 - softmax_stamp_loss: 3.1151 - multiply_1_loss: 0.0329 - val_loss: 83.5808 - val_min_1_loss: 83.5808 - val_softmax_stamp_loss: 3.0478 - val_multiply_1_loss: 0.0312
+Epoch 701/800
+ - 15s - loss: 67.7806 - min_1_loss: 67.7806 - softmax_stamp_loss: 3.1172 - multiply_1_loss: 0.0330 - val_loss: 84.0672 - val_min_1_loss: 84.0672 - val_softmax_stamp_loss: 3.0501 - val_multiply_1_loss: 0.0311
+Epoch 702/800
+ - 15s - loss: 67.3372 - min_1_loss: 67.3372 - softmax_stamp_loss: 3.1107 - multiply_1_loss: 0.0329 - val_loss: 82.5736 - val_min_1_loss: 82.5736 - val_softmax_stamp_loss: 3.0482 - val_multiply_1_loss: 0.0312
+Epoch 703/800
+ - 12s - loss: 67.1471 - min_1_loss: 67.1471 - softmax_stamp_loss: 3.1117 - multiply_1_loss: 0.0330 - val_loss: 83.5160 - val_min_1_loss: 83.5160 - val_softmax_stamp_loss: 3.0557 - val_multiply_1_loss: 0.0312
+Epoch 704/800
+ - 14s - loss: 67.1722 - min_1_loss: 67.1722 - softmax_stamp_loss: 3.1153 - multiply_1_loss: 0.0330 - val_loss: 85.3504 - val_min_1_loss: 85.3504 - val_softmax_stamp_loss: 3.0685 - val_multiply_1_loss: 0.0313
+Epoch 705/800
+ - 15s - loss: 67.2109 - min_1_loss: 67.2109 - softmax_stamp_loss: 3.1140 - multiply_1_loss: 0.0330 - val_loss: 85.9304 - val_min_1_loss: 85.9304 - val_softmax_stamp_loss: 3.0656 - val_multiply_1_loss: 0.0311
+Epoch 706/800
+ - 15s - loss: 67.1683 - min_1_loss: 67.1683 - softmax_stamp_loss: 3.1135 - multiply_1_loss: 0.0330 - val_loss: 83.4836 - val_min_1_loss: 83.4836 - val_softmax_stamp_loss: 3.0616 - val_multiply_1_loss: 0.0312
+Epoch 707/800
+ - 12s - loss: 66.9950 - min_1_loss: 66.9950 - softmax_stamp_loss: 3.1146 - multiply_1_loss: 0.0330 - val_loss: 83.1722 - val_min_1_loss: 83.1722 - val_softmax_stamp_loss: 3.0525 - val_multiply_1_loss: 0.0313
+Epoch 708/800
+ - 14s - loss: 67.2203 - min_1_loss: 67.2203 - softmax_stamp_loss: 3.1145 - multiply_1_loss: 0.0331 - val_loss: 83.1284 - val_min_1_loss: 83.1284 - val_softmax_stamp_loss: 3.0516 - val_multiply_1_loss: 0.0313
+Epoch 709/800
+ - 11s - loss: 67.1293 - min_1_loss: 67.1293 - softmax_stamp_loss: 3.1153 - multiply_1_loss: 0.0330 - val_loss: 84.4459 - val_min_1_loss: 84.4459 - val_softmax_stamp_loss: 3.0554 - val_multiply_1_loss: 0.0311
+Epoch 710/800
+ - 11s - loss: 67.0645 - min_1_loss: 67.0645 - softmax_stamp_loss: 3.1175 - multiply_1_loss: 0.0330 - val_loss: 84.0274 - val_min_1_loss: 84.0274 - val_softmax_stamp_loss: 3.0735 - val_multiply_1_loss: 0.0313
+Epoch 711/800
+ - 11s - loss: 67.5310 - min_1_loss: 67.5310 - softmax_stamp_loss: 3.1188 - multiply_1_loss: 0.0330 - val_loss: 84.7187 - val_min_1_loss: 84.7187 - val_softmax_stamp_loss: 3.0770 - val_multiply_1_loss: 0.0313
+Epoch 712/800
+ - 11s - loss: 67.1498 - min_1_loss: 67.1498 - softmax_stamp_loss: 3.1211 - multiply_1_loss: 0.0331 - val_loss: 82.7289 - val_min_1_loss: 82.7289 - val_softmax_stamp_loss: 3.0471 - val_multiply_1_loss: 0.0314
+Epoch 713/800
+ - 11s - loss: 67.4508 - min_1_loss: 67.4508 - softmax_stamp_loss: 3.1186 - multiply_1_loss: 0.0330 - val_loss: 84.2764 - val_min_1_loss: 84.2764 - val_softmax_stamp_loss: 3.0677 - val_multiply_1_loss: 0.0312
+Epoch 714/800
+ - 11s - loss: 67.0985 - min_1_loss: 67.0985 - softmax_stamp_loss: 3.1154 - multiply_1_loss: 0.0330 - val_loss: 84.1533 - val_min_1_loss: 84.1533 - val_softmax_stamp_loss: 3.0694 - val_multiply_1_loss: 0.0312
+Epoch 715/800
+ - 11s - loss: 67.3979 - min_1_loss: 67.3979 - softmax_stamp_loss: 3.1181 - multiply_1_loss: 0.0330 - val_loss: 82.6332 - val_min_1_loss: 82.6332 - val_softmax_stamp_loss: 3.0573 - val_multiply_1_loss: 0.0312
+Epoch 716/800
+ - 11s - loss: 67.2975 - min_1_loss: 67.2975 - softmax_stamp_loss: 3.1213 - multiply_1_loss: 0.0331 - val_loss: 82.9291 - val_min_1_loss: 82.9291 - val_softmax_stamp_loss: 3.0682 - val_multiply_1_loss: 0.0313
+Epoch 717/800
+ - 11s - loss: 67.1971 - min_1_loss: 67.1971 - softmax_stamp_loss: 3.1189 - multiply_1_loss: 0.0331 - val_loss: 84.2472 - val_min_1_loss: 84.2472 - val_softmax_stamp_loss: 3.0604 - val_multiply_1_loss: 0.0314
+Epoch 718/800
+ - 11s - loss: 67.5801 - min_1_loss: 67.5801 - softmax_stamp_loss: 3.1196 - multiply_1_loss: 0.0330 - val_loss: 83.8834 - val_min_1_loss: 83.8834 - val_softmax_stamp_loss: 3.0606 - val_multiply_1_loss: 0.0314
+Epoch 719/800
+ - 11s - loss: 67.7078 - min_1_loss: 67.7078 - softmax_stamp_loss: 3.1123 - multiply_1_loss: 0.0331 - val_loss: 86.1369 - val_min_1_loss: 86.1369 - val_softmax_stamp_loss: 3.0740 - val_multiply_1_loss: 0.0314
+Epoch 720/800
+ - 11s - loss: 67.9767 - min_1_loss: 67.9767 - softmax_stamp_loss: 3.1156 - multiply_1_loss: 0.0331 - val_loss: 84.2273 - val_min_1_loss: 84.2273 - val_softmax_stamp_loss: 3.0710 - val_multiply_1_loss: 0.0314
+Epoch 721/800
+ - 11s - loss: 67.6756 - min_1_loss: 67.6756 - softmax_stamp_loss: 3.1175 - multiply_1_loss: 0.0331 - val_loss: 83.9333 - val_min_1_loss: 83.9333 - val_softmax_stamp_loss: 3.0599 - val_multiply_1_loss: 0.0313
+Epoch 722/800
+ - 11s - loss: 67.5327 - min_1_loss: 67.5327 - softmax_stamp_loss: 3.1180 - multiply_1_loss: 0.0331 - val_loss: 83.6028 - val_min_1_loss: 83.6028 - val_softmax_stamp_loss: 3.0594 - val_multiply_1_loss: 0.0313
+Epoch 723/800
+ - 11s - loss: 67.3687 - min_1_loss: 67.3687 - softmax_stamp_loss: 3.1223 - multiply_1_loss: 0.0331 - val_loss: 85.2658 - val_min_1_loss: 85.2658 - val_softmax_stamp_loss: 3.0709 - val_multiply_1_loss: 0.0313
+Epoch 724/800
+ - 11s - loss: 67.2141 - min_1_loss: 67.2141 - softmax_stamp_loss: 3.1199 - multiply_1_loss: 0.0331 - val_loss: 83.3018 - val_min_1_loss: 83.3018 - val_softmax_stamp_loss: 3.0708 - val_multiply_1_loss: 0.0313
+Epoch 725/800
+ - 11s - loss: 67.6213 - min_1_loss: 67.6213 - softmax_stamp_loss: 3.1174 - multiply_1_loss: 0.0330 - val_loss: 85.2720 - val_min_1_loss: 85.2720 - val_softmax_stamp_loss: 3.0652 - val_multiply_1_loss: 0.0313
+Epoch 726/800
+ - 11s - loss: 67.5678 - min_1_loss: 67.5678 - softmax_stamp_loss: 3.1173 - multiply_1_loss: 0.0330 - val_loss: 84.0515 - val_min_1_loss: 84.0515 - val_softmax_stamp_loss: 3.0607 - val_multiply_1_loss: 0.0312
+Epoch 727/800
+ - 18s - loss: 67.4738 - min_1_loss: 67.4738 - softmax_stamp_loss: 3.1224 - multiply_1_loss: 0.0331 - val_loss: 84.5100 - val_min_1_loss: 84.5100 - val_softmax_stamp_loss: 3.0663 - val_multiply_1_loss: 0.0313
+Epoch 728/800
+ - 23s - loss: 67.4671 - min_1_loss: 67.4671 - softmax_stamp_loss: 3.1208 - multiply_1_loss: 0.0331 - val_loss: 83.1409 - val_min_1_loss: 83.1409 - val_softmax_stamp_loss: 3.0715 - val_multiply_1_loss: 0.0313
+Epoch 729/800
+ - 23s - loss: 67.5975 - min_1_loss: 67.5975 - softmax_stamp_loss: 3.1223 - multiply_1_loss: 0.0330 - val_loss: 82.0976 - val_min_1_loss: 82.0976 - val_softmax_stamp_loss: 3.0504 - val_multiply_1_loss: 0.0313
+Epoch 730/800
+ - 23s - loss: 67.2765 - min_1_loss: 67.2765 - softmax_stamp_loss: 3.1166 - multiply_1_loss: 0.0331 - val_loss: 83.6195 - val_min_1_loss: 83.6195 - val_softmax_stamp_loss: 3.0622 - val_multiply_1_loss: 0.0312
+Epoch 731/800
+ - 23s - loss: 67.5149 - min_1_loss: 67.5149 - softmax_stamp_loss: 3.1206 - multiply_1_loss: 0.0330 - val_loss: 83.4556 - val_min_1_loss: 83.4556 - val_softmax_stamp_loss: 3.0588 - val_multiply_1_loss: 0.0314
+Epoch 732/800
+ - 23s - loss: 67.2831 - min_1_loss: 67.2831 - softmax_stamp_loss: 3.1202 - multiply_1_loss: 0.0331 - val_loss: 84.3087 - val_min_1_loss: 84.3087 - val_softmax_stamp_loss: 3.0733 - val_multiply_1_loss: 0.0313
+Epoch 733/800
+ - 23s - loss: 67.3094 - min_1_loss: 67.3094 - softmax_stamp_loss: 3.1198 - multiply_1_loss: 0.0331 - val_loss: 83.2400 - val_min_1_loss: 83.2400 - val_softmax_stamp_loss: 3.0702 - val_multiply_1_loss: 0.0312
+Epoch 734/800
+ - 23s - loss: 67.0835 - min_1_loss: 67.0835 - softmax_stamp_loss: 3.1196 - multiply_1_loss: 0.0331 - val_loss: 85.1329 - val_min_1_loss: 85.1329 - val_softmax_stamp_loss: 3.0727 - val_multiply_1_loss: 0.0312
+Epoch 735/800
+ - 23s - loss: 67.4922 - min_1_loss: 67.4922 - softmax_stamp_loss: 3.1180 - multiply_1_loss: 0.0331 - val_loss: 81.9137 - val_min_1_loss: 81.9137 - val_softmax_stamp_loss: 3.0564 - val_multiply_1_loss: 0.0313
+Epoch 736/800
+ - 23s - loss: 67.5885 - min_1_loss: 67.5885 - softmax_stamp_loss: 3.1164 - multiply_1_loss: 0.0331 - val_loss: 81.2830 - val_min_1_loss: 81.2830 - val_softmax_stamp_loss: 3.0611 - val_multiply_1_loss: 0.0314
+Epoch 737/800
+ - 22s - loss: 67.3852 - min_1_loss: 67.3852 - softmax_stamp_loss: 3.1235 - multiply_1_loss: 0.0331 - val_loss: 82.5284 - val_min_1_loss: 82.5284 - val_softmax_stamp_loss: 3.0661 - val_multiply_1_loss: 0.0313
+Epoch 738/800
+ - 23s - loss: 67.5813 - min_1_loss: 67.5813 - softmax_stamp_loss: 3.1225 - multiply_1_loss: 0.0330 - val_loss: 84.9014 - val_min_1_loss: 84.9014 - val_softmax_stamp_loss: 3.0725 - val_multiply_1_loss: 0.0314
+Epoch 739/800
+ - 23s - loss: 67.3146 - min_1_loss: 67.3146 - softmax_stamp_loss: 3.1212 - multiply_1_loss: 0.0330 - val_loss: 84.4307 - val_min_1_loss: 84.4307 - val_softmax_stamp_loss: 3.0733 - val_multiply_1_loss: 0.0313
+Epoch 740/800
+ - 23s - loss: 67.3109 - min_1_loss: 67.3109 - softmax_stamp_loss: 3.1177 - multiply_1_loss: 0.0331 - val_loss: 85.7051 - val_min_1_loss: 85.7051 - val_softmax_stamp_loss: 3.0729 - val_multiply_1_loss: 0.0313
+Epoch 741/800
+ - 23s - loss: 67.3995 - min_1_loss: 67.3995 - softmax_stamp_loss: 3.1198 - multiply_1_loss: 0.0331 - val_loss: 83.6245 - val_min_1_loss: 83.6245 - val_softmax_stamp_loss: 3.0628 - val_multiply_1_loss: 0.0312
+Epoch 742/800
+ - 23s - loss: 67.2755 - min_1_loss: 67.2755 - softmax_stamp_loss: 3.1180 - multiply_1_loss: 0.0331 - val_loss: 84.6908 - val_min_1_loss: 84.6908 - val_softmax_stamp_loss: 3.0653 - val_multiply_1_loss: 0.0312
+Epoch 743/800
+ - 23s - loss: 67.5766 - min_1_loss: 67.5766 - softmax_stamp_loss: 3.1225 - multiply_1_loss: 0.0331 - val_loss: 85.2628 - val_min_1_loss: 85.2628 - val_softmax_stamp_loss: 3.0645 - val_multiply_1_loss: 0.0311
+Epoch 744/800
+ - 23s - loss: 67.2060 - min_1_loss: 67.2060 - softmax_stamp_loss: 3.1178 - multiply_1_loss: 0.0331 - val_loss: 83.2823 - val_min_1_loss: 83.2823 - val_softmax_stamp_loss: 3.0643 - val_multiply_1_loss: 0.0313
+Epoch 745/800
+ - 23s - loss: 67.6013 - min_1_loss: 67.6013 - softmax_stamp_loss: 3.1197 - multiply_1_loss: 0.0331 - val_loss: 82.3624 - val_min_1_loss: 82.3624 - val_softmax_stamp_loss: 3.0724 - val_multiply_1_loss: 0.0314
+Epoch 746/800
+ - 23s - loss: 67.1107 - min_1_loss: 67.1107 - softmax_stamp_loss: 3.1222 - multiply_1_loss: 0.0330 - val_loss: 83.6360 - val_min_1_loss: 83.6360 - val_softmax_stamp_loss: 3.0649 - val_multiply_1_loss: 0.0314
+Epoch 747/800
+ - 23s - loss: 67.2545 - min_1_loss: 67.2545 - softmax_stamp_loss: 3.1200 - multiply_1_loss: 0.0331 - val_loss: 84.4186 - val_min_1_loss: 84.4186 - val_softmax_stamp_loss: 3.0612 - val_multiply_1_loss: 0.0314
+Epoch 748/800
+ - 23s - loss: 67.0902 - min_1_loss: 67.0902 - softmax_stamp_loss: 3.1234 - multiply_1_loss: 0.0331 - val_loss: 82.7107 - val_min_1_loss: 82.7107 - val_softmax_stamp_loss: 3.0655 - val_multiply_1_loss: 0.0314
+Epoch 749/800
+ - 23s - loss: 67.2035 - min_1_loss: 67.2035 - softmax_stamp_loss: 3.1211 - multiply_1_loss: 0.0331 - val_loss: 85.6733 - val_min_1_loss: 85.6733 - val_softmax_stamp_loss: 3.0707 - val_multiply_1_loss: 0.0312
+Epoch 750/800
+ - 23s - loss: 67.5998 - min_1_loss: 67.5998 - softmax_stamp_loss: 3.1249 - multiply_1_loss: 0.0331 - val_loss: 83.1999 - val_min_1_loss: 83.1999 - val_softmax_stamp_loss: 3.0703 - val_multiply_1_loss: 0.0313
+Epoch 751/800
+ - 23s - loss: 67.5843 - min_1_loss: 67.5843 - softmax_stamp_loss: 3.1244 - multiply_1_loss: 0.0331 - val_loss: 84.0593 - val_min_1_loss: 84.0593 - val_softmax_stamp_loss: 3.0719 - val_multiply_1_loss: 0.0314
+Epoch 752/800
+ - 23s - loss: 67.5830 - min_1_loss: 67.5830 - softmax_stamp_loss: 3.1257 - multiply_1_loss: 0.0331 - val_loss: 83.8583 - val_min_1_loss: 83.8583 - val_softmax_stamp_loss: 3.0684 - val_multiply_1_loss: 0.0313
+Epoch 753/800
+ - 23s - loss: 67.3098 - min_1_loss: 67.3098 - softmax_stamp_loss: 3.1210 - multiply_1_loss: 0.0331 - val_loss: 83.1846 - val_min_1_loss: 83.1846 - val_softmax_stamp_loss: 3.0733 - val_multiply_1_loss: 0.0314
+Epoch 754/800
+ - 23s - loss: 67.5510 - min_1_loss: 67.5510 - softmax_stamp_loss: 3.1187 - multiply_1_loss: 0.0330 - val_loss: 82.8674 - val_min_1_loss: 82.8674 - val_softmax_stamp_loss: 3.0691 - val_multiply_1_loss: 0.0312
+Epoch 755/800
+ - 23s - loss: 67.7367 - min_1_loss: 67.7367 - softmax_stamp_loss: 3.1201 - multiply_1_loss: 0.0331 - val_loss: 82.6904 - val_min_1_loss: 82.6904 - val_softmax_stamp_loss: 3.0660 - val_multiply_1_loss: 0.0314
+Epoch 756/800
+ - 23s - loss: 67.3744 - min_1_loss: 67.3744 - softmax_stamp_loss: 3.1229 - multiply_1_loss: 0.0331 - val_loss: 84.3373 - val_min_1_loss: 84.3373 - val_softmax_stamp_loss: 3.0764 - val_multiply_1_loss: 0.0314
+Epoch 757/800
+ - 23s - loss: 67.4006 - min_1_loss: 67.4006 - softmax_stamp_loss: 3.1234 - multiply_1_loss: 0.0331 - val_loss: 84.3181 - val_min_1_loss: 84.3181 - val_softmax_stamp_loss: 3.0723 - val_multiply_1_loss: 0.0313
+Epoch 758/800
+ - 23s - loss: 67.4219 - min_1_loss: 67.4219 - softmax_stamp_loss: 3.1205 - multiply_1_loss: 0.0330 - val_loss: 84.2524 - val_min_1_loss: 84.2524 - val_softmax_stamp_loss: 3.0684 - val_multiply_1_loss: 0.0314
+Epoch 759/800
+ - 23s - loss: 67.5649 - min_1_loss: 67.5649 - softmax_stamp_loss: 3.1261 - multiply_1_loss: 0.0331 - val_loss: 86.6575 - val_min_1_loss: 86.6575 - val_softmax_stamp_loss: 3.0808 - val_multiply_1_loss: 0.0314
+Epoch 760/800
+ - 23s - loss: 67.5119 - min_1_loss: 67.5119 - softmax_stamp_loss: 3.1216 - multiply_1_loss: 0.0330 - val_loss: 85.0296 - val_min_1_loss: 85.0296 - val_softmax_stamp_loss: 3.0710 - val_multiply_1_loss: 0.0313
+Epoch 761/800
+ - 23s - loss: 67.2615 - min_1_loss: 67.2615 - softmax_stamp_loss: 3.1186 - multiply_1_loss: 0.0331 - val_loss: 84.7306 - val_min_1_loss: 84.7306 - val_softmax_stamp_loss: 3.0741 - val_multiply_1_loss: 0.0313
+Epoch 762/800
+ - 23s - loss: 67.3618 - min_1_loss: 67.3618 - softmax_stamp_loss: 3.1203 - multiply_1_loss: 0.0331 - val_loss: 84.6378 - val_min_1_loss: 84.6378 - val_softmax_stamp_loss: 3.0736 - val_multiply_1_loss: 0.0313
+Epoch 763/800
+ - 23s - loss: 67.5311 - min_1_loss: 67.5311 - softmax_stamp_loss: 3.1233 - multiply_1_loss: 0.0331 - val_loss: 86.6513 - val_min_1_loss: 86.6513 - val_softmax_stamp_loss: 3.0757 - val_multiply_1_loss: 0.0312
+Epoch 764/800
+ - 23s - loss: 67.3129 - min_1_loss: 67.3129 - softmax_stamp_loss: 3.1207 - multiply_1_loss: 0.0331 - val_loss: 84.0239 - val_min_1_loss: 84.0239 - val_softmax_stamp_loss: 3.0604 - val_multiply_1_loss: 0.0311
+Epoch 765/800
+ - 23s - loss: 67.3279 - min_1_loss: 67.3279 - softmax_stamp_loss: 3.1237 - multiply_1_loss: 0.0330 - val_loss: 84.0164 - val_min_1_loss: 84.0164 - val_softmax_stamp_loss: 3.0747 - val_multiply_1_loss: 0.0314
+Epoch 766/800
+ - 23s - loss: 67.4169 - min_1_loss: 67.4169 - softmax_stamp_loss: 3.1234 - multiply_1_loss: 0.0330 - val_loss: 87.9439 - val_min_1_loss: 87.9439 - val_softmax_stamp_loss: 3.0849 - val_multiply_1_loss: 0.0312
+Epoch 767/800
+ - 23s - loss: 67.3567 - min_1_loss: 67.3567 - softmax_stamp_loss: 3.1232 - multiply_1_loss: 0.0331 - val_loss: 85.2174 - val_min_1_loss: 85.2174 - val_softmax_stamp_loss: 3.0762 - val_multiply_1_loss: 0.0311
+Epoch 768/800
+ - 23s - loss: 67.2512 - min_1_loss: 67.2512 - softmax_stamp_loss: 3.1221 - multiply_1_loss: 0.0330 - val_loss: 83.8685 - val_min_1_loss: 83.8685 - val_softmax_stamp_loss: 3.0696 - val_multiply_1_loss: 0.0313
+Epoch 769/800
+ - 23s - loss: 67.1857 - min_1_loss: 67.1857 - softmax_stamp_loss: 3.1206 - multiply_1_loss: 0.0331 - val_loss: 84.8319 - val_min_1_loss: 84.8319 - val_softmax_stamp_loss: 3.0786 - val_multiply_1_loss: 0.0312
+Epoch 770/800
+ - 23s - loss: 67.0286 - min_1_loss: 67.0286 - softmax_stamp_loss: 3.1175 - multiply_1_loss: 0.0331 - val_loss: 84.5088 - val_min_1_loss: 84.5088 - val_softmax_stamp_loss: 3.0766 - val_multiply_1_loss: 0.0311
+Epoch 771/800
+ - 23s - loss: 67.3932 - min_1_loss: 67.3932 - softmax_stamp_loss: 3.1216 - multiply_1_loss: 0.0331 - val_loss: 84.4078 - val_min_1_loss: 84.4078 - val_softmax_stamp_loss: 3.0738 - val_multiply_1_loss: 0.0314
+Epoch 772/800
+ - 23s - loss: 67.6504 - min_1_loss: 67.6504 - softmax_stamp_loss: 3.1220 - multiply_1_loss: 0.0330 - val_loss: 84.2874 - val_min_1_loss: 84.2874 - val_softmax_stamp_loss: 3.0653 - val_multiply_1_loss: 0.0313
+Epoch 773/800
+ - 23s - loss: 67.5928 - min_1_loss: 67.5928 - softmax_stamp_loss: 3.1254 - multiply_1_loss: 0.0331 - val_loss: 84.4472 - val_min_1_loss: 84.4472 - val_softmax_stamp_loss: 3.0716 - val_multiply_1_loss: 0.0311
+Epoch 774/800
+ - 23s - loss: 67.1889 - min_1_loss: 67.1889 - softmax_stamp_loss: 3.1255 - multiply_1_loss: 0.0331 - val_loss: 85.2755 - val_min_1_loss: 85.2755 - val_softmax_stamp_loss: 3.0667 - val_multiply_1_loss: 0.0313
+Epoch 775/800
+ - 23s - loss: 67.2052 - min_1_loss: 67.2052 - softmax_stamp_loss: 3.1238 - multiply_1_loss: 0.0331 - val_loss: 86.1127 - val_min_1_loss: 86.1127 - val_softmax_stamp_loss: 3.0801 - val_multiply_1_loss: 0.0311
+Epoch 776/800
+ - 23s - loss: 67.1478 - min_1_loss: 67.1478 - softmax_stamp_loss: 3.1224 - multiply_1_loss: 0.0330 - val_loss: 84.7049 - val_min_1_loss: 84.7049 - val_softmax_stamp_loss: 3.0744 - val_multiply_1_loss: 0.0312
+Epoch 777/800
+ - 23s - loss: 67.0201 - min_1_loss: 67.0201 - softmax_stamp_loss: 3.1183 - multiply_1_loss: 0.0331 - val_loss: 84.5495 - val_min_1_loss: 84.5495 - val_softmax_stamp_loss: 3.0778 - val_multiply_1_loss: 0.0313
+Epoch 778/800
+ - 23s - loss: 67.2063 - min_1_loss: 67.2063 - softmax_stamp_loss: 3.1212 - multiply_1_loss: 0.0331 - val_loss: 82.5059 - val_min_1_loss: 82.5059 - val_softmax_stamp_loss: 3.0738 - val_multiply_1_loss: 0.0313
+Epoch 779/800
+ - 23s - loss: 67.0307 - min_1_loss: 67.0307 - softmax_stamp_loss: 3.1221 - multiply_1_loss: 0.0331 - val_loss: 84.1274 - val_min_1_loss: 84.1274 - val_softmax_stamp_loss: 3.0675 - val_multiply_1_loss: 0.0313
+Epoch 780/800
+ - 23s - loss: 67.0833 - min_1_loss: 67.0833 - softmax_stamp_loss: 3.1230 - multiply_1_loss: 0.0331 - val_loss: 81.8888 - val_min_1_loss: 81.8888 - val_softmax_stamp_loss: 3.0615 - val_multiply_1_loss: 0.0313
+Epoch 781/800
+ - 23s - loss: 67.1959 - min_1_loss: 67.1959 - softmax_stamp_loss: 3.1170 - multiply_1_loss: 0.0330 - val_loss: 86.0248 - val_min_1_loss: 86.0248 - val_softmax_stamp_loss: 3.0725 - val_multiply_1_loss: 0.0311
+Epoch 782/800
+ - 23s - loss: 67.3231 - min_1_loss: 67.3231 - softmax_stamp_loss: 3.1205 - multiply_1_loss: 0.0331 - val_loss: 82.0670 - val_min_1_loss: 82.0670 - val_softmax_stamp_loss: 3.0608 - val_multiply_1_loss: 0.0314
+Epoch 783/800
+ - 23s - loss: 66.9616 - min_1_loss: 66.9616 - softmax_stamp_loss: 3.1236 - multiply_1_loss: 0.0331 - val_loss: 83.3200 - val_min_1_loss: 83.3200 - val_softmax_stamp_loss: 3.0725 - val_multiply_1_loss: 0.0313
+Epoch 784/800
+ - 23s - loss: 67.1766 - min_1_loss: 67.1766 - softmax_stamp_loss: 3.1202 - multiply_1_loss: 0.0331 - val_loss: 83.7464 - val_min_1_loss: 83.7464 - val_softmax_stamp_loss: 3.0645 - val_multiply_1_loss: 0.0314
+Epoch 785/800
+ - 23s - loss: 67.1744 - min_1_loss: 67.1744 - softmax_stamp_loss: 3.1193 - multiply_1_loss: 0.0331 - val_loss: 81.4914 - val_min_1_loss: 81.4914 - val_softmax_stamp_loss: 3.0537 - val_multiply_1_loss: 0.0313
+Epoch 786/800
+ - 23s - loss: 67.4835 - min_1_loss: 67.4835 - softmax_stamp_loss: 3.1198 - multiply_1_loss: 0.0331 - val_loss: 84.0498 - val_min_1_loss: 84.0498 - val_softmax_stamp_loss: 3.0689 - val_multiply_1_loss: 0.0313
+Epoch 787/800
+ - 23s - loss: 67.3146 - min_1_loss: 67.3146 - softmax_stamp_loss: 3.1209 - multiply_1_loss: 0.0331 - val_loss: 82.5513 - val_min_1_loss: 82.5513 - val_softmax_stamp_loss: 3.0712 - val_multiply_1_loss: 0.0314
+Epoch 788/800
+ - 23s - loss: 67.3849 - min_1_loss: 67.3849 - softmax_stamp_loss: 3.1246 - multiply_1_loss: 0.0331 - val_loss: 83.2144 - val_min_1_loss: 83.2144 - val_softmax_stamp_loss: 3.0588 - val_multiply_1_loss: 0.0312
+Epoch 789/800
+ - 23s - loss: 67.3085 - min_1_loss: 67.3085 - softmax_stamp_loss: 3.1201 - multiply_1_loss: 0.0331 - val_loss: 89.8915 - val_min_1_loss: 89.8915 - val_softmax_stamp_loss: 3.0958 - val_multiply_1_loss: 0.0312
+Epoch 790/800
+ - 23s - loss: 67.1352 - min_1_loss: 67.1352 - softmax_stamp_loss: 3.1185 - multiply_1_loss: 0.0331 - val_loss: 84.7592 - val_min_1_loss: 84.7592 - val_softmax_stamp_loss: 3.0728 - val_multiply_1_loss: 0.0313
+Epoch 791/800
+ - 23s - loss: 67.1215 - min_1_loss: 67.1215 - softmax_stamp_loss: 3.1194 - multiply_1_loss: 0.0331 - val_loss: 84.4660 - val_min_1_loss: 84.4660 - val_softmax_stamp_loss: 3.0793 - val_multiply_1_loss: 0.0314
+Epoch 792/800
+ - 23s - loss: 66.9944 - min_1_loss: 66.9944 - softmax_stamp_loss: 3.1219 - multiply_1_loss: 0.0331 - val_loss: 81.8469 - val_min_1_loss: 81.8469 - val_softmax_stamp_loss: 3.0705 - val_multiply_1_loss: 0.0315
+Epoch 793/800
+ - 23s - loss: 67.4116 - min_1_loss: 67.4116 - softmax_stamp_loss: 3.1255 - multiply_1_loss: 0.0331 - val_loss: 81.9410 - val_min_1_loss: 81.9410 - val_softmax_stamp_loss: 3.0662 - val_multiply_1_loss: 0.0314
+Epoch 794/800
+ - 23s - loss: 67.0819 - min_1_loss: 67.0819 - softmax_stamp_loss: 3.1233 - multiply_1_loss: 0.0331 - val_loss: 82.6122 - val_min_1_loss: 82.6122 - val_softmax_stamp_loss: 3.0713 - val_multiply_1_loss: 0.0314
+Epoch 795/800
+ - 23s - loss: 67.4531 - min_1_loss: 67.4531 - softmax_stamp_loss: 3.1228 - multiply_1_loss: 0.0331 - val_loss: 84.7422 - val_min_1_loss: 84.7422 - val_softmax_stamp_loss: 3.0644 - val_multiply_1_loss: 0.0313
+Epoch 796/800
+ - 23s - loss: 67.6135 - min_1_loss: 67.6135 - softmax_stamp_loss: 3.1247 - multiply_1_loss: 0.0331 - val_loss: 84.4075 - val_min_1_loss: 84.4075 - val_softmax_stamp_loss: 3.0768 - val_multiply_1_loss: 0.0313
+Epoch 797/800
+ - 23s - loss: 67.2917 - min_1_loss: 67.2917 - softmax_stamp_loss: 3.1248 - multiply_1_loss: 0.0331 - val_loss: 84.1968 - val_min_1_loss: 84.1968 - val_softmax_stamp_loss: 3.0657 - val_multiply_1_loss: 0.0313
+Epoch 798/800
+ - 23s - loss: 67.0403 - min_1_loss: 67.0403 - softmax_stamp_loss: 3.1200 - multiply_1_loss: 0.0331 - val_loss: 81.8238 - val_min_1_loss: 81.8238 - val_softmax_stamp_loss: 3.0663 - val_multiply_1_loss: 0.0314
+Epoch 799/800
+ - 23s - loss: 67.1792 - min_1_loss: 67.1792 - softmax_stamp_loss: 3.1181 - multiply_1_loss: 0.0331 - val_loss: 83.8200 - val_min_1_loss: 83.8200 - val_softmax_stamp_loss: 3.0621 - val_multiply_1_loss: 0.0314
+Epoch 800/800
+ - 23s - loss: 67.4806 - min_1_loss: 67.4806 - softmax_stamp_loss: 3.1240 - multiply_1_loss: 0.0331 - val_loss: 84.5496 - val_min_1_loss: 84.5496 - val_softmax_stamp_loss: 3.0798 - val_multiply_1_loss: 0.0314
