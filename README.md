@@ -6,7 +6,7 @@ Code for ["StampNet: unsupervised multi-class object discovery"](https://arxiv.o
 
 ### Dependencies
 
-The StampNet code has been written in Python 3. These packages are required.
+The StampNet code has been written in Python 3 and are dependent on the following packages:
 
 ```bash
 pip install tensorflow-gpu keras sacred matplotlib scikit-image scikit-learn jupyterlab seaborn munkres opencv-python
