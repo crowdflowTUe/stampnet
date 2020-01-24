@@ -2,6 +2,23 @@
 
 Code for ["StampNet: unsupervised multi-class object discovery"](https://arxiv.org/abs/1902.02693) by Visser, Corbetta, Menkovski and Toschi.
 
+## What is StampNet
+StampNet is a way for performing multi-class multi-object object discovery. Well, sort of, as it is designed to discover and cluster abstract shapes, not real-world or ImageNet-style images. 
+
+It is easier to see StampNet as a **localising multi k-means clustering** using neural networks. Besides finding *k* clusters by minimising MSE, the network can also:
+- localise the clusters (or **stamps** as we call them) simultaneously
+- find multiple clusters in each image
+
+Besides the results and applications we show in the paper, StampNet can also be used in other ways. For example:
+- StampNet can perform a better clustering of Omniglot compared to, say, *k*-means clustering. If the cluster size are smaller and the network localises the clusters, it makes them more translation invariant resulting in a better clustering. (Not in the paper due to page limit constraint)
+
+The method is fairly robust. The network uses *M* stamps per image, but even when there are less than *M* objects per image, it still manages to reproduce the image properly by learning an empty stamp. When there are more than *M* objects in the image, the network learns to localise the objects with the highest average pixel value. (Not in the paper due to page limit constraint)
+
+
+## How does StampNet work?
+StampNet is an autoencoder with a discrete latent space, e.g. it tries to reproduce the input image. The discrete latent space consists of three [gumbel softmax](https://arxiv.org/abs/1611.01144) that predict the *(x, y)* coordinate and which stamp *s* we should use. We then place the predicted stamp at the predicted coordinate to reproduce the image. For more details, see the [paper]((https://arxiv.org/abs/1902.02693)).
+
+
 ## Installation
 
 ### Dependencies
